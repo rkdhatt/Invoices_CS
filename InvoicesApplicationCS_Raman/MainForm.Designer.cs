@@ -28,38 +28,40 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.compDataGridView = new System.Windows.Forms.DataGridView();
 			this.addCompanyButton = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.companyTitleLabel = new System.Windows.Forms.Label();
+			this.mainDataGrid = new System.Windows.Forms.DataGrid();
 			((System.ComponentModel.ISupportInitialize)(this.compDataGridView)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.mainDataGrid)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// compDataGridView
 			// 
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-			this.compDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightCyan;
+			dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+			this.compDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
 			this.compDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
 			this.compDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
 			this.compDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.compDataGridView.Location = new System.Drawing.Point(210, 35);
 			this.compDataGridView.Name = "compDataGridView";
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.compDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.PowderBlue;
-			this.compDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.compDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+			dataGridViewCellStyle12.BackColor = System.Drawing.Color.PowderBlue;
+			this.compDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle12;
 			this.compDataGridView.Size = new System.Drawing.Size(172, 106);
 			this.compDataGridView.TabIndex = 0;
 			// 
@@ -94,17 +96,27 @@
 			// companyTitleLabel
 			// 
 			this.companyTitleLabel.AutoSize = true;
-			this.companyTitleLabel.Location = new System.Drawing.Point(207, 19);
+			this.companyTitleLabel.Location = new System.Drawing.Point(184, 19);
 			this.companyTitleLabel.Name = "companyTitleLabel";
 			this.companyTitleLabel.Size = new System.Drawing.Size(59, 13);
 			this.companyTitleLabel.TabIndex = 4;
 			this.companyTitleLabel.Text = "Companies";
 			// 
+			// mainDataGrid
+			// 
+			this.mainDataGrid.DataMember = "";
+			this.mainDataGrid.HeaderForeColor = System.Drawing.SystemColors.ControlText;
+			this.mainDataGrid.Location = new System.Drawing.Point(187, 35);
+			this.mainDataGrid.Name = "mainDataGrid";
+			this.mainDataGrid.Size = new System.Drawing.Size(478, 116);
+			this.mainDataGrid.TabIndex = 5;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(417, 175);
+			this.ClientSize = new System.Drawing.Size(692, 193);
+			this.Controls.Add(this.mainDataGrid);
 			this.Controls.Add(this.companyTitleLabel);
 			this.Controls.Add(this.button3);
 			this.Controls.Add(this.button2);
@@ -114,6 +126,7 @@
 			this.Text = "Invoices Application";
 			this.Load += new System.EventHandler(this.MainForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.compDataGridView)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.mainDataGrid)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -126,6 +139,7 @@
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Label companyTitleLabel;
+		private System.Windows.Forms.DataGrid mainDataGrid;
 
 	}
 }

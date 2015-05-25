@@ -20,9 +20,9 @@ namespace InvoicesApplicationCS_Raman
 		private DBDataSet dbAddresses;
 		private DBDataSet dbDetails;
 
-		//private DataSet dsCompanies;
+		private DataSet dsCompanies;
 		//private DataSet dsInvoices;
-		//private DataSet dsAddresses;
+		private DataSet dsAddresses;
 		//private DataSet dsDetails;
 
 		private DataTable tableCompanies;
@@ -50,6 +50,9 @@ namespace InvoicesApplicationCS_Raman
 			dbAddresses = new DBDataSet();
 			dbDetails = new DBDataSet();
 
+			dsCompanies = new DataSet();
+			dsAddresses = new DataSet();
+
 			tableCompanies = new DataTable();
 			tableInvoices = new DataTable();
 			tableAddresses = new DataTable();
@@ -60,6 +63,10 @@ namespace InvoicesApplicationCS_Raman
 			dbInvoices.FetchStoredProcedure = "fetch_invoices";
 			dbAddresses.FetchStoredProcedure = "fetch_addresses";
 			dbDetails.FetchStoredProcedure = "fetch_details";
+
+			// Set  to corresponding datasources
+			dbCompanies.DataSet = dsCompanies;
+			dbAddresses.DataSet = dsAddresses;
 
 			// Set Datasources
 			compDataGridView.DataSource = tableCompanies;
@@ -73,7 +80,7 @@ namespace InvoicesApplicationCS_Raman
 			dbAddresses.FetchDataTable(tableAddresses);
 
 			// Hide ID's
-			compDataGridView.Columns[0].Visible = false;
+			compDataGridView.Visible = false;
 
 			// Add master company and child address tables to dataset
 			DataSet dsDataSet = new DataSet();
@@ -81,10 +88,11 @@ namespace InvoicesApplicationCS_Raman
 			dsDataSet.Tables.Add(tableAddresses);
 
 			// Define relationship between master and child tables
-			DataRelation relation = new DataRelation("Company Addresses",
-				dsDataSet.Tables[0].Columns[0], dsDataSet.Tables[1].Columns[0], true);
-			dsDataSet.Relations.Add(relation);
-
+			dsDataSet.Relations.Add("Company Addresses",
+					dsDataSet.Tables[0].Columns["company_id"],
+					dsDataSet.Tables[1].Columns["company_id"], true);
+			// Bind data
+			mainDataGrid.DataSource = dsDataSet.Tables[0];
 
 		}
 
