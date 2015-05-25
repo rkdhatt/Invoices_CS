@@ -27,8 +27,8 @@ BEGIN
     -- Insert statements for procedure here
 	BEGIN TRANSACTION
 		SELECT c.company_id, name, date, terms
-		FROM companies c
-		LEFT JOIN invoices i ON i.company_id = c.company_id
+		FROM companies c, invoices i
+		WHERE c.company_id = i.company_id
 
 	COMMIT TRANSACTION
 
