@@ -53,9 +53,9 @@ namespace InvoicesApplicationCS_Raman
 			dsCompanies = new DataSet();
 			dsAddresses = new DataSet();
 
-			tableCompanies = new DataTable();
+			tableCompanies = new DataTable("Companies");
 			tableInvoices = new DataTable();
-			tableAddresses = new DataTable();
+			tableAddresses = new DataTable("Addresses");
 			tableDetails = new DataTable();
 
 			// Initialize stored procedures
@@ -79,8 +79,8 @@ namespace InvoicesApplicationCS_Raman
 			dbCompanies.FetchDataTable(tableCompanies);
 			dbAddresses.FetchDataTable(tableAddresses);
 
-			// Hide ID's
-			compDataGridView.Visible = false;
+			// Prevent user from adding new company name directly on grid
+			tableCompanies.DefaultView.AllowNew = false;
 
 			// Add master company and child address tables to dataset
 			DataSet dsDataSet = new DataSet();
@@ -91,18 +91,20 @@ namespace InvoicesApplicationCS_Raman
 			dsDataSet.Relations.Add("Company Addresses",
 					dsDataSet.Tables[0].Columns["company_id"],
 					dsDataSet.Tables[1].Columns["company_id"], true);
+
+			// Hide ID's
+			compDataGridView.Visible = false;
+			dsDataSet.Tables[0].Columns[0].ColumnMapping = MappingType.Hidden; // hide company_id in company table
+			dsDataSet.Tables[1].Columns[0].ColumnMapping = MappingType.Hidden; // hide company_id in address table
+			dsDataSet.Tables[1].Columns[1].ColumnMapping = MappingType.Hidden; // hide address-Id in address table 
+			
+			
 			// Bind data
 			mainDataGrid.DataSource = dsDataSet.Tables[0];
-
 		}
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
-			// resize master columns to fit newly loaded data
-			//compDataGridView.AutoResizeColumns();
-
-			// Child data grid view automatically adjust their widths when the data changes
-			//addressDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 		}
 
 		// Add new company using add company form
