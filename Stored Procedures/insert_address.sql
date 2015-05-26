@@ -11,11 +11,11 @@ GO
 --		------------------- 	---------- 	--------------------------------------
 -- =================================================================================
 
-IF EXISTS (SELECT * FROM SYSOBJECTS WHERE NAME = 'add_address')
-	DROP PROCEDURE add_address
+IF EXISTS (SELECT * FROM SYSOBJECTS WHERE NAME = 'insert_address')
+	DROP PROCEDURE insert_address
 GO
 
-CREATE PROCEDURE add_address 
+CREATE PROCEDURE insert_address 
 	-- Add the parameters for the stored procedure here
 	@addresses varchar(100),
 	@company_id int,
@@ -64,7 +64,8 @@ BEGIN
 
 	COMMIT TRANSACTION
 
-	GRANT EXECUTE ON add_address TO PUBLIC
-
 END
+GO
+
+GRANT EXECUTE ON insert_address TO PUBLIC
 GO

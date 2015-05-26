@@ -1,6 +1,3 @@
-USE [invoices_raman]
-GO
-
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14,11 +11,11 @@ GO
 --		------------------- 	---------- 	--------------------------------------
 -- =================================================================================
 
-IF EXISTS (SELECT * FROM SYSOBJECTS WHERE NAME = 'add_detail')
-	DROP PROCEDURE add_detail
+IF EXISTS (SELECT * FROM SYSOBJECTS WHERE NAME = 'insert_detail')
+	DROP PROCEDURE insert_detail
 GO
 
-CREATE PROCEDURE add_detail
+CREATE PROCEDURE insert_detail
 	@invoice_id int,
 	@description varchar(50),
 	@quantity real,
@@ -34,7 +31,7 @@ BEGIN
 	-- Insert statements for procedure here
 	-- Check if any attributes are empty
 	IF (@description IS NULL) OR (LTRIM(RTRIM(@description)) = '') BEGIN
-		RAISERROR('description of invoice details cannot be blank. Please enter description.', 16, 1)
+		RAISERROR('Description of invoice details cannot be blank. Please enter description.', 16, 1)
 		RETURN -1
 	END
 
@@ -56,7 +53,9 @@ BEGIN
 		VALUES (@invoice_id, @detail_id, @description, @quantity, @cost);
 	COMMIT TRANSACTION
 
-	
-	GRANT EXECUTE ON add_detail TO PUBLIC
-	
+		
 END
+GO
+
+GRANT EXECUTE ON insert_detail TO PUBLIC
+GO

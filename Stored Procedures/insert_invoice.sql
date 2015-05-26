@@ -11,11 +11,11 @@ GO
 --		------------------- 	---------- 	--------------------------------------
 -- =================================================================================
 
-IF EXISTS (SELECT * FROM SYSOBJECTS WHERE NAME = 'add_invoice')
-	DROP PROCEDURE add_invoice
+IF EXISTS (SELECT * FROM SYSOBJECTS WHERE NAME = 'insert_invoice')
+	DROP PROCEDURE insert_invoice
 GO
 
-CREATE PROCEDURE add_invoice
+CREATE PROCEDURE insert_invoice
 	@date smalldatetime,
 	@company_id INT,
 	@terms VARCHAR(20)
@@ -55,9 +55,9 @@ BEGIN
 		VALUES (@invoice_id, @date, @company_id, @terms);
 
 	COMMIT TRANSACTION
-
-	
-	GRANT EXECUTE ON add_invoice TO PUBLIC
 	
 END
+GO
+
+GRANT EXECUTE ON insert_invoice TO PUBLIC
 GO

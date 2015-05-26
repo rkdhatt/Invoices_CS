@@ -16,26 +16,16 @@ namespace InvoicesApplicationCS_Raman
 	public partial class MainForm : Form
 	{
 		private DBDataSet dbCompanies;
-		private DBDataSet dbInvoices;
 		private DBDataSet dbAddresses;
-		private DBDataSet dbDetails;
+		
 
 		private DataSet dsCompanies;
-		//private DataSet dsInvoices;
 		private DataSet dsAddresses;
-		//private DataSet dsDetails;
 
 		private DataTable tableCompanies;
-		private DataTable tableInvoices;
 		private DataTable tableAddresses;
-		private DataTable tableDetails;
 
-		DBView dbvCompanies;
-		//DBView dbvInvoices;
-		DBView dbvAddresses;
-		//DBView dbvDetails;
-
-        DataGridView addressDataGridView = new DataGridView();
+		DataGridView addressDataGridView = new DataGridView();
 
 		public MainForm()
 		{
@@ -46,78 +36,104 @@ namespace InvoicesApplicationCS_Raman
 
 			// initialize company data variables
 			dbCompanies = new DBDataSet();
-			dbInvoices = new DBDataSet();
+			// dbInvoices = new DBDataSet();
 			dbAddresses = new DBDataSet();
-			dbDetails = new DBDataSet();
+			// dbDetails = new DBDataSet();
 
 			dsCompanies = new DataSet();
 			dsAddresses = new DataSet();
 
 			tableCompanies = new DataTable("Companies");
-			tableInvoices = new DataTable();
+			// tableInvoices = new DataTable();
 			tableAddresses = new DataTable("Addresses");
-			tableDetails = new DataTable();
+			// tableDetails = new DataTable();
+
+			// Must have DB Views to send inserts/updates/deletes to SQL Server
+			DBView dbvCompanies = new DBView(compDataGridView, dbCompanies);
 
 			// Initialize stored procedures
 			dbCompanies.FetchStoredProcedure = "fetch_companies";
-			dbInvoices.FetchStoredProcedure = "fetch_invoices";
 			dbAddresses.FetchStoredProcedure = "fetch_addresses";
-			dbDetails.FetchStoredProcedure = "fetch_details";
+
+			dbCompanies.InsertStoredProcedure = "insert_company";
+			dbAddresses.InsertStoredProcedure = "insert_address";
 
 			// Set  to corresponding datasources
 			dbCompanies.DataSet = dsCompanies;
 			dbAddresses.DataSet = dsAddresses;
 
-			// Set Datasources
-			compDataGridView.DataSource = tableCompanies;
-			addressDataGridView.DataSource = tableAddresses;
-
-			dbvCompanies = new DBView(compDataGridView, dbCompanies);
-			dbvAddresses = new DBView(addressDataGridView, dbAddresses);
+			// Prevent user from adding new company name directly on grid
+			// Note to self: needed gridview to be assigned to its datasource in order for the 'add new row' to stay hidden
 
 			// Fetch data and save to corresponding table 
 			dbCompanies.FetchDataTable(tableCompanies);
 			dbAddresses.FetchDataTable(tableAddresses);
 
-			// Prevent user from adding new company name directly on grid
-			tableCompanies.DefaultView.AllowNew = false;
-
 			// Add master company and child address tables to dataset
-			DataSet dsDataSet = new DataSet();
-			dsDataSet.Tables.Add(tableCompanies);
-			dsDataSet.Tables.Add(tableAddresses);
+			//DataSet dsDataSet = new DataSet();
+			//dsDataSet.Tables.Add(this.tableCompanies);
+			//dsDataSet.Tables.Add(this.tableAddresses);
 
 			// Define relationship between master and child tables
-			dsDataSet.Relations.Add("Company Addresses",
-					dsDataSet.Tables[0].Columns["company_id"],
-					dsDataSet.Tables[1].Columns["company_id"], true);
+			//dsDataSet.Relations.Add("Company Addresses",
+			//		dsDataSet.Tables[0].Columns["company_id"],
+			//		dsDataSet.Tables[1].Columns["company_id"], true);
 
 			// Hide ID's
-			compDataGridView.Visible = false;
-			dsDataSet.Tables[0].Columns[0].ColumnMapping = MappingType.Hidden; // hide company_id in company table
-			dsDataSet.Tables[1].Columns[0].ColumnMapping = MappingType.Hidden; // hide company_id in address table
-			dsDataSet.Tables[1].Columns[1].ColumnMapping = MappingType.Hidden; // hide address-Id in address table 
+			//compDataGridView.Visible = false;
+			//dsDataSet.Tables[0].Columns[0].ColumnMapping = MappingType.Hidden; // hide company_id in company table
+			//dsDataSet.Tables[1].Columns[0].ColumnMapping = MappingType.Hidden; // hide company_id in address table
+			//dsDataSet.Tables[1].Columns[1].ColumnMapping = MappingType.Hidden; // hide address_id in address table 
 			
+			// Bind data to main data grid
+
+			//mainDataGrid.DataSource = dsDataSet.Tables[0];
+
+			// Set Datasources
+			compDataGridView.DataSource = tableCompanies;
+			addressDataGridView.DataSource = tableAddresses;
+			compDataGridView.AutoGenerateColumns = false;
+
+			mainDataGrid.Visible = false;
+			//compDataGridView.Columns[0].Visible = false;
+
+			dbCompanies.BeforeDelete += dbCompanies_BeforeDelete;
+			dbCompanies.BeforeInsert += dbCompanies_BeforeInsert;
+		}
+
+		void dbCompanies_BeforeInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
+		{
+			System.Diagnostics.Debug.WriteLine("INSERT TEST");
+		}
+
+		void dbCompanies_BeforeDelete(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
+		{
 			
-			// Bind data
-			mainDataGrid.DataSource = dsDataSet.Tables[0];
 		}
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 		}
 
-		// Add new company using add company form
-		private void addCompanyButton_Click(object sender, EventArgs e)
+
+		private void mainDataGrid_Navigate(object sender, NavigateEventArgs ne)
 		{
-			AddCompanyForm add_company = new AddCompanyForm();
-			DialogResult result = add_company.ShowDialog(this);
 
-			if (result == DialogResult.OK)
-			{
-				//dbCompanies.FetchDataSet();	
-			}
+		}
 
+		// Take user to invoices and invoice details - probably can't use it.... or can i?..
+		private void mainDataGrid_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+		}
+
+
+		private void compDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			string name = (string) compDataGridView[e.ColumnIndex, e.RowIndex].FormattedValue;
+			int company_id = Convert.ToInt32(compDataGridView[0, e.RowIndex].FormattedValue);
+			Console.WriteLine("Current name: {0}; column: {1}, row: {2}, company id: {3}", name, e.ColumnIndex, e.RowIndex, company_id);
+			InvoicesForm frm_invoices = new InvoicesForm(company_id);
+			frm_invoices.Show();
 		}
 	}
 }

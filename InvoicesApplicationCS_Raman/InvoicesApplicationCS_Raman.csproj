@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,11 +52,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddCompanyForm.cs">
+    <Compile Include="InvoicesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddCompanyForm.Designer.cs">
-      <DependentUpon>AddCompanyForm.cs</DependentUpon>
+    <Compile Include="InvoicesForm.Designer.cs">
+      <DependentUpon>InvoicesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -65,8 +66,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddCompanyForm.resx">
-      <DependentUpon>AddCompanyForm.cs</DependentUpon>
+    <EmbeddedResource Include="InvoicesForm.resx">
+      <DependentUpon>InvoicesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
