@@ -25,7 +25,7 @@ BEGIN
 
 	BEGIN TRANSACTION
 	    -- Insert statements for procedure here
-		SELECT c.company_id, address_id, phone, date_modify
+		SELECT c.company_id, address_id, addresses, phone, date_modify
 		FROM companies c, addresses a
 		WHERE c.company_id = a.company_id and a.company_id = @company_id
 	COMMIT TRANSACTION

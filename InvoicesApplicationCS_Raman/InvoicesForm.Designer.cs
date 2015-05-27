@@ -36,6 +36,7 @@
 			this.addressDataGridView = new System.Windows.Forms.DataGridView();
 			this.companyIDAddCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.AddressID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Addresses = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.DateModify = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabControl1.SuspendLayout();
@@ -77,7 +78,6 @@
 			this.invoiceDataGrid.HeaderForeColor = System.Drawing.SystemColors.ControlText;
 			this.invoiceDataGrid.Location = new System.Drawing.Point(5, 7);
 			this.invoiceDataGrid.Name = "invoiceDataGrid";
-			this.invoiceDataGrid.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.invoiceDataGrid.Size = new System.Drawing.Size(530, 196);
 			this.invoiceDataGrid.TabIndex = 1;
 			// 
@@ -101,6 +101,7 @@
 			this.addressDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.companyIDAddCol,
             this.AddressID,
+            this.Addresses,
             this.Phone,
             this.DateModify});
 			this.addressDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -108,13 +109,13 @@
 			this.addressDataGridView.Name = "addressDataGridView";
 			this.addressDataGridView.Size = new System.Drawing.Size(529, 197);
 			this.addressDataGridView.TabIndex = 0;
+			this.addressDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.addressDataGridView_DefaultValuesNeeded);
 			// 
 			// companyIDAddCol
 			// 
 			this.companyIDAddCol.DataPropertyName = "company_id";
 			this.companyIDAddCol.HeaderText = "Company ID";
 			this.companyIDAddCol.Name = "companyIDAddCol";
-			this.companyIDAddCol.Visible = false;
 			// 
 			// AddressID
 			// 
@@ -122,6 +123,12 @@
 			this.AddressID.HeaderText = "Address ID";
 			this.AddressID.Name = "AddressID";
 			this.AddressID.Visible = false;
+			// 
+			// Addresses
+			// 
+			this.Addresses.DataPropertyName = "addresses";
+			this.Addresses.HeaderText = "Addresses";
+			this.Addresses.Name = "Addresses";
 			// 
 			// Phone
 			// 
@@ -145,6 +152,7 @@
 			this.MinimumSize = new System.Drawing.Size(559, 267);
 			this.Name = "InvoicesForm";
 			this.Text = "Selected Company\'s Invoices and Addresses";
+			this.Load += new System.EventHandler(this.InvoicesForm_Load);
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.invoiceDataGrid)).EndInit();
@@ -163,6 +171,7 @@
 		private System.Windows.Forms.DataGridView addressDataGridView;
 		private System.Windows.Forms.DataGridViewTextBoxColumn companyIDAddCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn AddressID;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Addresses;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
 		private System.Windows.Forms.DataGridViewTextBoxColumn DateModify;
 

@@ -25,8 +25,8 @@ namespace InvoicesApplicationCS_Raman
 		private DataTable tableDetails;
 		private DataTable tableAddresses;
 
-		DataGridView invoiceGridView;
-		DataGridView detailGridView;
+		DataGridView invoiceDataGridView;
+		DataGridView detailDataGridView;
 
 		DBView dbvInvoices;
 		DBView dbvDetails;
@@ -58,14 +58,27 @@ namespace InvoicesApplicationCS_Raman
 			tableDetails = new DataTable("Details");
 			tableAddresses = new DataTable("Addresses");
 
+			// Initialize grid views to allow inserts/updates/deletes
+			invoiceDataGridView = new DataGridView() { DataSource = tableInvoices };
+			detailDataGridView = new DataGridView() { DataSource = tableDetails };
+
+			// Initialize DBViews
+			dbvInvoices = new DBView(invoiceDataGridView, dbInvoices);
+			dbvDetails = new DBView(detailDataGridView, dbDetails);
+			dbvAddresses = new DBView(addressDataGridView, dbAddresses);
+
 			// Initialize stored procedures
 			dbInvoices.FetchStoredProcedure = "fetch_invoices_by_comp_ID";
+			dbInvoices.InsertStoredProcedure = "insert_invoice";
+			dbInvoices.UpdateStoredProcedure = "update_invoice";
+			dbInvoices.DeleteStoredProcedure = "delete_invoice";
+			
 			dbDetails.FetchStoredProcedure = "fetch_details";
-			dbAddresses.FetchStoredProcedure = "fetch_addresses_by_comp_ID";
 
-			// Initialize grid views to allow inserts/updates/deletes
-			invoiceGridView = new DataGridView() { DataSource = tableInvoices };
-			detailGridView = new DataGridView() { DataSource = tableDetails };
+			dbAddresses.FetchStoredProcedure = "fetch_addresses_by_comp_ID";
+			dbAddresses.InsertStoredProcedure = "insert_address";
+			dbAddresses.UpdateStoredProcedure = "update_address";
+			dbAddresses.DeleteStoredProcedure = "delete_address";
 
 			// Set to corresponding datasources
 			dbInvoices.DataSet = dsInvoices;
@@ -81,32 +94,42 @@ namespace InvoicesApplicationCS_Raman
 			dbDetails.FetchDataTable(tableDetails);
 			dbAddresses.FetchDataTable(tableAddresses);
 
-			dbvInvoices = new DBView(invoiceGridView, dbInvoices);
-			dbvDetails = new DBView(detailGridView, dbDetails);
-			dbvAddresses = new DBView(addressDataGridView, dbAddresses);
-
-			// Add master and chil tables to dataset
+			// Add master and child tables to dataset
 			DataSet dsDataSet = new DataSet();
 			dsDataSet.Tables.Add(this.tableInvoices);
 			dsDataSet.Tables.Add(this.tableDetails);
+
+			// Hide ID's
+			addressDataGridView.AutoGenerateColumns = false;
+			dsDataSet.Tables[0].Columns[0].ColumnMapping = MappingType.Hidden; // Hide invoice_id in invoices table
+			// dsDataSet.Tables[0].Columns[2].ColumnMapping = MappingType.Hidden; // Hide company_id in invoices table
+			dsDataSet.Tables[1].Columns[0].ColumnMapping = MappingType.Hidden; // Hide invoice_id in details table
+			dsDataSet.Tables[1].Columns[1].ColumnMapping = MappingType.Hidden; // Hide detail_id in details table
+			
+			// Modify Column Names in invoices data grid
+			dsDataSet.Tables[0].Columns[1].ColumnName = "Date";
+			dsDataSet.Tables[0].Columns[3].ColumnName = "Terms Of Invoice";
+			dsDataSet.Tables[1].Columns[2].ColumnName = "Description";
+			dsDataSet.Tables[1].Columns[3].ColumnName = "Quantity";
+			dsDataSet.Tables[1].Columns[4].ColumnName = "Unit Cost";
+
+			// Bind data
+			invoiceDataGrid.DataSource = dsDataSet.Tables[0];
+			addressDataGridView.DataSource = this.tableAddresses;
 
 			// Define relationship between master and child tables
 			dsDataSet.Relations.Add("More Invoice Details",
 					dsDataSet.Tables[0].Columns["invoice_id"],
 					dsDataSet.Tables[1].Columns["invoice_id"], false); // must be set to false: don't want to enforce relationship.
 
-			// Hide ID's
-			addressDataGridView.AutoGenerateColumns = false;
-			dsDataSet.Tables[0].Columns[0].ColumnMapping = MappingType.Hidden; // Hide invoice_id in invoices table
-			dsDataSet.Tables[0].Columns[2].ColumnMapping = MappingType.Hidden; // Hide company_id in invoices table
-			dsDataSet.Tables[1].Columns[0].ColumnMapping = MappingType.Hidden; // Hide invoice_id in details table
-			dsDataSet.Tables[1].Columns[1].ColumnMapping = MappingType.Hidden; // Hide detail_id in details table
+			dbInvoices.BeforeInsert += dbInvoices_BeforeInsert;
 
-			// Bind data to invoiceDataGrid
-			invoiceDataGrid.DataSource = dsDataSet.Tables[0];
-			addressDataGridView.DataSource = this.tableAddresses;
-			
+		}
 
+		void dbInvoices_BeforeInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
+		{
+			cmd.Parameters["@company_id"].Value = this.company_id;
+			System.Diagnostics.Debug.WriteLine("INSERT INVOICE");
 		}
 
 		void dbAddresses_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
@@ -119,6 +142,16 @@ namespace InvoicesApplicationCS_Raman
 			cmd.Parameters["@company_id"].Value = this.company_id;
 		}
 
+		private void InvoicesForm_Load(object sender, EventArgs e)
+		{
 
+		}
+
+		private void addressDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+		{
+			// For datagrid views for address, make sure default value for company_id is used, otherwise no updating happens
+			e.Row.Cells["companyIDAddCol"].Value = this.company_id;
+		}
+		
 	}
 }

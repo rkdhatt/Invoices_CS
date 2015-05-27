@@ -15,11 +15,8 @@ namespace InvoicesApplicationCS_Raman
 	public partial class MainForm : Form
 	{
 		private DBDataSet dbCompanies;
-
 		private DataSet dsCompanies;
-
 		private DataTable tableCompanies;
-
 		DBView dbvCompanies;
 
 		public MainForm()
@@ -29,22 +26,21 @@ namespace InvoicesApplicationCS_Raman
 			// Set up CemDB to use the .udl file
 			DBControl.ConnectionFile(Application.StartupPath + "\\newer_invoice.udl");
 
-			// initialize company data variables
+			// Initialize company data variables
 			dbCompanies = new DBDataSet();
-
 			dsCompanies = new DataSet();
-
 			tableCompanies = new DataTable("Companies");
 
-			// Must have DB Views to send inserts/updates/deletes to SQL Server
+			// Must have DB View to send inserts/updates/deletes to SQL Server
 			dbvCompanies = new DBView(compDataGridView, dbCompanies);
 
 			// Initialize stored procedures
 			dbCompanies.FetchStoredProcedure = "fetch_companies";
-
 			dbCompanies.InsertStoredProcedure = "insert_company";
+			dbCompanies.UpdateStoredProcedure = "update_company";
+			dbCompanies.DeleteStoredProcedure = "delete_company";
 
-			// Set  to corresponding datasources
+			// Set  to corresponding datasource
 			dbCompanies.DataSet = dsCompanies;
 
 			// Fetch data and save to corresponding table 
@@ -54,7 +50,6 @@ namespace InvoicesApplicationCS_Raman
 			compDataGridView.DataSource = this.tableCompanies;
 			compDataGridView.AutoGenerateColumns = false;
 
-			mainDataGrid.Visible = false;
 			dbCompanies.BeforeInsert += dbCompanies_BeforeInsert;
 		}
 
@@ -64,17 +59,6 @@ namespace InvoicesApplicationCS_Raman
 		}
 
 		private void MainForm_Load(object sender, EventArgs e)
-		{
-		}
-
-
-		private void mainDataGrid_Navigate(object sender, NavigateEventArgs ne)
-		{
-
-		}
-
-		// Take user to invoices and invoice details - probably can't use it.... or can i?..
-		private void mainDataGrid_MouseDoubleClick(object sender, MouseEventArgs e)
 		{
 		}
 
@@ -91,6 +75,17 @@ namespace InvoicesApplicationCS_Raman
 		private void compDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 
+		}
+
+		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			// Do message box first, then exit.
+			DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Invoices Application", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+
+			if (result == DialogResult.Yes)
+			{
+				Application.Exit();
+			}
 		}
 	}
 }
