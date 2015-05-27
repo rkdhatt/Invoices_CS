@@ -144,7 +144,7 @@ namespace InvoicesApplicationCS_Raman
 
 		private void InvoicesForm_Load(object sender, EventArgs e)
 		{
-
+			
 		}
 
 		private void addressDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)

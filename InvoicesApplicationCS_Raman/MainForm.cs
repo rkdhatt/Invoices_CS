@@ -51,6 +51,12 @@ namespace InvoicesApplicationCS_Raman
 			compDataGridView.AutoGenerateColumns = false;
 
 			dbCompanies.BeforeInsert += dbCompanies_BeforeInsert;
+			dbCompanies.AfterInsert += dbCompanies_AfterInsert;
+		}
+
+		void dbCompanies_AfterInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
+		{
+			dbCompanies.FetchDataSet();
 		}
 
 		void dbCompanies_BeforeInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
