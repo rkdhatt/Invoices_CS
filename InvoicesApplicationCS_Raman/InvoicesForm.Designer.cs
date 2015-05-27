@@ -30,13 +30,17 @@
 		{
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.invoiceDataGrid = new System.Windows.Forms.DataGrid();
+			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.addressDataGridView = new System.Windows.Forms.DataGridView();
+			this.CompanyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.AddressID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.DateModify = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
-			this.tabPage2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.invoiceDataGrid)).BeginInit();
+			this.tabPage2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.addressDataGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -61,6 +65,17 @@
 			this.tabPage1.Text = "Invoices";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
+			// invoiceDataGrid
+			// 
+			this.invoiceDataGrid.BackgroundColor = System.Drawing.SystemColors.Control;
+			this.invoiceDataGrid.DataMember = "";
+			this.invoiceDataGrid.HeaderForeColor = System.Drawing.SystemColors.ControlText;
+			this.invoiceDataGrid.Location = new System.Drawing.Point(5, 7);
+			this.invoiceDataGrid.Name = "invoiceDataGrid";
+			this.invoiceDataGrid.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.invoiceDataGrid.Size = new System.Drawing.Size(499, 164);
+			this.invoiceDataGrid.TabIndex = 1;
+			// 
 			// tabPage2
 			// 
 			this.tabPage2.Controls.Add(this.addressDataGridView);
@@ -72,23 +87,43 @@
 			this.tabPage2.Text = "Addresses";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
-			// invoiceDataGrid
-			// 
-			this.invoiceDataGrid.DataMember = "";
-			this.invoiceDataGrid.HeaderForeColor = System.Drawing.SystemColors.ControlText;
-			this.invoiceDataGrid.Location = new System.Drawing.Point(5, 7);
-			this.invoiceDataGrid.Name = "invoiceDataGrid";
-			this.invoiceDataGrid.Size = new System.Drawing.Size(499, 164);
-			this.invoiceDataGrid.TabIndex = 1;
-			// 
 			// addressDataGridView
 			// 
 			this.addressDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.addressDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CompanyID,
+            this.AddressID,
+            this.Phone,
+            this.DateModify});
 			this.addressDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.addressDataGridView.Location = new System.Drawing.Point(3, 3);
 			this.addressDataGridView.Name = "addressDataGridView";
 			this.addressDataGridView.Size = new System.Drawing.Size(502, 172);
 			this.addressDataGridView.TabIndex = 0;
+			// 
+			// CompanyID
+			// 
+			this.CompanyID.DataPropertyName = "company_id";
+			this.CompanyID.HeaderText = "Company ID";
+			this.CompanyID.Name = "CompanyID";
+			// 
+			// AddressID
+			// 
+			this.AddressID.DataPropertyName = "address_id";
+			this.AddressID.HeaderText = "Address ID";
+			this.AddressID.Name = "AddressID";
+			// 
+			// Phone
+			// 
+			this.Phone.DataPropertyName = "phone";
+			this.Phone.HeaderText = "Phone";
+			this.Phone.Name = "Phone";
+			// 
+			// DateModify
+			// 
+			this.DateModify.DataPropertyName = "date_modify";
+			this.DateModify.HeaderText = "Date Modified";
+			this.DateModify.Name = "DateModify";
 			// 
 			// InvoicesForm
 			// 
@@ -100,8 +135,8 @@
 			this.Text = "Invoices and Details";
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
-			this.tabPage2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.invoiceDataGrid)).EndInit();
+			this.tabPage2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.addressDataGridView)).EndInit();
 			this.ResumeLayout(false);
 
@@ -114,6 +149,10 @@
 		private System.Windows.Forms.TabPage tabPage2;
 		private System.Windows.Forms.DataGrid invoiceDataGrid;
 		private System.Windows.Forms.DataGridView addressDataGridView;
+		private System.Windows.Forms.DataGridViewTextBoxColumn CompanyID;
+		private System.Windows.Forms.DataGridViewTextBoxColumn AddressID;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
+		private System.Windows.Forms.DataGridViewTextBoxColumn DateModify;
 
 	}
 }

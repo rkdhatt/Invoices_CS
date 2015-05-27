@@ -11,13 +11,11 @@ using CemDB;
 
 namespace InvoicesApplicationCS_Raman
 {
-	// http://blog.csharplearners.com/category/metro-style-apps/
-	// https://msdn.microsoft.com/en-us/library/vstudio/y8c0cxey%28v=vs.100%29.aspx
+
 	public partial class MainForm : Form
 	{
 		private DBDataSet dbCompanies;
 		private DBDataSet dbAddresses;
-		
 
 		private DataSet dsCompanies;
 		private DataSet dsAddresses;
@@ -26,6 +24,8 @@ namespace InvoicesApplicationCS_Raman
 		private DataTable tableAddresses;
 
 		DataGridView addressDataGridView = new DataGridView();
+
+		DBView dbvCompanies;
 
 		public MainForm()
 		{
@@ -36,20 +36,16 @@ namespace InvoicesApplicationCS_Raman
 
 			// initialize company data variables
 			dbCompanies = new DBDataSet();
-			// dbInvoices = new DBDataSet();
 			dbAddresses = new DBDataSet();
-			// dbDetails = new DBDataSet();
 
 			dsCompanies = new DataSet();
 			dsAddresses = new DataSet();
 
 			tableCompanies = new DataTable("Companies");
-			// tableInvoices = new DataTable();
 			tableAddresses = new DataTable("Addresses");
-			// tableDetails = new DataTable();
 
 			// Must have DB Views to send inserts/updates/deletes to SQL Server
-			DBView dbvCompanies = new DBView(compDataGridView, dbCompanies);
+			dbvCompanies = new DBView(compDataGridView, dbCompanies);
 
 			// Initialize stored procedures
 			dbCompanies.FetchStoredProcedure = "fetch_companies";
@@ -62,53 +58,42 @@ namespace InvoicesApplicationCS_Raman
 			dbCompanies.DataSet = dsCompanies;
 			dbAddresses.DataSet = dsAddresses;
 
-			// Prevent user from adding new company name directly on grid
-			// Note to self: needed gridview to be assigned to its datasource in order for the 'add new row' to stay hidden
-
 			// Fetch data and save to corresponding table 
 			dbCompanies.FetchDataTable(tableCompanies);
 			dbAddresses.FetchDataTable(tableAddresses);
 
 			// Add master company and child address tables to dataset
-			//DataSet dsDataSet = new DataSet();
-			//dsDataSet.Tables.Add(this.tableCompanies);
-			//dsDataSet.Tables.Add(this.tableAddresses);
+			// DataSet dsDataSet = new DataSet();
+			// dsDataSet.Tables.Add(this.tableCompanies);
+			// dsDataSet.Tables.Add(this.tableAddresses);
 
 			// Define relationship between master and child tables
-			//dsDataSet.Relations.Add("Company Addresses",
+			// dsDataSet.Relations.Add("Company Addresses",
 			//		dsDataSet.Tables[0].Columns["company_id"],
 			//		dsDataSet.Tables[1].Columns["company_id"], true);
 
 			// Hide ID's
-			//compDataGridView.Visible = false;
-			//dsDataSet.Tables[0].Columns[0].ColumnMapping = MappingType.Hidden; // hide company_id in company table
-			//dsDataSet.Tables[1].Columns[0].ColumnMapping = MappingType.Hidden; // hide company_id in address table
-			//dsDataSet.Tables[1].Columns[1].ColumnMapping = MappingType.Hidden; // hide address_id in address table 
-			
+			// compDataGridView.Visible = false;
+			// dsDataSet.Tables[0].Columns[0].ColumnMapping = MappingType.Hidden; // hide company_id in company table
+			// dsDataSet.Tables[1].Columns[0].ColumnMapping = MappingType.Hidden; // hide company_id in address table
+			// dsDataSet.Tables[1].Columns[1].ColumnMapping = MappingType.Hidden; // hide address_id in address table 
+
 			// Bind data to main data grid
 
-			//mainDataGrid.DataSource = dsDataSet.Tables[0];
+			// mainDataGrid.DataSource = dsDataSet.Tables[0];
 
 			// Set Datasources
-			compDataGridView.DataSource = tableCompanies;
-			addressDataGridView.DataSource = tableAddresses;
+			compDataGridView.DataSource = this.tableCompanies;
+			addressDataGridView.DataSource = this.tableAddresses;
 			compDataGridView.AutoGenerateColumns = false;
 
 			mainDataGrid.Visible = false;
-			//compDataGridView.Columns[0].Visible = false;
-
-			dbCompanies.BeforeDelete += dbCompanies_BeforeDelete;
 			dbCompanies.BeforeInsert += dbCompanies_BeforeInsert;
 		}
 
 		void dbCompanies_BeforeInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
 		{
 			System.Diagnostics.Debug.WriteLine("INSERT TEST");
-		}
-
-		void dbCompanies_BeforeDelete(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
-		{
-			
 		}
 
 		private void MainForm_Load(object sender, EventArgs e)

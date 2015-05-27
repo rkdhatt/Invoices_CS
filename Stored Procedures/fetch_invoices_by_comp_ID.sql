@@ -23,11 +23,15 @@ BEGIN
 	SET NOCOUNT ON;
 	SET XACT_ABORT ON;
 
-    -- Insert statements for procedure here
-	SELECT * from invoices
-	WHERE invoices.company_id = @company_id;
-	
+	BEGIN TRANSACTION
+	    -- Insert statements for procedure here
+		SELECT invoice_id, date, companies.company_id, terms
+		FROM invoices, companies
+		WHERE companies.company_id = invoices.company_id and invoices.company_id = @company_id
+	COMMIT TRANSACTION
+
 END
 GO
 
 GRANT EXECUTE ON fetch_invoices_by_comp_ID TO PUBLIC
+GO
