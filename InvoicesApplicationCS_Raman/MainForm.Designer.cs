@@ -99,14 +99,14 @@
 			this.mainDataGrid.ParentRowsForeColor = System.Drawing.Color.MidnightBlue;
 			this.mainDataGrid.SelectionBackColor = System.Drawing.Color.CadetBlue;
 			this.mainDataGrid.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-			this.mainDataGrid.Size = new System.Drawing.Size(250, 201);
+			this.mainDataGrid.Size = new System.Drawing.Size(0, 205);
 			this.mainDataGrid.TabIndex = 5;
 			this.mainDataGrid.Navigate += new System.Windows.Forms.NavigateEventHandler(this.mainDataGrid_Navigate);
 			this.mainDataGrid.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.mainDataGrid_MouseDoubleClick);
 			// 
 			// compDataGridView
 			// 
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveCaption;
 			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
 			this.compDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -130,8 +130,9 @@
 			this.compDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
 			this.compDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
-			this.compDataGridView.Size = new System.Drawing.Size(224, 201);
+			this.compDataGridView.Size = new System.Drawing.Size(228, 207);
 			this.compDataGridView.TabIndex = 0;
+			this.compDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.compDataGridView_CellContentClick);
 			this.compDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.compDataGridView_CellContentDoubleClick);
 			// 
 			// companyIDCol
@@ -159,7 +160,7 @@
 			this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.mainMenuStrip.Name = "mainMenuStrip";
 			this.mainMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-			this.mainMenuStrip.Size = new System.Drawing.Size(690, 24);
+			this.mainMenuStrip.Size = new System.Drawing.Size(253, 24);
 			this.mainMenuStrip.TabIndex = 6;
 			this.mainMenuStrip.Text = "menuStrip1";
 			// 
@@ -390,12 +391,14 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Control;
-			this.ClientSize = new System.Drawing.Size(690, 268);
+			this.ClientSize = new System.Drawing.Size(253, 272);
 			this.Controls.Add(this.mainDataGrid);
 			this.Controls.Add(this.compDataGridView);
 			this.Controls.Add(this.mainMenuStrip);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
 			this.MainMenuStrip = this.mainMenuStrip;
+			this.MaximumSize = new System.Drawing.Size(273, 314);
+			this.MinimumSize = new System.Drawing.Size(273, 314);
 			this.Name = "MainForm";
 			this.Text = "Companies";
 			this.Load += new System.EventHandler(this.MainForm_Load);

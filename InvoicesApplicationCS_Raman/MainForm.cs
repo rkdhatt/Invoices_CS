@@ -15,15 +15,10 @@ namespace InvoicesApplicationCS_Raman
 	public partial class MainForm : Form
 	{
 		private DBDataSet dbCompanies;
-		private DBDataSet dbAddresses;
 
 		private DataSet dsCompanies;
-		private DataSet dsAddresses;
 
 		private DataTable tableCompanies;
-		private DataTable tableAddresses;
-
-		DataGridView addressDataGridView = new DataGridView();
 
 		DBView dbvCompanies;
 
@@ -36,55 +31,27 @@ namespace InvoicesApplicationCS_Raman
 
 			// initialize company data variables
 			dbCompanies = new DBDataSet();
-			dbAddresses = new DBDataSet();
 
 			dsCompanies = new DataSet();
-			dsAddresses = new DataSet();
 
 			tableCompanies = new DataTable("Companies");
-			tableAddresses = new DataTable("Addresses");
 
 			// Must have DB Views to send inserts/updates/deletes to SQL Server
 			dbvCompanies = new DBView(compDataGridView, dbCompanies);
 
 			// Initialize stored procedures
 			dbCompanies.FetchStoredProcedure = "fetch_companies";
-			dbAddresses.FetchStoredProcedure = "fetch_addresses";
 
 			dbCompanies.InsertStoredProcedure = "insert_company";
-			dbAddresses.InsertStoredProcedure = "insert_address";
 
 			// Set  to corresponding datasources
 			dbCompanies.DataSet = dsCompanies;
-			dbAddresses.DataSet = dsAddresses;
 
 			// Fetch data and save to corresponding table 
 			dbCompanies.FetchDataTable(tableCompanies);
-			dbAddresses.FetchDataTable(tableAddresses);
-
-			// Add master company and child address tables to dataset
-			// DataSet dsDataSet = new DataSet();
-			// dsDataSet.Tables.Add(this.tableCompanies);
-			// dsDataSet.Tables.Add(this.tableAddresses);
-
-			// Define relationship between master and child tables
-			// dsDataSet.Relations.Add("Company Addresses",
-			//		dsDataSet.Tables[0].Columns["company_id"],
-			//		dsDataSet.Tables[1].Columns["company_id"], true);
-
-			// Hide ID's
-			// compDataGridView.Visible = false;
-			// dsDataSet.Tables[0].Columns[0].ColumnMapping = MappingType.Hidden; // hide company_id in company table
-			// dsDataSet.Tables[1].Columns[0].ColumnMapping = MappingType.Hidden; // hide company_id in address table
-			// dsDataSet.Tables[1].Columns[1].ColumnMapping = MappingType.Hidden; // hide address_id in address table 
-
-			// Bind data to main data grid
-
-			// mainDataGrid.DataSource = dsDataSet.Tables[0];
 
 			// Set Datasources
 			compDataGridView.DataSource = this.tableCompanies;
-			addressDataGridView.DataSource = this.tableAddresses;
 			compDataGridView.AutoGenerateColumns = false;
 
 			mainDataGrid.Visible = false;
@@ -119,6 +86,11 @@ namespace InvoicesApplicationCS_Raman
 			Console.WriteLine("Current name: {0}; column: {1}, row: {2}, company id: {3}", name, e.ColumnIndex, e.RowIndex, company_id);
 			InvoicesForm frm_invoices = new InvoicesForm(company_id);
 			frm_invoices.Show();
+		}
+
+		private void compDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
 		}
 	}
 }

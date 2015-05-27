@@ -27,7 +27,6 @@ namespace InvoicesApplicationCS_Raman
 
 		DataGridView invoiceGridView;
 		DataGridView detailGridView;
-		DataGridView addressGridView;
 
 		DBView dbvInvoices;
 		DBView dbvDetails;
@@ -55,7 +54,7 @@ namespace InvoicesApplicationCS_Raman
 			dsDetails = new DataSet();
 			dsAddresses = new DataSet();
 
-			tableInvoices = new DataTable("Invoices");
+			tableInvoices = new DataTable("Current Invoice");
 			tableDetails = new DataTable("Details");
 			tableAddresses = new DataTable("Addresses");
 
@@ -67,7 +66,6 @@ namespace InvoicesApplicationCS_Raman
 			// Initialize grid views to allow inserts/updates/deletes
 			invoiceGridView = new DataGridView() { DataSource = tableInvoices };
 			detailGridView = new DataGridView() { DataSource = tableDetails };
-			addressGridView = new DataGridView() { DataSource = tableAddresses };
 
 			// Set to corresponding datasources
 			dbInvoices.DataSet = dsInvoices;
@@ -77,6 +75,7 @@ namespace InvoicesApplicationCS_Raman
 			// Ensure company_id parameter is passed to obtain corresponding invoices
 			dbInvoices.BeforeFetch += dbInvoices_BeforeFetch;
 			dbAddresses.BeforeFetch += dbAddresses_BeforeFetch;
+
 			// Fetch data and save to corresponding tables
 			dbInvoices.FetchDataTable(tableInvoices);
 			dbDetails.FetchDataTable(tableDetails);
@@ -84,20 +83,20 @@ namespace InvoicesApplicationCS_Raman
 
 			dbvInvoices = new DBView(invoiceGridView, dbInvoices);
 			dbvDetails = new DBView(detailGridView, dbDetails);
-			dbvAddresses = new DBView(addressGridView, dbAddresses);
+			dbvAddresses = new DBView(addressDataGridView, dbAddresses);
 
 			// Add master and chil tables to dataset
 			DataSet dsDataSet = new DataSet();
 			dsDataSet.Tables.Add(this.tableInvoices);
 			dsDataSet.Tables.Add(this.tableDetails);
-			dsDataSet.Tables.Add(this.tableAddresses);
 
 			// Define relationship between master and child tables
-			dsDataSet.Relations.Add("Details of Invoice",
+			dsDataSet.Relations.Add("More Invoice Details",
 					dsDataSet.Tables[0].Columns["invoice_id"],
 					dsDataSet.Tables[1].Columns["invoice_id"], false); // must be set to false: don't want to enforce relationship.
 
 			// Hide ID's
+			addressDataGridView.AutoGenerateColumns = false;
 			dsDataSet.Tables[0].Columns[0].ColumnMapping = MappingType.Hidden; // Hide invoice_id in invoices table
 			dsDataSet.Tables[0].Columns[2].ColumnMapping = MappingType.Hidden; // Hide company_id in invoices table
 			dsDataSet.Tables[1].Columns[0].ColumnMapping = MappingType.Hidden; // Hide invoice_id in details table
@@ -105,8 +104,8 @@ namespace InvoicesApplicationCS_Raman
 
 			// Bind data to invoiceDataGrid
 			invoiceDataGrid.DataSource = dsDataSet.Tables[0];
-			addressGridView.DataSource = dsDataSet.Tables[2];
-			addressGridView.AutoGenerateColumns = false;
+			addressDataGridView.DataSource = this.tableAddresses;
+			
 
 		}
 
