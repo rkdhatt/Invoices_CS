@@ -61,7 +61,7 @@ namespace InvoicesApplicationCS_Raman
 			// Initialize stored procedures
 			dbInvoices.FetchStoredProcedure = "fetch_invoices_by_comp_ID";
 			dbDetails.FetchStoredProcedure = "fetch_details";
-			dbAddresses.FetchStoredProcedure = "fetch_addresses";
+			dbAddresses.FetchStoredProcedure = "fetch_addresses_by_comp_ID";
 
 			// Initialize grid views to allow inserts/updates/deletes
 			invoiceGridView = new DataGridView() { DataSource = tableInvoices };
@@ -111,7 +111,7 @@ namespace InvoicesApplicationCS_Raman
 
 		void dbAddresses_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
 		{
-			//cmd.Parameters["@company_id"].Value = this.company_id;
+			cmd.Parameters["@company_id"].Value = this.company_id;
 		}
 
 		void dbInvoices_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
