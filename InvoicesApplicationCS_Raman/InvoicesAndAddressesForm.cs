@@ -15,17 +15,13 @@ namespace InvoicesApplicationCS_Raman
 	public partial class InvoicesAndAddressesForm : Form
 	{
 		private DBDataSet dbInvoices;
-		private DBDataSet dbDetails;
 		private DBDataSet dbAddresses;
 
 		private DataSet dsInvoices;
-		private DataSet dsDetails;
 		private DataSet dsAddresses;
 
 		private DataTable tableInvoices;
-		private DataTable tableDetails;
 		private DataTable tableAddresses;
-
 
 		DBView dbvInvoices;
 		DBView dbvAddresses;
@@ -45,19 +41,13 @@ namespace InvoicesApplicationCS_Raman
 
 			// Initialize company data variables
 			dbInvoices = new DBDataSet();
-			dbDetails = new DBDataSet();
 			dbAddresses = new DBDataSet();
 
 			dsInvoices = new DataSet();
-			dsDetails = new DataSet();
 			dsAddresses = new DataSet();
 
 			tableInvoices = new DataTable("Current Invoice");
-			tableDetails = new DataTable("Details");
 			tableAddresses = new DataTable("Addresses");
-
-			// Initialize grid views to allow inserts/updates/deletes
-			//invoiceDataGridView = new DataGridView() { DataSource = tableInvoices };
 
 			// Initialize DBViews
 			dbvInvoices = new DBView(invoiceDataGridView, dbInvoices);
@@ -68,8 +58,6 @@ namespace InvoicesApplicationCS_Raman
 			dbInvoices.InsertStoredProcedure = "insert_invoice";
 			dbInvoices.UpdateStoredProcedure = "update_invoice";
 			dbInvoices.DeleteStoredProcedure = "delete_invoice";
-			
-			dbDetails.FetchStoredProcedure = "fetch_details";
 
 			dbAddresses.FetchStoredProcedure = "fetch_addresses_by_comp_ID";
 			dbAddresses.InsertStoredProcedure = "insert_address";
@@ -78,7 +66,6 @@ namespace InvoicesApplicationCS_Raman
 
 			// Set to corresponding datasources
 			dbInvoices.DataSet = dsInvoices;
-			dbDetails.DataSet = dsDetails;
 			dbAddresses.DataSet = dsAddresses;
 
 			// Ensure company_id parameter is passed to obtain corresponding invoices
@@ -88,7 +75,6 @@ namespace InvoicesApplicationCS_Raman
 
 			// Fetch data and save to corresponding tables
 			dbInvoices.FetchDataTable(tableInvoices);
-			dbDetails.FetchDataTable(tableDetails);
 			dbAddresses.FetchDataTable(tableAddresses);
 
 			// Add master and child tables to dataset
@@ -163,7 +149,10 @@ namespace InvoicesApplicationCS_Raman
 
 		private void invoiceDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
-
+			int invoice_id = Convert.ToInt32(invoiceDataGridView[0, e.RowIndex].FormattedValue);
+			Console.WriteLine("Invoice Column: {0}, row: {1}, invoice id: {2}", e.ColumnIndex, e.RowIndex, invoice_id);
+			InvoiceDetailsForm frm_details = new InvoiceDetailsForm(invoice_id);
+			frm_details.Show();
 		}
 		
 	}

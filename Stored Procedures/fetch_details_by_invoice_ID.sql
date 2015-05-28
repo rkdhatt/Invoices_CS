@@ -5,16 +5,17 @@ GO
 -- =================================================================================
 -- Author:		Raman Dhatt
 -- Create date: 2015-05-15
--- Description:	Procedure that retrieves all details of all invoices.
+-- Description:	Procedure that retrieves all details for an invoice.
 -- Revisions:
 --		Author                  Date       	Description                                       
 --		------------------- 	---------- 	--------------------------------------
 -- =================================================================================
-IF EXISTS (SELECT * FROM SYSOBJECTS WHERE NAME = 'fetch_details')
-	DROP PROCEDURE fetch_details
+IF EXISTS (SELECT * FROM SYSOBJECTS WHERE NAME = 'fetch_details_by_invoice_ID')
+	DROP PROCEDURE fetch_details_by_invoice_ID
 GO
 
-CREATE PROCEDURE fetch_details
+CREATE PROCEDURE fetch_details_by_invoice_ID
+	@invoice_id INT
 
 AS
 BEGIN
@@ -24,9 +25,13 @@ BEGIN
 	SET XACT_ABORT ON;
 
     -- Insert statements for procedure here
-	SELECT * from details
+	BEGIN TRANSACTION
+		SELECT i.invoice_id, d.detail_id, d.description, d.quantity, d.cost
+		FROM invoices i, details d
+		WHERE i.invoice_id = d.invoice_id AND d.invoice_id = @invoice_id
+	COMMIT TRANSACTION
 
-	GRANT EXECUTE ON fetch_details TO PUBLIC
+	GRANT EXECUTE ON fetch_details_by_invoice_ID TO PUBLIC
 	
 END
 GO
