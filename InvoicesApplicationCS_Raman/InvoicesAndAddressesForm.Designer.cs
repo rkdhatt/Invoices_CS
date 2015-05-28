@@ -28,8 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.invoiceDataGridView = new System.Windows.Forms.DataGridView();
@@ -45,6 +45,7 @@
 			this.Addresses = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.DateModify = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.invoiceInfoLabel = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.invoiceDataGridView)).BeginInit();
@@ -57,11 +58,10 @@
 			// 
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
-			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tabControl1.Location = new System.Drawing.Point(0, 0);
+			this.tabControl1.Location = new System.Drawing.Point(12, 31);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(543, 229);
+			this.tabControl1.Size = new System.Drawing.Size(476, 224);
 			this.tabControl1.TabIndex = 0;
 			// 
 			// tabPage1
@@ -71,15 +71,15 @@
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(535, 203);
+			this.tabPage1.Size = new System.Drawing.Size(468, 198);
 			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "Invoices";
+			this.tabPage1.Text = "Company Invoices";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
 			// invoiceDataGridView
 			// 
-			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			this.invoiceDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.invoiceDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
 			this.invoiceDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
 			this.invoiceDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.invoiceDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -90,7 +90,7 @@
 			this.invoiceDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.invoiceDataGridView.Location = new System.Drawing.Point(3, 3);
 			this.invoiceDataGridView.Name = "invoiceDataGridView";
-			this.invoiceDataGridView.Size = new System.Drawing.Size(529, 197);
+			this.invoiceDataGridView.Size = new System.Drawing.Size(462, 192);
 			this.invoiceDataGridView.TabIndex = 2;
 			this.invoiceDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.invoiceDataGridView_CellDoubleClick);
 			this.invoiceDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.invoiceDataGridView_DefaultValuesNeeded);
@@ -142,15 +142,15 @@
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(535, 203);
+			this.tabPage2.Size = new System.Drawing.Size(468, 198);
 			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "Addresses";
+			this.tabPage2.Text = "Company Addresses";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
 			// addressDataGridView
 			// 
-			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			this.addressDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.addressDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
 			this.addressDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
 			this.addressDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.addressDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -162,7 +162,7 @@
 			this.addressDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.addressDataGridView.Location = new System.Drawing.Point(3, 3);
 			this.addressDataGridView.Name = "addressDataGridView";
-			this.addressDataGridView.Size = new System.Drawing.Size(529, 197);
+			this.addressDataGridView.Size = new System.Drawing.Size(462, 192);
 			this.addressDataGridView.TabIndex = 0;
 			this.addressDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.addressDataGridView_DefaultValuesNeeded);
 			// 
@@ -198,15 +198,26 @@
 			this.DateModify.HeaderText = "Date Modified";
 			this.DateModify.Name = "DateModify";
 			// 
+			// invoiceInfoLabel
+			// 
+			this.invoiceInfoLabel.AutoSize = true;
+			this.invoiceInfoLabel.Location = new System.Drawing.Point(16, 9);
+			this.invoiceInfoLabel.Name = "invoiceInfoLabel";
+			this.invoiceInfoLabel.Size = new System.Drawing.Size(182, 13);
+			this.invoiceInfoLabel.TabIndex = 1;
+			this.invoiceInfoLabel.Text = "Double-click an invoice for more info:";
+			// 
 			// InvoicesAndAddressesForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(543, 229);
+			this.ClientSize = new System.Drawing.Size(509, 265);
+			this.Controls.Add(this.invoiceInfoLabel);
 			this.Controls.Add(this.tabControl1);
-			this.MaximumSize = new System.Drawing.Size(559, 267);
-			this.MinimumSize = new System.Drawing.Size(559, 267);
+			this.MaximumSize = new System.Drawing.Size(525, 303);
+			this.MinimumSize = new System.Drawing.Size(525, 303);
 			this.Name = "InvoicesAndAddressesForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Selected Company\'s Invoices and Addresses";
 			this.Load += new System.EventHandler(this.InvoicesForm_Load);
 			this.tabControl1.ResumeLayout(false);
@@ -216,6 +227,7 @@
 			this.tabPage2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.addressDataGridView)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -236,6 +248,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Addresses;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
 		private System.Windows.Forms.DataGridViewTextBoxColumn DateModify;
+		private System.Windows.Forms.Label invoiceInfoLabel;
 
 	}
 }

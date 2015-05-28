@@ -72,6 +72,11 @@ namespace InvoicesApplicationCS_Raman
 			dbInvoices.BeforeFetch += dbInvoices_BeforeFetch;
 			dbAddresses.BeforeFetch += dbAddresses_BeforeFetch;
 			dbInvoices.BeforeInsert += dbInvoices_BeforeInsert;
+			dbInvoices.AfterInsert += dbInvoices_AfterInsert;
+			dbAddresses.AfterInsert += dbAddresses_AfterInsert;
+
+			// Format Date column
+			invoiceDataGridView.Columns["InvoiceDateCol"].DefaultCellStyle.Format = "d";
 
 			// Fetch data and save to corresponding tables
 			dbInvoices.FetchDataTable(tableInvoices);
@@ -109,6 +114,16 @@ namespace InvoicesApplicationCS_Raman
 
 			
 
+		}
+
+		void dbAddresses_AfterInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
+		{
+			dbAddresses.FetchDataTable(tableAddresses);
+		}
+
+		void dbInvoices_AfterInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
+		{
+			dbInvoices.FetchDataTable(tableInvoices);
 		}
 
 		void dbInvoices_BeforeInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)

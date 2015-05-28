@@ -86,6 +86,12 @@
     <Compile Include="SelectedCompanyReportViewerForm.Designer.cs">
       <DependentUpon>SelectedCompanyReportViewerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TotalReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TotalReportViewer.Designer.cs">
+      <DependentUpon>TotalReportViewer.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="InvoiceDetailsForm.resx">
       <DependentUpon>InvoiceDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +113,10 @@
     <EmbeddedResource Include="SelectedCompanyReport.rdlc" />
     <EmbeddedResource Include="SelectedCompanyReportViewerForm.resx">
       <DependentUpon>SelectedCompanyReportViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TotalReport.rdlc" />
+    <EmbeddedResource Include="TotalReportViewer.resx">
+      <DependentUpon>TotalReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="invoices_ramanDataSet.xsc">
       <DependentUpon>invoices_ramanDataSet.xsd</DependentUpon>

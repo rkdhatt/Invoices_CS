@@ -41,12 +41,19 @@ namespace InvoicesApplicationCS_Raman
 
 			dbDetails.BeforeFetch += dbDetails_BeforeFetch;
 			dbDetails.BeforeInsert += dbDetails_BeforeInsert;
+			dbDetails.AfterInsert += dbDetails_AfterInsert;
 
+			// Format unit cost 
+
+			detailsDataGridView.Columns["CostCol"].DefaultCellStyle.Format = "c";
 			dbDetails.FetchDataTable(tableDetails);
-
 			detailsDataGridView.AutoGenerateColumns = false;
-
 			detailsDataGridView.DataSource = this.tableDetails;
+		}
+
+		void dbDetails_AfterInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
+		{
+			dbDetails.FetchDataTable(tableDetails);
 		}
 
 		void dbDetails_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)

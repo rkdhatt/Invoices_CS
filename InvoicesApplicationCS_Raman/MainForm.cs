@@ -54,9 +54,10 @@ namespace InvoicesApplicationCS_Raman
 			dbCompanies.AfterInsert += dbCompanies_AfterInsert;
 		}
 
+
 		void dbCompanies_AfterInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
 		{
-			dbCompanies.FetchDataSet();
+			dbCompanies.FetchDataTable(tableCompanies);
 		}
 
 		void dbCompanies_BeforeInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
@@ -88,6 +89,18 @@ namespace InvoicesApplicationCS_Raman
 			{
 				Application.Exit();
 			}
+		}
+
+		private void reportAllCompaniesToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			TotalReportViewer rptviewer = new TotalReportViewer();
+			rptviewer.Show();
+		}
+
+		private void reportSelectedCompanyToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			SelectedCompanyReportViewerForm rptviewer = new SelectedCompanyReportViewerForm();
+			//rptviewer.Show();
 		}
 	}
 }

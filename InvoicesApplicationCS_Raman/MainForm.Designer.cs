@@ -28,9 +28,9 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.compDataGridView = new System.Windows.Forms.DataGridView();
 			this.companyIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,16 +49,17 @@
 			this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.CompanyInfoLabel = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.compDataGridView)).BeginInit();
 			this.mainMenuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// compDataGridView
 			// 
-			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-			this.compDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+			this.compDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
 			this.compDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
 			this.compDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
 			this.compDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -67,21 +68,20 @@
             this.companyIDCol,
             this.companyNameCol});
 			this.compDataGridView.Cursor = System.Windows.Forms.Cursors.Default;
-			this.compDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.compDataGridView.Location = new System.Drawing.Point(0, 24);
+			this.compDataGridView.Location = new System.Drawing.Point(15, 46);
 			this.compDataGridView.MaximumSize = new System.Drawing.Size(228, 235);
 			this.compDataGridView.MinimumSize = new System.Drawing.Size(228, 235);
 			this.compDataGridView.Name = "compDataGridView";
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.compDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-			this.compDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.compDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+			this.compDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
 			this.compDataGridView.Size = new System.Drawing.Size(228, 235);
 			this.compDataGridView.TabIndex = 0;
 			this.compDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.compDataGridView_CellContentDoubleClick);
@@ -110,7 +110,7 @@
 			this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.mainMenuStrip.Name = "mainMenuStrip";
 			this.mainMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-			this.mainMenuStrip.Size = new System.Drawing.Size(229, 24);
+			this.mainMenuStrip.Size = new System.Drawing.Size(286, 24);
 			this.mainMenuStrip.TabIndex = 6;
 			this.mainMenuStrip.Text = "menuStrip1";
 			// 
@@ -162,12 +162,14 @@
 			this.reportAllCompaniesToolStripMenuItem.Name = "reportAllCompaniesToolStripMenuItem";
 			this.reportAllCompaniesToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
 			this.reportAllCompaniesToolStripMenuItem.Text = "Report - All Companies";
+			this.reportAllCompaniesToolStripMenuItem.Click += new System.EventHandler(this.reportAllCompaniesToolStripMenuItem_Click);
 			// 
 			// reportSelectedCompanyToolStripMenuItem
 			// 
 			this.reportSelectedCompanyToolStripMenuItem.Name = "reportSelectedCompanyToolStripMenuItem";
 			this.reportSelectedCompanyToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
 			this.reportSelectedCompanyToolStripMenuItem.Text = "Report - Selected Company";
+			this.reportSelectedCompanyToolStripMenuItem.Click += new System.EventHandler(this.reportSelectedCompanyToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator2
 			// 
@@ -208,17 +210,30 @@
 			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
 			this.aboutToolStripMenuItem.Text = "&About...";
 			// 
+			// CompanyInfoLabel
+			// 
+			this.CompanyInfoLabel.AutoSize = true;
+			this.CompanyInfoLabel.Location = new System.Drawing.Point(12, 30);
+			this.CompanyInfoLabel.Name = "CompanyInfoLabel";
+			this.CompanyInfoLabel.Size = new System.Drawing.Size(229, 13);
+			this.CompanyInfoLabel.TabIndex = 7;
+			this.CompanyInfoLabel.Text = "Double-click on a company name for more info:";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Control;
-			this.ClientSize = new System.Drawing.Size(229, 260);
+			this.ClientSize = new System.Drawing.Size(286, 293);
+			this.Controls.Add(this.CompanyInfoLabel);
 			this.Controls.Add(this.compDataGridView);
 			this.Controls.Add(this.mainMenuStrip);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
 			this.MainMenuStrip = this.mainMenuStrip;
+			this.MaximumSize = new System.Drawing.Size(306, 335);
+			this.MinimumSize = new System.Drawing.Size(306, 335);
 			this.Name = "MainForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Companies";
 			this.Load += new System.EventHandler(this.MainForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.compDataGridView)).EndInit();
@@ -248,6 +263,7 @@
 		private System.Windows.Forms.ToolStripMenuItem reportSelectedCompanyToolStripMenuItem;
 		private System.Windows.Forms.DataGridViewTextBoxColumn companyIDCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn companyNameCol;
+		private System.Windows.Forms.Label CompanyInfoLabel;
 
 	}
 }

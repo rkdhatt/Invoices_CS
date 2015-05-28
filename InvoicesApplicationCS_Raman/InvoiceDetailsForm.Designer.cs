@@ -59,12 +59,14 @@
 			this.InvoiceIDDetailCol.DataPropertyName = "invoice_id";
 			this.InvoiceIDDetailCol.HeaderText = "Invoice ID";
 			this.InvoiceIDDetailCol.Name = "InvoiceIDDetailCol";
+			this.InvoiceIDDetailCol.Visible = false;
 			// 
 			// DetailIDCol
 			// 
 			this.DetailIDCol.DataPropertyName = "detail_id";
 			this.DetailIDCol.HeaderText = "Detail ID";
 			this.DetailIDCol.Name = "DetailIDCol";
+			this.DetailIDCol.Visible = false;
 			// 
 			// DescriptionCol
 			// 
@@ -91,6 +93,7 @@
 			this.ClientSize = new System.Drawing.Size(545, 201);
 			this.Controls.Add(this.detailsDataGridView);
 			this.Name = "InvoiceDetailsForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Invoice Details";
 			((System.ComponentModel.ISupportInitialize)(this.detailsDataGridView)).EndInit();
 			this.ResumeLayout(false);

@@ -27,6 +27,16 @@ BEGIN
 	SET NOCOUNT ON;
 	SET XACT_ABORT ON;
 
+	IF (@name = NULL) OR (LTRIM(RTRIM(@name)) = '') BEGIN
+		RAISERROR('Company Name cannot be blank! please enter company name.', 16, 1)
+		RETURN -1
+	END
+
+	IF EXISTS (SELECT * FROM companies WHERE name = @name) BEGIN
+		RAISERROR('This company name already exists. Please enter a different name', 16, 1)
+		RETURN
+	END
+	 
     -- Insert statements for procedure here
 	BEGIN
 		BEGIN TRANSACTION
