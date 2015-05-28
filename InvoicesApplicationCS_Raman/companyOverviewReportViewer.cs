@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace InvoicesApplicationCS_Raman
 {
-	public partial class TotalReportViewer : Form
+	public partial class companyOverviewReportViewer : Form
 	{
 		private DBDataSet dbMainReport;
 		private DataSet dsMainReport;
 		private DataTable tableMainReport;
 
 
-		public TotalReportViewer()
+		public companyOverviewReportViewer()
 		{
 			InitializeComponent();
 			// Set up CemDB to use the .udl file

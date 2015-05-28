@@ -91,16 +91,15 @@ namespace InvoicesApplicationCS_Raman
 			}
 		}
 
-		private void reportAllCompaniesToolStripMenuItem_Click(object sender, EventArgs e)
+		private void reportAllCompaniesWithInvoicesToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			TotalReportViewer rptviewer = new TotalReportViewer();
+			companyOverviewReportViewer rptviewer = new companyOverviewReportViewer();
 			rptviewer.Show();
 		}
 
-		private void reportSelectedCompanyToolStripMenuItem_Click(object sender, EventArgs e)
+		private void reportAllCompaniesWithAddressesToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			SelectedCompanyReportViewerForm rptviewer = new SelectedCompanyReportViewerForm();
-			//rptviewer.Show();
+
 		}
 	}
 }

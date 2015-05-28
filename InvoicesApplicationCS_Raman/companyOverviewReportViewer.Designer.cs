@@ -1,6 +1,6 @@
 ﻿namespace InvoicesApplicationCS_Raman
 {
-	partial class TotalReportViewer
+	partial class companyOverviewReportViewer
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -40,15 +40,16 @@
 			this.mainReportViewer.TabIndex = 0;
 			this.mainReportViewer.Load += new System.EventHandler(this.reportViewer1_Load);
 			// 
-			// TotalReportViewer
+			// companyOverviewReportViewer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(664, 576);
 			this.Controls.Add(this.mainReportViewer);
+			this.MaximumSize = new System.Drawing.Size(680, 614);
 			this.MinimumSize = new System.Drawing.Size(680, 614);
-			this.Name = "TotalReportViewer";
-			this.Text = "TotalReportViewer";
+			this.Name = "companyOverviewReportViewer";
+			this.Text = "Summary Report of Companies and their Invoices";
 			this.Load += new System.EventHandler(this.TotalReportViewer_Load);
 			this.ResumeLayout(false);
 

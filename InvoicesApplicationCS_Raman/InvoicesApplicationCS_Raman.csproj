@@ -89,17 +89,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>reportsDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SelectedCompanyReportViewerForm.cs">
+    <Compile Include="companyOverviewReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelectedCompanyReportViewerForm.Designer.cs">
-      <DependentUpon>SelectedCompanyReportViewerForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TotalReportViewer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TotalReportViewer.Designer.cs">
-      <DependentUpon>TotalReportViewer.cs</DependentUpon>
+    <Compile Include="companyOverviewReportViewer.Designer.cs">
+      <DependentUpon>companyOverviewReportViewer.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="InvoiceDetailsForm.resx">
       <DependentUpon>InvoiceDetailsForm.cs</DependentUpon>
@@ -119,13 +113,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SelectedCompanyReport.rdlc" />
-    <EmbeddedResource Include="SelectedCompanyReportViewerForm.resx">
-      <DependentUpon>SelectedCompanyReportViewerForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainReport.rdlc" />
-    <EmbeddedResource Include="TotalReportViewer.resx">
-      <DependentUpon>TotalReportViewer.cs</DependentUpon>
+    <EmbeddedResource Include="companyOverviewReportViewer.resx">
+      <DependentUpon>companyOverviewReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="invoices_ramanDataSet.xsc">
       <DependentUpon>invoices_ramanDataSet.xsd</DependentUpon>

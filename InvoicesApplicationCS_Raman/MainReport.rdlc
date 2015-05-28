@@ -228,7 +228,7 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!date.Value</Value>
+                                                <Value>=FORMAT(Fields!date.Value, "dd-MMM-yyyy")</Value>
                                                 <Style />
                                               </TextRun>
                                             </TextRuns>
@@ -247,6 +247,7 @@
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
+                                      <rd:Selected>true</rd:Selected>
                                     </CellContents>
                                   </TablixCell>
                                   <TablixCell>
@@ -482,7 +483,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Globals!PageNumber</Value>
+                  <Value>="| Page " &amp; Globals!PageNumber</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -491,9 +492,43 @@
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
           <Top>0.42017cm</Top>
-          <Left>14.83933cm</Left>
+          <Left>14.30134cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>2.41715cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox51">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Report Generation Date: " &amp; FORMAT(Cdate(today), "dd-MMM-yyyy")</Value>
+                  <Style>
+                    <FontWeight>Medium</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox51</rd:DefaultName>
+          <Top>0.42017cm</Top>
+          <Left>8.27828cm</Left>
+          <Height>0.6cm</Height>
+          <Width>5.98778cm</Width>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

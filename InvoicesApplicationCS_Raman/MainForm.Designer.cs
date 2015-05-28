@@ -28,18 +28,15 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.compDataGridView = new System.Windows.Forms.DataGridView();
 			this.companyIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.companyNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.reportAllCompaniesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.reportSelectedCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,10 +53,10 @@
 			// 
 			// compDataGridView
 			// 
-			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-			this.compDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+			this.compDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.compDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
 			this.compDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
 			this.compDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -72,16 +69,16 @@
 			this.compDataGridView.MaximumSize = new System.Drawing.Size(228, 235);
 			this.compDataGridView.MinimumSize = new System.Drawing.Size(228, 235);
 			this.compDataGridView.Name = "compDataGridView";
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.compDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-			dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-			this.compDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.compDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+			this.compDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
 			this.compDataGridView.Size = new System.Drawing.Size(228, 235);
 			this.compDataGridView.TabIndex = 0;
 			this.compDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.compDataGridView_CellContentDoubleClick);
@@ -117,34 +114,12 @@
 			// fileToolStripMenuItem
 			// 
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.toolStripSeparator,
-            this.toolStripSeparator1,
             this.printToolStripMenuItem,
             this.toolStripSeparator2,
             this.exitToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
 			this.fileToolStripMenuItem.Text = "&File";
-			// 
-			// newToolStripMenuItem
-			// 
-			this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
-			this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-			this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-			this.newToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
-			this.newToolStripMenuItem.Text = "&New";
-			// 
-			// toolStripSeparator
-			// 
-			this.toolStripSeparator.Name = "toolStripSeparator";
-			this.toolStripSeparator.Size = new System.Drawing.Size(138, 6);
-			// 
-			// toolStripSeparator1
-			// 
-			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(138, 6);
 			// 
 			// printToolStripMenuItem
 			// 
@@ -154,32 +129,32 @@
 			this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
 			this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-			this.printToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+			this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.printToolStripMenuItem.Text = "&Print";
 			// 
 			// reportAllCompaniesToolStripMenuItem
 			// 
 			this.reportAllCompaniesToolStripMenuItem.Name = "reportAllCompaniesToolStripMenuItem";
-			this.reportAllCompaniesToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-			this.reportAllCompaniesToolStripMenuItem.Text = "Report - All Companies";
+			this.reportAllCompaniesToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+			this.reportAllCompaniesToolStripMenuItem.Text = "Report - Company Invoices";
 			this.reportAllCompaniesToolStripMenuItem.Click += new System.EventHandler(this.reportAllCompaniesToolStripMenuItem_Click);
 			// 
 			// reportSelectedCompanyToolStripMenuItem
 			// 
 			this.reportSelectedCompanyToolStripMenuItem.Name = "reportSelectedCompanyToolStripMenuItem";
-			this.reportSelectedCompanyToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-			this.reportSelectedCompanyToolStripMenuItem.Text = "Report - Selected Company";
+			this.reportSelectedCompanyToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+			this.reportSelectedCompanyToolStripMenuItem.Text = "Report - Company Addresses";
 			this.reportSelectedCompanyToolStripMenuItem.Click += new System.EventHandler(this.reportSelectedCompanyToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new System.Drawing.Size(138, 6);
+			this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.exitToolStripMenuItem.Text = "E&xit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
@@ -196,18 +171,18 @@
 			// searchToolStripMenuItem
 			// 
 			this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-			this.searchToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+			this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.searchToolStripMenuItem.Text = "&Search";
 			// 
 			// toolStripSeparator5
 			// 
 			this.toolStripSeparator5.Name = "toolStripSeparator5";
-			this.toolStripSeparator5.Size = new System.Drawing.Size(113, 6);
+			this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
 			// 
 			// aboutToolStripMenuItem
 			// 
 			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.aboutToolStripMenuItem.Text = "&About...";
 			// 
 			// CompanyInfoLabel
@@ -249,14 +224,11 @@
 		private System.Windows.Forms.DataGridView compDataGridView;
 		private System.Windows.Forms.MenuStrip mainMenuStrip;
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
 		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem reportAllCompaniesToolStripMenuItem;
