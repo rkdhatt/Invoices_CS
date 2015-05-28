@@ -11,7 +11,8 @@ using System.Windows.Forms;
 
 namespace InvoicesApplicationCS_Raman
 {
-	public partial class InvoicesForm : Form
+	// Note to self: DataGrids suck!
+	public partial class InvoicesAndAddressesForm : Form
 	{
 		private DBDataSet dbInvoices;
 		private DBDataSet dbDetails;
@@ -25,17 +26,14 @@ namespace InvoicesApplicationCS_Raman
 		private DataTable tableDetails;
 		private DataTable tableAddresses;
 
-		DataGridView invoiceDataGridView;
-		DataGridView detailDataGridView;
 
 		DBView dbvInvoices;
-		DBView dbvDetails;
 		DBView dbvAddresses;
 
 		private int company_id;
 
 
-		public InvoicesForm(int cID)
+		public InvoicesAndAddressesForm(int cID)
 		{
 			InitializeComponent();
 
@@ -59,12 +57,10 @@ namespace InvoicesApplicationCS_Raman
 			tableAddresses = new DataTable("Addresses");
 
 			// Initialize grid views to allow inserts/updates/deletes
-			invoiceDataGridView = new DataGridView() { DataSource = tableInvoices };
-			detailDataGridView = new DataGridView() { DataSource = tableDetails };
+			//invoiceDataGridView = new DataGridView() { DataSource = tableInvoices };
 
 			// Initialize DBViews
 			dbvInvoices = new DBView(invoiceDataGridView, dbInvoices);
-			dbvDetails = new DBView(detailDataGridView, dbDetails);
 			dbvAddresses = new DBView(addressDataGridView, dbAddresses);
 
 			// Initialize stored procedures
@@ -88,6 +84,7 @@ namespace InvoicesApplicationCS_Raman
 			// Ensure company_id parameter is passed to obtain corresponding invoices
 			dbInvoices.BeforeFetch += dbInvoices_BeforeFetch;
 			dbAddresses.BeforeFetch += dbAddresses_BeforeFetch;
+			dbInvoices.BeforeInsert += dbInvoices_BeforeInsert;
 
 			// Fetch data and save to corresponding tables
 			dbInvoices.FetchDataTable(tableInvoices);
@@ -95,41 +92,42 @@ namespace InvoicesApplicationCS_Raman
 			dbAddresses.FetchDataTable(tableAddresses);
 
 			// Add master and child tables to dataset
-			DataSet dsDataSet = new DataSet();
-			dsDataSet.Tables.Add(this.tableInvoices);
-			dsDataSet.Tables.Add(this.tableDetails);
+			//DataSet dsDataSet = new DataSet();
+			//dsDataSet.Tables.Add(this.tableInvoices);
+			//dsDataSet.Tables.Add(this.tableDetails);
 
 			// Hide ID's
 			addressDataGridView.AutoGenerateColumns = false;
-			dsDataSet.Tables[0].Columns[0].ColumnMapping = MappingType.Hidden; // Hide invoice_id in invoices table
-			// dsDataSet.Tables[0].Columns[2].ColumnMapping = MappingType.Hidden; // Hide company_id in invoices table
-			dsDataSet.Tables[1].Columns[0].ColumnMapping = MappingType.Hidden; // Hide invoice_id in details table
-			dsDataSet.Tables[1].Columns[1].ColumnMapping = MappingType.Hidden; // Hide detail_id in details table
+			invoiceDataGridView.AutoGenerateColumns = false;
+			//dsDataSet.Tables[0].Columns[0].ColumnMapping = MappingType.Hidden; // Hide invoice_id in invoices table
+			//dsDataSet.Tables[0].Columns[2].ColumnMapping = MappingType.Hidden; // Hide company_id in invoices table
+			//dsDataSet.Tables[1].Columns[0].ColumnMapping = MappingType.Hidden; // Hide invoice_id in details table
+			//dsDataSet.Tables[1].Columns[1].ColumnMapping = MappingType.Hidden; // Hide detail_id in details table
 			
 			// Modify Column Names in invoices data grid
-			dsDataSet.Tables[0].Columns[1].ColumnName = "Date";
-			dsDataSet.Tables[0].Columns[3].ColumnName = "Terms Of Invoice";
-			dsDataSet.Tables[1].Columns[2].ColumnName = "Description";
-			dsDataSet.Tables[1].Columns[3].ColumnName = "Quantity";
-			dsDataSet.Tables[1].Columns[4].ColumnName = "Unit Cost";
+			// dsDataSet.Tables[0].Columns[1].ColumnName = "Date";
+			// dsDataSet.Tables[0].Columns[3].ColumnName = "Terms Of Invoice";
+			// dsDataSet.Tables[1].Columns[2].ColumnName = "Description";
+			// dsDataSet.Tables[1].Columns[3].ColumnName = "Quantity";
+			// dsDataSet.Tables[1].Columns[4].ColumnName = "Unit Cost";
 
 			// Bind data
-			invoiceDataGrid.DataSource = dsDataSet.Tables[0];
+			//invoiceDataGrid.DataSource = dsDataSet.Tables[0];
+			invoiceDataGridView.DataSource = this.tableInvoices;
 			addressDataGridView.DataSource = this.tableAddresses;
 
 			// Define relationship between master and child tables
-			dsDataSet.Relations.Add("More Invoice Details",
-					dsDataSet.Tables[0].Columns["invoice_id"],
-					dsDataSet.Tables[1].Columns["invoice_id"], false); // must be set to false: don't want to enforce relationship.
+			//dsDataSet.Relations.Add("More Invoice Details",
+			//		dsDataSet.Tables[0].Columns["invoice_id"],
+			//		dsDataSet.Tables[1].Columns["invoice_id"], false); // must be set to false: don't want to enforce relationship.
 
-			dbInvoices.BeforeInsert += dbInvoices_BeforeInsert;
+			
 
 		}
 
 		void dbInvoices_BeforeInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
 		{
 			cmd.Parameters["@company_id"].Value = this.company_id;
-			System.Diagnostics.Debug.WriteLine("INSERT INVOICE");
 		}
 
 		void dbAddresses_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
@@ -151,6 +149,21 @@ namespace InvoicesApplicationCS_Raman
 		{
 			// For datagrid views for address, make sure default value for company_id is used, otherwise no updating happens
 			e.Row.Cells["companyIDAddCol"].Value = this.company_id;
+		}
+
+		private void invoiceDataGrid_Navigate(object sender, NavigateEventArgs ne)
+		{
+
+		}
+
+		private void invoiceDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+		{
+			e.Row.Cells["CompIDInvoiceCol"].Value = this.company_id;
+		}
+
+		private void invoiceDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+
 		}
 		
 	}

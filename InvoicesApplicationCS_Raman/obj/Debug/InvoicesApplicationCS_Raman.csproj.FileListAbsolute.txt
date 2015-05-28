@@ -3,7 +3,6 @@ E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\b
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\bin\Debug\InvoicesApplicationCS_Raman.pdb
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\bin\Debug\CemControls.dll
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\bin\Debug\CemDB.dll
-E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.InvoicesForm.resources
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.MainForm.resources
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.Properties.Resources.resources
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.SelectedCompanyReportViewerForm.resources
@@ -12,3 +11,6 @@ E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\o
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\RdlCompile.compiled
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.exe
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.pdb
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.csprojResolveAssemblyReference.cache
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.InvoicesAndAddressesForm.resources
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.InvoiceDetailsForm.resources

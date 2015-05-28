@@ -28,37 +28,37 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.compDataGridView = new System.Windows.Forms.DataGridView();
+			this.companyIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.companyNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.reportAllCompaniesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.reportSelectedCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.reportAllCompaniesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.reportSelectedCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.companyIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.companyNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.compDataGridView)).BeginInit();
 			this.mainMenuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// compDataGridView
 			// 
-			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-			this.compDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+			this.compDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.compDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
 			this.compDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
 			this.compDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -67,24 +67,40 @@
             this.companyIDCol,
             this.companyNameCol});
 			this.compDataGridView.Cursor = System.Windows.Forms.Cursors.Default;
-			this.compDataGridView.Location = new System.Drawing.Point(12, 32);
+			this.compDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.compDataGridView.Location = new System.Drawing.Point(0, 24);
 			this.compDataGridView.MaximumSize = new System.Drawing.Size(228, 235);
 			this.compDataGridView.MinimumSize = new System.Drawing.Size(228, 235);
 			this.compDataGridView.Name = "compDataGridView";
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.compDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-			dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-			this.compDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.compDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+			this.compDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
 			this.compDataGridView.Size = new System.Drawing.Size(228, 235);
 			this.compDataGridView.TabIndex = 0;
-			this.compDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.compDataGridView_CellContentClick);
 			this.compDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.compDataGridView_CellContentDoubleClick);
+			// 
+			// companyIDCol
+			// 
+			this.companyIDCol.DataPropertyName = "company_id";
+			this.companyIDCol.HeaderText = "Company ID";
+			this.companyIDCol.Name = "companyIDCol";
+			this.companyIDCol.ReadOnly = true;
+			this.companyIDCol.Visible = false;
+			this.companyIDCol.Width = 90;
+			// 
+			// companyNameCol
+			// 
+			this.companyNameCol.DataPropertyName = "name";
+			this.companyNameCol.HeaderText = "Company Name";
+			this.companyNameCol.Name = "companyNameCol";
+			this.companyNameCol.Width = 98;
 			// 
 			// mainMenuStrip
 			// 
@@ -94,7 +110,7 @@
 			this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.mainMenuStrip.Name = "mainMenuStrip";
 			this.mainMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-			this.mainMenuStrip.Size = new System.Drawing.Size(253, 24);
+			this.mainMenuStrip.Size = new System.Drawing.Size(229, 24);
 			this.mainMenuStrip.TabIndex = 6;
 			this.mainMenuStrip.Text = "menuStrip1";
 			// 
@@ -117,18 +133,18 @@
 			this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.newToolStripMenuItem.Name = "newToolStripMenuItem";
 			this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-			this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.newToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
 			this.newToolStripMenuItem.Text = "&New";
 			// 
 			// toolStripSeparator
 			// 
 			this.toolStripSeparator.Name = "toolStripSeparator";
-			this.toolStripSeparator.Size = new System.Drawing.Size(149, 6);
+			this.toolStripSeparator.Size = new System.Drawing.Size(138, 6);
 			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+			this.toolStripSeparator1.Size = new System.Drawing.Size(138, 6);
 			// 
 			// printToolStripMenuItem
 			// 
@@ -138,18 +154,30 @@
 			this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
 			this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-			this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.printToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
 			this.printToolStripMenuItem.Text = "&Print";
+			// 
+			// reportAllCompaniesToolStripMenuItem
+			// 
+			this.reportAllCompaniesToolStripMenuItem.Name = "reportAllCompaniesToolStripMenuItem";
+			this.reportAllCompaniesToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+			this.reportAllCompaniesToolStripMenuItem.Text = "Report - All Companies";
+			// 
+			// reportSelectedCompanyToolStripMenuItem
+			// 
+			this.reportSelectedCompanyToolStripMenuItem.Name = "reportSelectedCompanyToolStripMenuItem";
+			this.reportSelectedCompanyToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+			this.reportSelectedCompanyToolStripMenuItem.Text = "Report - Selected Company";
 			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+			this.toolStripSeparator2.Size = new System.Drawing.Size(138, 6);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
 			this.exitToolStripMenuItem.Text = "E&xit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
@@ -166,60 +194,30 @@
 			// searchToolStripMenuItem
 			// 
 			this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-			this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.searchToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
 			this.searchToolStripMenuItem.Text = "&Search";
 			// 
 			// toolStripSeparator5
 			// 
 			this.toolStripSeparator5.Name = "toolStripSeparator5";
-			this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
+			this.toolStripSeparator5.Size = new System.Drawing.Size(113, 6);
 			// 
 			// aboutToolStripMenuItem
 			// 
 			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
 			this.aboutToolStripMenuItem.Text = "&About...";
-			// 
-			// reportAllCompaniesToolStripMenuItem
-			// 
-			this.reportAllCompaniesToolStripMenuItem.Name = "reportAllCompaniesToolStripMenuItem";
-			this.reportAllCompaniesToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-			this.reportAllCompaniesToolStripMenuItem.Text = "Report - All Companies";
-			// 
-			// reportSelectedCompanyToolStripMenuItem
-			// 
-			this.reportSelectedCompanyToolStripMenuItem.Name = "reportSelectedCompanyToolStripMenuItem";
-			this.reportSelectedCompanyToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-			this.reportSelectedCompanyToolStripMenuItem.Text = "Report - Selected Company";
-			// 
-			// companyIDCol
-			// 
-			this.companyIDCol.DataPropertyName = "company_id";
-			this.companyIDCol.HeaderText = "Company ID";
-			this.companyIDCol.Name = "companyIDCol";
-			this.companyIDCol.ReadOnly = true;
-			this.companyIDCol.Visible = false;
-			this.companyIDCol.Width = 90;
-			// 
-			// companyNameCol
-			// 
-			this.companyNameCol.DataPropertyName = "name";
-			this.companyNameCol.HeaderText = "Company Name";
-			this.companyNameCol.Name = "companyNameCol";
-			this.companyNameCol.Width = 98;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Control;
-			this.ClientSize = new System.Drawing.Size(253, 277);
+			this.ClientSize = new System.Drawing.Size(229, 260);
 			this.Controls.Add(this.compDataGridView);
 			this.Controls.Add(this.mainMenuStrip);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
 			this.MainMenuStrip = this.mainMenuStrip;
-			this.MaximumSize = new System.Drawing.Size(273, 319);
-			this.MinimumSize = new System.Drawing.Size(273, 319);
 			this.Name = "MainForm";
 			this.Text = "Companies";
 			this.Load += new System.EventHandler(this.MainForm_Load);

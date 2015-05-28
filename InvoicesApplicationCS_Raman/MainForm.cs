@@ -74,14 +74,10 @@ namespace InvoicesApplicationCS_Raman
 			string name = (string) compDataGridView[e.ColumnIndex, e.RowIndex].FormattedValue;
 			int company_id = Convert.ToInt32(compDataGridView[0, e.RowIndex].FormattedValue);
 			Console.WriteLine("Current name: {0}; column: {1}, row: {2}, company id: {3}", name, e.ColumnIndex, e.RowIndex, company_id);
-			InvoicesForm frm_invoices = new InvoicesForm(company_id);
+			InvoicesAndAddressesForm frm_invoices = new InvoicesAndAddressesForm(company_id);
 			frm_invoices.Show();
 		}
 
-		private void compDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-
-		}
 
 		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
 		{

@@ -55,11 +55,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InvoicesForm.cs">
+    <Compile Include="InvoiceDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InvoicesForm.Designer.cs">
-      <DependentUpon>InvoicesForm.cs</DependentUpon>
+    <Compile Include="InvoiceDetailsForm.Designer.cs">
+      <DependentUpon>InvoiceDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoicesAndAddressesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoicesAndAddressesForm.Designer.cs">
+      <DependentUpon>InvoicesAndAddressesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="invoices_ramanDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -80,8 +86,11 @@
     <Compile Include="SelectedCompanyReportViewerForm.Designer.cs">
       <DependentUpon>SelectedCompanyReportViewerForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="InvoicesForm.resx">
-      <DependentUpon>InvoicesForm.cs</DependentUpon>
+    <EmbeddedResource Include="InvoiceDetailsForm.resx">
+      <DependentUpon>InvoiceDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoicesAndAddressesForm.resx">
+      <DependentUpon>InvoicesAndAddressesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
