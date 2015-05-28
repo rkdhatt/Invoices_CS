@@ -12,40 +12,44 @@ using System.Windows.Forms;
 
 namespace InvoicesApplicationCS_Raman
 {
-	public partial class companyOverviewReportViewer : Form
+	// Report viewer displays all companies and their corresponding invoice terms and dates
+	public partial class TotalCompInvoicesReportViewer : Form
 	{
 		private DBDataSet dbMainReport;
 		private DataSet dsMainReport;
 		private DataTable tableMainReport;
 
 
-		public companyOverviewReportViewer()
+		public TotalCompInvoicesReportViewer()
 		{
 			InitializeComponent();
 			// Set up CemDB to use the .udl file
 			DBControl.ConnectionFile(Application.StartupPath + "\\newer_invoice.udl");
 
+			// Initialize data sets and table
 			dbMainReport = new DBDataSet();
 			dsMainReport = new DataSet();
 			tableMainReport = new DataTable();
 
+			// Stored procedure for report
 			dbMainReport.FetchStoredProcedure = "fetch_main_report";
 
 			dbMainReport.DataSet = dsMainReport;
 
 			dbMainReport.FetchDataTable(tableMainReport);
 
-			this.mainReportViewer.Reset();
-			this.mainReportViewer.LocalReport.ReportEmbeddedResource = "InvoicesApplicationCS_Raman.MainReport.rdlc";
-			this.mainReportViewer.LocalReport.DataSources.Clear();
-			this.mainReportViewer.LocalReport.DataSources.Add( new Microsoft.Reporting.WinForms.ReportDataSource("mainReportDataSet", tableMainReport));
+			// Connect report to report viewer
+			this.compInvReportViewer.Reset();
+			this.compInvReportViewer.LocalReport.ReportEmbeddedResource = "InvoicesApplicationCS_Raman.MainReport.rdlc";
+			this.compInvReportViewer.LocalReport.DataSources.Clear();
+			this.compInvReportViewer.LocalReport.DataSources.Add( new Microsoft.Reporting.WinForms.ReportDataSource("mainReportDataSet", tableMainReport));
 
 		}
 
 		private void TotalReportViewer_Load(object sender, EventArgs e)
 		{
 
-			this.mainReportViewer.RefreshReport();
+			this.compInvReportViewer.RefreshReport();
 		}
 
 		private void reportViewer1_Load(object sender, EventArgs e)

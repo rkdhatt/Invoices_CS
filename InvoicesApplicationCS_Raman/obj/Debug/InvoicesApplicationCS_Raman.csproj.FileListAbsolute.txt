@@ -13,4 +13,5 @@ E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\o
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.exe
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.pdb
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.csprojResolveAssemblyReference.cache
-E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.companyOverviewReportViewer.resources
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.TotalCompAddressesReportViewer.resources
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.TotalCompInvoicesReportViewer.resources

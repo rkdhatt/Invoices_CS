@@ -38,7 +38,7 @@
 			this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.reportAllCompaniesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.reportAllCompaniesWithInvoices = new System.Windows.Forms.ToolStripMenuItem();
 			this.reportSelectedCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,6 +81,7 @@
 			this.compDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
 			this.compDataGridView.Size = new System.Drawing.Size(228, 235);
 			this.compDataGridView.TabIndex = 0;
+			this.compDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.compDataGridView_CellContentClick);
 			this.compDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.compDataGridView_CellContentDoubleClick);
 			// 
 			// companyIDCol
@@ -124,7 +125,7 @@
 			// printToolStripMenuItem
 			// 
 			this.printToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reportAllCompaniesToolStripMenuItem,
+            this.reportAllCompaniesWithInvoices,
             this.reportSelectedCompanyToolStripMenuItem});
 			this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
 			this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -132,19 +133,18 @@
 			this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.printToolStripMenuItem.Text = "&Print";
 			// 
-			// reportAllCompaniesToolStripMenuItem
+			// reportAllCompaniesWithInvoices
 			// 
-			this.reportAllCompaniesToolStripMenuItem.Name = "reportAllCompaniesToolStripMenuItem";
-			this.reportAllCompaniesToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
-			this.reportAllCompaniesToolStripMenuItem.Text = "Report - Company Invoices";
-			this.reportAllCompaniesToolStripMenuItem.Click += new System.EventHandler(this.reportAllCompaniesToolStripMenuItem_Click);
+			this.reportAllCompaniesWithInvoices.Name = "reportAllCompaniesWithInvoices";
+			this.reportAllCompaniesWithInvoices.Size = new System.Drawing.Size(228, 22);
+			this.reportAllCompaniesWithInvoices.Text = "Report - Company Invoices";
+			this.reportAllCompaniesWithInvoices.Click += new System.EventHandler(this.reportAllCompaniesWithInvoices_Click);
 			// 
 			// reportSelectedCompanyToolStripMenuItem
 			// 
 			this.reportSelectedCompanyToolStripMenuItem.Name = "reportSelectedCompanyToolStripMenuItem";
 			this.reportSelectedCompanyToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
 			this.reportSelectedCompanyToolStripMenuItem.Text = "Report - Company Addresses";
-			this.reportSelectedCompanyToolStripMenuItem.Click += new System.EventHandler(this.reportSelectedCompanyToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator2
 			// 
@@ -171,18 +171,18 @@
 			// searchToolStripMenuItem
 			// 
 			this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-			this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.searchToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
 			this.searchToolStripMenuItem.Text = "&Search";
 			// 
 			// toolStripSeparator5
 			// 
 			this.toolStripSeparator5.Name = "toolStripSeparator5";
-			this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
+			this.toolStripSeparator5.Size = new System.Drawing.Size(113, 6);
 			// 
 			// aboutToolStripMenuItem
 			// 
 			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
 			this.aboutToolStripMenuItem.Text = "&About...";
 			// 
 			// CompanyInfoLabel
@@ -231,7 +231,7 @@
 		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem reportAllCompaniesToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem reportAllCompaniesWithInvoices;
 		private System.Windows.Forms.ToolStripMenuItem reportSelectedCompanyToolStripMenuItem;
 		private System.Windows.Forms.DataGridViewTextBoxColumn companyIDCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn companyNameCol;

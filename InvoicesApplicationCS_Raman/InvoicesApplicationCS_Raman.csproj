@@ -89,11 +89,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>reportsDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="companyOverviewReportViewer.cs">
+    <Compile Include="TotalCompAddressesReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="companyOverviewReportViewer.Designer.cs">
-      <DependentUpon>companyOverviewReportViewer.cs</DependentUpon>
+    <Compile Include="TotalCompAddressesReportViewer.Designer.cs">
+      <DependentUpon>TotalCompAddressesReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TotalCompInvoicesReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TotalCompInvoicesReportViewer.Designer.cs">
+      <DependentUpon>TotalCompInvoicesReportViewer.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="InvoiceDetailsForm.resx">
       <DependentUpon>InvoiceDetailsForm.cs</DependentUpon>
@@ -114,8 +120,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainReport.rdlc" />
-    <EmbeddedResource Include="companyOverviewReportViewer.resx">
-      <DependentUpon>companyOverviewReportViewer.cs</DependentUpon>
+    <EmbeddedResource Include="TotalCompAddressesReportViewer.resx">
+      <DependentUpon>TotalCompAddressesReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TotalCompInvoicesReportViewer.resx">
+      <DependentUpon>TotalCompInvoicesReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="invoices_ramanDataSet.xsc">
       <DependentUpon>invoices_ramanDataSet.xsd</DependentUpon>
