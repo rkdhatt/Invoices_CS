@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CemDB;
+using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +14,44 @@ namespace InvoicesApplicationCS_Raman
 {
 	public partial class TotalReportViewer : Form
 	{
+		private DBDataSet dbMainReport;
+		private DataSet dsMainReport;
+		private DataTable tableMainReport;
+
+
 		public TotalReportViewer()
 		{
 			InitializeComponent();
+			// Set up CemDB to use the .udl file
+			DBControl.ConnectionFile(Application.StartupPath + "\\newer_invoice.udl");
+
+			dbMainReport = new DBDataSet();
+			dsMainReport = new DataSet();
+			tableMainReport = new DataTable();
+
+			dbMainReport.FetchStoredProcedure = "fetch_main_report";
+
+			dbMainReport.DataSet = dsMainReport;
+
+			dbMainReport.FetchDataTable(tableMainReport);
+
+			this.mainReportViewer.Reset();
+			this.mainReportViewer.LocalReport.ReportEmbeddedResource = "InvoicesApplicationCS_Raman.MainReport.rdlc";
+			this.mainReportViewer.LocalReport.DataSources.Clear();
+			this.mainReportViewer.LocalReport.DataSources.Add( new Microsoft.Reporting.WinForms.ReportDataSource("mainReportDataSet", tableMainReport));
+			this.mainReportViewer.RefreshReport();
+
 		}
 
 		private void TotalReportViewer_Load(object sender, EventArgs e)
 		{
-			// TODO: This line of code loads data into the 'invoices_ramanDataSet.details' table. You can move, or remove it, as needed.
-			this.detailsTableAdapter.Fill(this.invoices_ramanDataSet.details);
 
-			this.reportViewer1.RefreshReport();
+			this.mainReportViewer.RefreshReport();
+		}
+
+		private void reportViewer1_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

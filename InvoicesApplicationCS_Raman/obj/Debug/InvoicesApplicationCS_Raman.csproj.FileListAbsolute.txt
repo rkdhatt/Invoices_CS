@@ -3,6 +3,7 @@ E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\b
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\bin\Debug\InvoicesApplicationCS_Raman.pdb
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\bin\Debug\CemControls.dll
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\bin\Debug\CemDB.dll
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.csprojResolveAssemblyReference.cache
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.InvoiceDetailsForm.resources
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.InvoicesAndAddressesForm.resources
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.MainForm.resources

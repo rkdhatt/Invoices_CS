@@ -76,8 +76,8 @@ namespace InvoicesApplicationCS_Raman
 			dbAddresses.AfterInsert += dbAddresses_AfterInsert;
 
 			// Format Date column
-			invoiceDataGridView.Columns["InvoiceDateCol"].DefaultCellStyle.Format = "d";
-
+			invoiceDataGridView.Columns["InvoiceDateCol"].DefaultCellStyle.Format = "dd/MMM/yyyy";
+			addressDataGridView.Columns["DateModify"].DefaultCellStyle.Format = "dd/MMM/yyyy";
 			// Fetch data and save to corresponding tables
 			dbInvoices.FetchDataTable(tableInvoices);
 			dbAddresses.FetchDataTable(tableAddresses);

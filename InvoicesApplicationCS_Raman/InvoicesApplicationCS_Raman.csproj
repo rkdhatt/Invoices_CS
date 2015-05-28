@@ -80,6 +80,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reportsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reportsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SelectedCompanyReportViewerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,7 +119,7 @@
     <EmbeddedResource Include="SelectedCompanyReportViewerForm.resx">
       <DependentUpon>SelectedCompanyReportViewerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TotalReport.rdlc" />
+    <EmbeddedResource Include="MainReport.rdlc" />
     <EmbeddedResource Include="TotalReportViewer.resx">
       <DependentUpon>TotalReportViewer.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +143,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="reportsDataSet.xsc">
+      <DependentUpon>reportsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="reportsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>reportsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="reportsDataSet.xss">
+      <DependentUpon>reportsDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

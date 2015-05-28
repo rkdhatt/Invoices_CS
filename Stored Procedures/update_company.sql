@@ -27,7 +27,7 @@ BEGIN
 	SET NOCOUNT ON;
 	SET XACT_ABORT ON;
 
-	IF (@name = NULL) OR (LTRIM(RTRIM(@name)) = '') BEGIN
+	IF @name IS NULL OR (LTRIM(RTRIM(@name)) = '') BEGIN
 		RAISERROR('Company Name cannot be blank! please enter company name.', 16, 1)
 		RETURN -1
 	END
