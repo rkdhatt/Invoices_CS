@@ -39,7 +39,6 @@ namespace InvoicesApplicationCS_Raman
 			this.mainReportViewer.LocalReport.ReportEmbeddedResource = "InvoicesApplicationCS_Raman.MainReport.rdlc";
 			this.mainReportViewer.LocalReport.DataSources.Clear();
 			this.mainReportViewer.LocalReport.DataSources.Add( new Microsoft.Reporting.WinForms.ReportDataSource("mainReportDataSet", tableMainReport));
-			this.mainReportViewer.RefreshReport();
 
 		}
 

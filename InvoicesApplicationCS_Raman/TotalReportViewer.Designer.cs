@@ -36,7 +36,7 @@
 			this.mainReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.mainReportViewer.Location = new System.Drawing.Point(0, 0);
 			this.mainReportViewer.Name = "mainReportViewer";
-			this.mainReportViewer.Size = new System.Drawing.Size(541, 543);
+			this.mainReportViewer.Size = new System.Drawing.Size(664, 576);
 			this.mainReportViewer.TabIndex = 0;
 			this.mainReportViewer.Load += new System.EventHandler(this.reportViewer1_Load);
 			// 
@@ -44,8 +44,9 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(541, 543);
+			this.ClientSize = new System.Drawing.Size(664, 576);
 			this.Controls.Add(this.mainReportViewer);
+			this.MinimumSize = new System.Drawing.Size(680, 614);
 			this.Name = "TotalReportViewer";
 			this.Text = "TotalReportViewer";
 			this.Load += new System.EventHandler(this.TotalReportViewer_Load);
