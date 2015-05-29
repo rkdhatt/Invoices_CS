@@ -40,14 +40,12 @@
 			this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.reportAllInvoices = new System.Windows.Forms.ToolStripMenuItem();
 			this.reportAllCompaniesWithAddresses = new System.Windows.Forms.ToolStripMenuItem();
+			this.selectedCompanyInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.CompanyInfoLabel = new System.Windows.Forms.Label();
-			this.selectedCompanyInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.invoicesCostChart = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.compDataGridView)).BeginInit();
 			this.mainMenuStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -104,7 +102,7 @@
 			// 
 			this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.aboutToolStripMenuItem});
 			this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.mainMenuStrip.Name = "mainMenuStrip";
 			this.mainMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -127,7 +125,8 @@
 			this.printToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reportAllInvoices,
             this.reportAllCompaniesWithAddresses,
-            this.selectedCompanyInformationToolStripMenuItem});
+            this.selectedCompanyInformationToolStripMenuItem,
+            this.invoicesCostChart});
 			this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
 			this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.printToolStripMenuItem.Name = "printToolStripMenuItem";
@@ -148,6 +147,13 @@
 			this.reportAllCompaniesWithAddresses.Text = "Company Addresses";
 			this.reportAllCompaniesWithAddresses.Click += new System.EventHandler(this.reportSelectedCompanyToolStripMenuItem_Click);
 			// 
+			// selectedCompanyInformationToolStripMenuItem
+			// 
+			this.selectedCompanyInformationToolStripMenuItem.Name = "selectedCompanyInformationToolStripMenuItem";
+			this.selectedCompanyInformationToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+			this.selectedCompanyInformationToolStripMenuItem.Text = "Selected Company Information";
+			this.selectedCompanyInformationToolStripMenuItem.Click += new System.EventHandler(this.selectedCompanyInformationToolStripMenuItem_Click);
+			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
@@ -160,32 +166,12 @@
 			this.exitToolStripMenuItem.Text = "E&xit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
-			// helpToolStripMenuItem
-			// 
-			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.searchToolStripMenuItem,
-            this.toolStripSeparator5,
-            this.aboutToolStripMenuItem});
-			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-			this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-			this.helpToolStripMenuItem.Text = "&Help";
-			// 
-			// searchToolStripMenuItem
-			// 
-			this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-			this.searchToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-			this.searchToolStripMenuItem.Text = "&Search";
-			// 
-			// toolStripSeparator5
-			// 
-			this.toolStripSeparator5.Name = "toolStripSeparator5";
-			this.toolStripSeparator5.Size = new System.Drawing.Size(113, 6);
-			// 
 			// aboutToolStripMenuItem
 			// 
 			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-			this.aboutToolStripMenuItem.Text = "&About...";
+			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+			this.aboutToolStripMenuItem.Text = "About";
+			this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
 			// 
 			// CompanyInfoLabel
 			// 
@@ -196,12 +182,12 @@
 			this.CompanyInfoLabel.TabIndex = 7;
 			this.CompanyInfoLabel.Text = "Double-click on a company name for more details:";
 			// 
-			// selectedCompanyInformationToolStripMenuItem
+			// invoicesCostChart
 			// 
-			this.selectedCompanyInformationToolStripMenuItem.Name = "selectedCompanyInformationToolStripMenuItem";
-			this.selectedCompanyInformationToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
-			this.selectedCompanyInformationToolStripMenuItem.Text = "Selected Company Information";
-			this.selectedCompanyInformationToolStripMenuItem.Click += new System.EventHandler(this.selectedCompanyInformationToolStripMenuItem_Click);
+			this.invoicesCostChart.Name = "invoicesCostChart";
+			this.invoicesCostChart.Size = new System.Drawing.Size(239, 22);
+			this.invoicesCostChart.Text = "Invoices Chart";
+			this.invoicesCostChart.Click += new System.EventHandler(this.invoicesCostChart_Click);
 			// 
 			// MainForm
 			// 
@@ -234,10 +220,6 @@
 		private System.Windows.Forms.MenuStrip mainMenuStrip;
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem reportAllInvoices;
@@ -246,6 +228,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn companyNameCol;
 		private System.Windows.Forms.Label CompanyInfoLabel;
 		private System.Windows.Forms.ToolStripMenuItem selectedCompanyInformationToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem invoicesCostChart;
 
 	}
 }

@@ -92,6 +92,8 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(545, 201);
 			this.Controls.Add(this.detailsDataGridView);
+			this.MaximumSize = new System.Drawing.Size(561, 239);
+			this.MinimumSize = new System.Drawing.Size(561, 239);
 			this.Name = "InvoiceDetailsForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Invoice Details";

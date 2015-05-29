@@ -109,5 +109,16 @@ namespace InvoicesApplicationCS_Raman
 			SelectedCompanyReportViewer rptviewer = new SelectedCompanyReportViewer(company_id);
 			rptviewer.Show();
 		}
+
+		private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
+		{
+			MessageBox.Show("Author: Raman Dhatt \nCreated: May 2015", "About", MessageBoxButtons.OK);
+		}
+
+		private void invoicesCostChart_Click(object sender, EventArgs e)
+		{
+			InvoiceChartForm rptviewer = new InvoiceChartForm();
+			rptviewer.Show();
+		}
 	}
 }

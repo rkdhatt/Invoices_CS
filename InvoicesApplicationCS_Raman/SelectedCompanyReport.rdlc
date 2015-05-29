@@ -58,7 +58,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>invoice_id</rd:DefaultName>
@@ -115,7 +117,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!date.Value</Value>
+                                  <Value>=FORMAT(Fields!date.Value, "dd-MMM-yyyy")</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -563,7 +565,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox41</rd:DefaultName>
-        <Top>1.32474cm</Top>
+        <Top>1.6687cm</Top>
         <Left>2.27225cm</Left>
         <Height>0.5909cm</Height>
         <Width>4.28562cm</Width>
@@ -909,7 +911,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!date_modify.Value</Value>
+                                  <Value>=FORMAT(Fields!date_modify.Value, "dd-MMM-yyyy")</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -957,7 +959,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>selectedAddressDataSet</DataSetName>
-            <Top>0.46743cm</Top>
+            <Top>0.22931cm</Top>
             <Left>0.48097cm</Left>
             <Height>1.2cm</Height>
             <Width>9.71778cm</Width>
@@ -969,9 +971,9 @@
           </Tablix>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>2.02148cm</Top>
+        <Top>2.25961cm</Top>
         <Left>2.26343cm</Left>
-        <Height>2.02375cm</Height>
+        <Height>1.78562cm</Height>
         <Width>10.66208cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
