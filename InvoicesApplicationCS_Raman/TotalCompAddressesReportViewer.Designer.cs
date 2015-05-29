@@ -38,6 +38,7 @@
 			this.compAddReportViewer.Name = "compAddReportViewer";
 			this.compAddReportViewer.Size = new System.Drawing.Size(715, 578);
 			this.compAddReportViewer.TabIndex = 0;
+			this.compAddReportViewer.Load += new System.EventHandler(this.compAddReportViewer_Load);
 			// 
 			// TotalCompAddressesReportViewer
 			// 
@@ -45,6 +46,8 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(715, 578);
 			this.Controls.Add(this.compAddReportViewer);
+			this.MaximumSize = new System.Drawing.Size(731, 616);
+			this.MinimumSize = new System.Drawing.Size(731, 616);
 			this.Name = "TotalCompAddressesReportViewer";
 			this.Text = "TotalCompAddressesReportViewer";
 			this.Load += new System.EventHandler(this.TotalCompAddressesReportViewer_Load);

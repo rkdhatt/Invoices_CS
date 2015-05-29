@@ -101,6 +101,7 @@
     <Compile Include="TotalCompInvoicesReportViewer.Designer.cs">
       <DependentUpon>TotalCompInvoicesReportViewer.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AllAddressesReport.rdlc" />
     <EmbeddedResource Include="InvoiceDetailsForm.resx">
       <DependentUpon>InvoiceDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,7 +120,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="MainReport.rdlc" />
+    <EmbeddedResource Include="AllInvoicesReport.rdlc" />
     <EmbeddedResource Include="TotalCompAddressesReportViewer.resx">
       <DependentUpon>TotalCompAddressesReportViewer.cs</DependentUpon>
     </EmbeddedResource>

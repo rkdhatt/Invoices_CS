@@ -129,31 +129,32 @@
 			this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
 			this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-			this.printToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
-			this.printToolStripMenuItem.Text = "&Print";
+			this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.printToolStripMenuItem.Text = "&Print Report";
 			// 
 			// reportAllCompaniesWithInvoices
 			// 
 			this.reportAllCompaniesWithInvoices.Name = "reportAllCompaniesWithInvoices";
-			this.reportAllCompaniesWithInvoices.Size = new System.Drawing.Size(228, 22);
-			this.reportAllCompaniesWithInvoices.Text = "Report - Company Invoices";
+			this.reportAllCompaniesWithInvoices.Size = new System.Drawing.Size(182, 22);
+			this.reportAllCompaniesWithInvoices.Text = "Company Invoices";
 			this.reportAllCompaniesWithInvoices.Click += new System.EventHandler(this.reportAllCompaniesWithInvoices_Click);
 			// 
 			// reportSelectedCompanyToolStripMenuItem
 			// 
 			this.reportSelectedCompanyToolStripMenuItem.Name = "reportSelectedCompanyToolStripMenuItem";
-			this.reportSelectedCompanyToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
-			this.reportSelectedCompanyToolStripMenuItem.Text = "Report - Company Addresses";
+			this.reportSelectedCompanyToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+			this.reportSelectedCompanyToolStripMenuItem.Text = "Company Addresses";
+			this.reportSelectedCompanyToolStripMenuItem.Click += new System.EventHandler(this.reportSelectedCompanyToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new System.Drawing.Size(96, 6);
+			this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.exitToolStripMenuItem.Text = "E&xit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 

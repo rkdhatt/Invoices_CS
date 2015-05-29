@@ -35,6 +35,18 @@ BEGIN
 		RETURN -1
 	END
 
+	-- Check if addresses attribute is non-empty
+	IF (@addresses IS NULL) OR (LTRIM(RTRIM(@addresses)) = '') BEGIN
+		RAISERROR('Addresses cannot be blank. Please enter addresses.', 16, 1)
+		RETURN -1
+	END
+
+	-- Check if address is unique
+	IF EXISTS (SELECT * FROM addresses ad WHERE LTRIM(RTRIM(LOWER(ad.addresses))) = LTRIM(RTRIM(LOWER(@addresses)))) BEGIN
+		RAISERROR('Address already exists. Please enter a unique address.', 16, 1)
+		RETURN -1
+	END
+
     -- Insert statements for procedure here
 	BEGIN
 		BEGIN TRANSACTION

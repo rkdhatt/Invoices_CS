@@ -15,9 +15,9 @@ namespace InvoicesApplicationCS_Raman
 	// Report viewer displays all companies and their corresponding invoice terms and dates
 	public partial class TotalCompInvoicesReportViewer : Form
 	{
-		private DBDataSet dbMainReport;
-		private DataSet dsMainReport;
-		private DataTable tableMainReport;
+		private DBDataSet dbInvoicesReport;
+		private DataSet dsInvoicesReport;
+		private DataTable tableInvoicesReport;
 
 
 		public TotalCompInvoicesReportViewer()
@@ -27,23 +27,23 @@ namespace InvoicesApplicationCS_Raman
 			DBControl.ConnectionFile(Application.StartupPath + "\\newer_invoice.udl");
 
 			// Initialize data sets and table
-			dbMainReport = new DBDataSet();
-			dsMainReport = new DataSet();
-			tableMainReport = new DataTable();
+			dbInvoicesReport = new DBDataSet();
+			dsInvoicesReport = new DataSet();
+			tableInvoicesReport = new DataTable();
 
 			// Stored procedure for report
-			dbMainReport.FetchStoredProcedure = "fetch_main_report";
+			dbInvoicesReport.FetchStoredProcedure = "fetch_main_report";
 
-			dbMainReport.DataSet = dsMainReport;
+			dbInvoicesReport.DataSet = dsInvoicesReport;
 
-			// Save data into tableMainReport
-			dbMainReport.FetchDataTable(tableMainReport);
+			// Save data into tableInvoicesReport
+			dbInvoicesReport.FetchDataTable(tableInvoicesReport);
 
 			// Connect report to report viewer
 			this.compInvReportViewer.Reset();
-			this.compInvReportViewer.LocalReport.ReportEmbeddedResource = "InvoicesApplicationCS_Raman.MainReport.rdlc";
+			this.compInvReportViewer.LocalReport.ReportEmbeddedResource = "InvoicesApplicationCS_Raman.AllInvoicesReport.rdlc";
 			this.compInvReportViewer.LocalReport.DataSources.Clear();
-			this.compInvReportViewer.LocalReport.DataSources.Add( new Microsoft.Reporting.WinForms.ReportDataSource("mainReportDataSet", tableMainReport));
+			this.compInvReportViewer.LocalReport.DataSources.Add( new Microsoft.Reporting.WinForms.ReportDataSource("mainReportDataSet", tableInvoicesReport));
 
 		}
 

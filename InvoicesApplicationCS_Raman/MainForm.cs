@@ -92,5 +92,12 @@ namespace InvoicesApplicationCS_Raman
 			TotalCompInvoicesReportViewer rptviewer = new TotalCompInvoicesReportViewer();
 			rptviewer.Show();
 		}
+
+		// Shows report of all companies and their addresses
+		private void reportSelectedCompanyToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			TotalCompAddressesReportViewer rptviewer = new TotalCompAddressesReportViewer();
+			rptviewer.Show();
+		}
 	}
 }
