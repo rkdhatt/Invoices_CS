@@ -111,31 +111,33 @@ namespace InvoicesApplicationCS_Raman
 			// dsDataSet.Relations.Add("More Invoice Details",
 			//		dsDataSet.Tables[0].Columns["invoice_id"],
 			//		dsDataSet.Tables[1].Columns["invoice_id"], false); // must be set to false: don't want to enforce relationship.
-
-
-
 		}
 
+		// re-fetch addresses
 		void dbAddresses_AfterInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
 		{
 			dbAddresses.FetchDataTable(tableAddresses);
 		}
 
+		// Re-fetch invoices
 		void dbInvoices_AfterInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
 		{
 			dbInvoices.FetchDataTable(tableInvoices);
 		}
 
+		// Pass company_id for new invoice as a parameter to insert stored procedure
 		void dbInvoices_BeforeInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
 		{
 			cmd.Parameters["@company_id"].Value = this.company_id;
 		}
 
+		// Fetch addresses based on specified company_id
 		void dbAddresses_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
 		{
 			cmd.Parameters["@company_id"].Value = this.company_id;
 		}
 
+		// Fetch invoices based on company_id
 		void dbInvoices_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
 		{
 			cmd.Parameters["@company_id"].Value = this.company_id;
@@ -146,6 +148,7 @@ namespace InvoicesApplicationCS_Raman
 
 		}
 
+		// All addresses of a specific company should have the same company_id
 		private void addressDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
 		{
 			// For datagrid views for address, make sure default value for company_id is used, otherwise no updating happens
@@ -157,15 +160,16 @@ namespace InvoicesApplicationCS_Raman
 
 		}
 
+		// All invoices of a specific company should have the same company_id
 		private void invoiceDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
 		{
 			e.Row.Cells["CompIDInvoiceCol"].Value = this.company_id;
 		}
 
+		// Double click on invoice to see more invoice details
 		private void invoiceDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
 			int invoice_id = Convert.ToInt32(invoiceDataGridView[0, e.RowIndex].FormattedValue);
-			Console.WriteLine("Invoice Column: {0}, row: {1}, invoice id: {2}", e.ColumnIndex, e.RowIndex, invoice_id);
 			InvoiceDetailsForm frm_details = new InvoiceDetailsForm(invoice_id);
 			frm_details.Show();
 		}

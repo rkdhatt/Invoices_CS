@@ -28,8 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.invoiceDataGridView = new System.Windows.Forms.DataGridView();
@@ -78,8 +78,8 @@
 			// 
 			// invoiceDataGridView
 			// 
-			dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			this.invoiceDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.invoiceDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
 			this.invoiceDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
 			this.invoiceDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.invoiceDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -149,8 +149,8 @@
 			// 
 			// addressDataGridView
 			// 
-			dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			this.addressDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.addressDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
 			this.addressDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
 			this.addressDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.addressDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -203,9 +203,9 @@
 			this.invoiceInfoLabel.AutoSize = true;
 			this.invoiceInfoLabel.Location = new System.Drawing.Point(16, 9);
 			this.invoiceInfoLabel.Name = "invoiceInfoLabel";
-			this.invoiceInfoLabel.Size = new System.Drawing.Size(182, 13);
+			this.invoiceInfoLabel.Size = new System.Drawing.Size(210, 13);
 			this.invoiceInfoLabel.TabIndex = 1;
-			this.invoiceInfoLabel.Text = "Double-click an invoice for more info:";
+			this.invoiceInfoLabel.Text = "Double-click on an invoice for more details:";
 			// 
 			// InvoicesAndAddressesForm
 			// 

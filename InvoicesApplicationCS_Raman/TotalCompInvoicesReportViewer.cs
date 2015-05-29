@@ -36,6 +36,7 @@ namespace InvoicesApplicationCS_Raman
 
 			dbMainReport.DataSet = dsMainReport;
 
+			// Save data into tableMainReport
 			dbMainReport.FetchDataTable(tableMainReport);
 
 			// Connect report to report viewer

@@ -81,7 +81,6 @@
 			this.compDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
 			this.compDataGridView.Size = new System.Drawing.Size(228, 235);
 			this.compDataGridView.TabIndex = 0;
-			this.compDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.compDataGridView_CellContentClick);
 			this.compDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.compDataGridView_CellContentDoubleClick);
 			// 
 			// companyIDCol
@@ -130,7 +129,7 @@
 			this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
 			this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-			this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.printToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
 			this.printToolStripMenuItem.Text = "&Print";
 			// 
 			// reportAllCompaniesWithInvoices
@@ -149,12 +148,12 @@
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+			this.toolStripSeparator2.Size = new System.Drawing.Size(96, 6);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
 			this.exitToolStripMenuItem.Text = "E&xit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
@@ -190,9 +189,9 @@
 			this.CompanyInfoLabel.AutoSize = true;
 			this.CompanyInfoLabel.Location = new System.Drawing.Point(12, 30);
 			this.CompanyInfoLabel.Name = "CompanyInfoLabel";
-			this.CompanyInfoLabel.Size = new System.Drawing.Size(229, 13);
+			this.CompanyInfoLabel.Size = new System.Drawing.Size(242, 13);
 			this.CompanyInfoLabel.TabIndex = 7;
-			this.CompanyInfoLabel.Text = "Double-click on a company name for more info:";
+			this.CompanyInfoLabel.Text = "Double-click on a company name for more details:";
 			// 
 			// MainForm
 			// 

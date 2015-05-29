@@ -49,27 +49,21 @@ namespace InvoicesApplicationCS_Raman
 			// Set Datasources
 			compDataGridView.DataSource = this.tableCompanies;
 			compDataGridView.AutoGenerateColumns = false;
-
-			dbCompanies.BeforeInsert += dbCompanies_BeforeInsert;
 			dbCompanies.AfterInsert += dbCompanies_AfterInsert;
 		}
 
 
+		// Fetch latest data after insert
 		void dbCompanies_AfterInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
 		{
 			dbCompanies.FetchDataTable(tableCompanies);
-		}
-
-		void dbCompanies_BeforeInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
-		{
-			System.Diagnostics.Debug.WriteLine("INSERT TEST");
 		}
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 		}
 
-
+		// Double click on company name to see list of its invoices
 		private void compDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
 			string name = (string) compDataGridView[e.ColumnIndex, e.RowIndex].FormattedValue;
@@ -82,8 +76,9 @@ namespace InvoicesApplicationCS_Raman
 
 		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			// Do message box first, then exit.
-			DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Invoices Application", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+			// Ask if user wants to exit first
+			DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Invoices Application", 
+				MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
 
 			if (result == DialogResult.Yes)
 			{
@@ -91,12 +86,7 @@ namespace InvoicesApplicationCS_Raman
 			}
 		}
 
-
-		private void compDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-
-		}
-
+		// Shows report of all companies and their invoices
 		private void reportAllCompaniesWithInvoices_Click(object sender, EventArgs e)
 		{
 			TotalCompInvoicesReportViewer rptviewer = new TotalCompInvoicesReportViewer();
