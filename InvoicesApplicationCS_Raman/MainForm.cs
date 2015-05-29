@@ -99,5 +99,15 @@ namespace InvoicesApplicationCS_Raman
 			TotalCompAddressesReportViewer rptviewer = new TotalCompAddressesReportViewer();
 			rptviewer.Show();
 		}
+
+		private void selectedCompanyInformationToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			int column = compDataGridView.CurrentCell.ColumnIndex;
+			int row = compDataGridView.CurrentCell.RowIndex;
+			
+			int company_id = Convert.ToInt32(compDataGridView.CurrentCell.OwningRow.Cells[0].Value);
+			SelectedCompanyReportViewer rptviewer = new SelectedCompanyReportViewer(company_id);
+			rptviewer.Show();
+		}
 	}
 }

@@ -89,6 +89,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>reportsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SelectedCompanyReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectedCompanyReportViewer.Designer.cs">
+      <DependentUpon>SelectedCompanyReportViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="TotalCompAddressesReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AllInvoicesReport.rdlc" />
+    <EmbeddedResource Include="SelectedCompanyReport.rdlc" />
+    <EmbeddedResource Include="SelectedCompanyReportViewer.resx">
+      <DependentUpon>SelectedCompanyReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TotalCompAddressesReportViewer.resx">
       <DependentUpon>TotalCompAddressesReportViewer.cs</DependentUpon>
     </EmbeddedResource>
