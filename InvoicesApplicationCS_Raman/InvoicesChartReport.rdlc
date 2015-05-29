@@ -11,7 +11,7 @@
                   <GroupExpression>=Fields!date.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
-              <Label>=Fields!date.Value</Label>
+              <Label>Fields!date.Value</Label>
               <SortExpressions>
                 <SortExpression>
                   <Value>=Fields!date.Value</Value>
