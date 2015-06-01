@@ -28,31 +28,31 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.detailsDataGridView = new System.Windows.Forms.DataGridView();
+			this.DetailsDataGridView = new System.Windows.Forms.DataGridView();
 			this.InvoiceIDDetailCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.DetailIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.DescriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.QuantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.CostCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			((System.ComponentModel.ISupportInitialize)(this.detailsDataGridView)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.DetailsDataGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// detailsDataGridView
+			// DetailsDataGridView
 			// 
-			this.detailsDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-			this.detailsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.detailsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.DetailsDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+			this.DetailsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.DetailsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.InvoiceIDDetailCol,
             this.DetailIDCol,
             this.DescriptionCol,
             this.QuantityCol,
             this.CostCol});
-			this.detailsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.detailsDataGridView.Location = new System.Drawing.Point(0, 0);
-			this.detailsDataGridView.Name = "detailsDataGridView";
-			this.detailsDataGridView.Size = new System.Drawing.Size(545, 201);
-			this.detailsDataGridView.TabIndex = 0;
-			this.detailsDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.detailsDataGridView_DefaultValuesNeeded);
+			this.DetailsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.DetailsDataGridView.Location = new System.Drawing.Point(0, 0);
+			this.DetailsDataGridView.Name = "DetailsDataGridView";
+			this.DetailsDataGridView.Size = new System.Drawing.Size(545, 201);
+			this.DetailsDataGridView.TabIndex = 0;
+			this.DetailsDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.DetailsDataGridView_DefaultValuesNeeded);
 			// 
 			// InvoiceIDDetailCol
 			// 
@@ -91,20 +91,20 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(545, 201);
-			this.Controls.Add(this.detailsDataGridView);
+			this.Controls.Add(this.DetailsDataGridView);
 			this.MaximumSize = new System.Drawing.Size(561, 239);
 			this.MinimumSize = new System.Drawing.Size(561, 239);
 			this.Name = "InvoiceDetailsForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Invoice Details";
-			((System.ComponentModel.ISupportInitialize)(this.detailsDataGridView)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.DetailsDataGridView)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.DataGridView detailsDataGridView;
+		private System.Windows.Forms.DataGridView DetailsDataGridView;
 		private System.Windows.Forms.DataGridViewTextBoxColumn InvoiceIDDetailCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn DetailIDCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionCol;

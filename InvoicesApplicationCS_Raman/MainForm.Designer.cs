@@ -32,7 +32,7 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-			this.compDataGridView = new System.Windows.Forms.DataGridView();
+			this.CompDataGridView = new System.Windows.Forms.DataGridView();
 			this.companyIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.companyNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
@@ -43,31 +43,31 @@
 			this.selectedCompanyInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.invoicesCostChart = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.CompanyInfoLabel = new System.Windows.Forms.Label();
-			((System.ComponentModel.ISupportInitialize)(this.compDataGridView)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.CompDataGridView)).BeginInit();
 			this.mainMenuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// compDataGridView
+			// CompDataGridView
 			// 
 			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveCaption;
 			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-			this.compDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-			this.compDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-			this.compDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-			this.compDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-			this.compDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.compDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.CompDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			this.CompDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+			this.CompDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+			this.CompDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+			this.CompDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.CompDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.companyIDCol,
             this.companyNameCol});
-			this.compDataGridView.Cursor = System.Windows.Forms.Cursors.Default;
-			this.compDataGridView.Location = new System.Drawing.Point(15, 46);
-			this.compDataGridView.MaximumSize = new System.Drawing.Size(228, 235);
-			this.compDataGridView.MinimumSize = new System.Drawing.Size(228, 235);
-			this.compDataGridView.Name = "compDataGridView";
+			this.CompDataGridView.Cursor = System.Windows.Forms.Cursors.Default;
+			this.CompDataGridView.Location = new System.Drawing.Point(15, 46);
+			this.CompDataGridView.MaximumSize = new System.Drawing.Size(228, 235);
+			this.CompDataGridView.MinimumSize = new System.Drawing.Size(228, 235);
+			this.CompDataGridView.Name = "CompDataGridView";
 			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
 			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -75,12 +75,12 @@
 			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
 			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
 			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.compDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			this.CompDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-			this.compDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
-			this.compDataGridView.Size = new System.Drawing.Size(228, 235);
-			this.compDataGridView.TabIndex = 0;
-			this.compDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.compDataGridView_CellContentDoubleClick);
+			this.CompDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+			this.CompDataGridView.Size = new System.Drawing.Size(228, 235);
+			this.CompDataGridView.TabIndex = 0;
+			this.CompDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CompDataGridView_CellContentDoubleClick);
 			// 
 			// companyIDCol
 			// 
@@ -115,7 +115,7 @@
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.printToolStripMenuItem,
             this.toolStripSeparator2,
-            this.exitToolStripMenuItem});
+            this.ExitToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
 			this.fileToolStripMenuItem.Text = "&File";
@@ -130,7 +130,7 @@
 			this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
 			this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-			this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.printToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
 			this.printToolStripMenuItem.Text = "&Print Report";
 			// 
 			// reportAllInvoices
@@ -138,47 +138,47 @@
 			this.reportAllInvoices.Name = "reportAllInvoices";
 			this.reportAllInvoices.Size = new System.Drawing.Size(239, 22);
 			this.reportAllInvoices.Text = "Company Invoices";
-			this.reportAllInvoices.Click += new System.EventHandler(this.reportAllCompaniesWithInvoices_Click);
+			this.reportAllInvoices.Click += new System.EventHandler(this.ReportAllCompaniesWithInvoices_Click);
 			// 
 			// reportAllCompaniesWithAddresses
 			// 
 			this.reportAllCompaniesWithAddresses.Name = "reportAllCompaniesWithAddresses";
 			this.reportAllCompaniesWithAddresses.Size = new System.Drawing.Size(239, 22);
 			this.reportAllCompaniesWithAddresses.Text = "Company Addresses";
-			this.reportAllCompaniesWithAddresses.Click += new System.EventHandler(this.reportSelectedCompanyToolStripMenuItem_Click);
+			this.reportAllCompaniesWithAddresses.Click += new System.EventHandler(this.ReportAllCompaniesWithAddresses_Click);
 			// 
 			// selectedCompanyInformationToolStripMenuItem
 			// 
 			this.selectedCompanyInformationToolStripMenuItem.Name = "selectedCompanyInformationToolStripMenuItem";
 			this.selectedCompanyInformationToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
 			this.selectedCompanyInformationToolStripMenuItem.Text = "Selected Company Information";
-			this.selectedCompanyInformationToolStripMenuItem.Click += new System.EventHandler(this.selectedCompanyInformationToolStripMenuItem_Click);
+			this.selectedCompanyInformationToolStripMenuItem.Click += new System.EventHandler(this.SelectedCompanyInformation_Click);
 			// 
 			// invoicesCostChart
 			// 
 			this.invoicesCostChart.Name = "invoicesCostChart";
 			this.invoicesCostChart.Size = new System.Drawing.Size(239, 22);
 			this.invoicesCostChart.Text = "Invoices Costs Over Time";
-			this.invoicesCostChart.Click += new System.EventHandler(this.invoicesCostChart_Click);
+			this.invoicesCostChart.Click += new System.EventHandler(this.InvoicesCostChart_Click);
 			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+			this.toolStripSeparator2.Size = new System.Drawing.Size(134, 6);
 			// 
-			// exitToolStripMenuItem
+			// ExitToolStripMenuItem
 			// 
-			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.exitToolStripMenuItem.Text = "E&xit";
-			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+			this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
+			this.ExitToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+			this.ExitToolStripMenuItem.Text = "E&xit";
+			this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
 			// 
 			// aboutToolStripMenuItem
 			// 
 			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
 			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
 			this.aboutToolStripMenuItem.Text = "About";
-			this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
+			this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuClick);
 			// 
 			// CompanyInfoLabel
 			// 
@@ -196,7 +196,7 @@
 			this.BackColor = System.Drawing.SystemColors.Control;
 			this.ClientSize = new System.Drawing.Size(286, 293);
 			this.Controls.Add(this.CompanyInfoLabel);
-			this.Controls.Add(this.compDataGridView);
+			this.Controls.Add(this.CompDataGridView);
 			this.Controls.Add(this.mainMenuStrip);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
 			this.MainMenuStrip = this.mainMenuStrip;
@@ -206,7 +206,7 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Companies";
 			this.Load += new System.EventHandler(this.MainForm_Load);
-			((System.ComponentModel.ISupportInitialize)(this.compDataGridView)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.CompDataGridView)).EndInit();
 			this.mainMenuStrip.ResumeLayout(false);
 			this.mainMenuStrip.PerformLayout();
 			this.ResumeLayout(false);
@@ -216,12 +216,12 @@
 
 		#endregion
 
-		private System.Windows.Forms.DataGridView compDataGridView;
+		private System.Windows.Forms.DataGridView CompDataGridView;
 		private System.Windows.Forms.MenuStrip mainMenuStrip;
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 		private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem reportAllInvoices;
 		private System.Windows.Forms.ToolStripMenuItem reportAllCompaniesWithAddresses;
 		private System.Windows.Forms.DataGridViewTextBoxColumn companyIDCol;

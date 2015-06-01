@@ -247,7 +247,6 @@
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
-                                      <rd:Selected>true</rd:Selected>
                                     </CellContents>
                                   </TablixCell>
                                   <TablixCell>
@@ -300,7 +299,7 @@
                               </TablixMember>
                             </TablixMembers>
                           </TablixRowHierarchy>
-                          <DataSetName>mainReportDataSet</DataSetName>
+                          <DataSetName>AllInvoicesReportDataSet</DataSetName>
                           <Top>3.13174cm</Top>
                           <Left>0.82021cm</Left>
                           <Height>1.2cm</Height>
@@ -410,7 +409,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>mainReportDataSet</DataSetName>
+        <DataSetName>AllInvoicesReportDataSet</DataSetName>
         <Top>0.17639cm</Top>
         <Left>1.00224cm</Left>
         <Height>4.53729cm</Height>
@@ -566,7 +565,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="mainReportDataSet">
+    <DataSet Name="AllInvoicesReportDataSet">
       <Query>
         <DataSourceName>reportsDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>

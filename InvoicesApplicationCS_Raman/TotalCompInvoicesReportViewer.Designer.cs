@@ -38,7 +38,6 @@
 			this.compInvReportViewer.Name = "compInvReportViewer";
 			this.compInvReportViewer.Size = new System.Drawing.Size(664, 576);
 			this.compInvReportViewer.TabIndex = 0;
-			this.compInvReportViewer.Load += new System.EventHandler(this.reportViewer1_Load);
 			// 
 			// TotalCompInvoicesReportViewer
 			// 

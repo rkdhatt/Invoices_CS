@@ -1,5 +1,4 @@
-﻿using CemDB;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CemDB;
 
 namespace InvoicesApplicationCS_Raman
 {
@@ -21,13 +21,13 @@ namespace InvoicesApplicationCS_Raman
 		private DataSet dsInvoicesReport;
 		private DataTable tableInvoicesReport;
 
-		int company_id;
+		private int companyId;
 
 		public SelectedCompanyReportViewer(int cID)
 		{
 			this.InitializeComponent();
 
-			this.company_id = cID;
+			this.companyId = cID;
 
 			// Set up CemDB to use the .udl file
 			DBControl.ConnectionFile(Application.StartupPath + "\\newer_invoice.udl");
@@ -41,8 +41,8 @@ namespace InvoicesApplicationCS_Raman
 
 			this.tableAddressesReport = new DataTable();
 			this.tableInvoicesReport = new DataTable();
-			this.dbAddressesReport.BeforeFetch += this.dbAddressesReport_BeforeFetch;
-			this.dbInvoicesReport.BeforeFetch += this.dbInvoicesReport_BeforeFetch;
+			this.dbAddressesReport.BeforeFetch += this.DBAddressesReport_BeforeFetch;
+			this.dbInvoicesReport.BeforeFetch += this.DBInvoicesReport_BeforeFetch;
 
 			// Stored procedures for report
 			this.dbAddressesReport.FetchStoredProcedure = "fetch_company_address";
@@ -73,14 +73,14 @@ namespace InvoicesApplicationCS_Raman
 			}
 		}
 
-		void dbInvoicesReport_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
+		private void DBInvoicesReport_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
 		{
-			cmd.Parameters["@company_id"].Value = this.company_id;
+			cmd.Parameters["@company_id"].Value = this.companyId;
 		}
 
-		void dbAddressesReport_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
+		private void DBAddressesReport_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
 		{
-			cmd.Parameters["@company_id"].Value = this.company_id;
+			cmd.Parameters["@company_id"].Value = this.companyId;
 		}
 
 		private void SelectedCompanyReportViewer_Load(object sender, EventArgs e)

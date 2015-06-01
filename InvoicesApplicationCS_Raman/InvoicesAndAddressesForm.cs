@@ -1,5 +1,4 @@
-﻿using CemDB;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CemDB;
 
 namespace InvoicesApplicationCS_Raman
 {
 	/// <summary>
-	/// Shows datagridview for company invoices and company addresses.
+	/// Shows data grid view for company invoices and company addresses.
 	/// </summary>
 	public partial class InvoicesAndAddressesForm : Form
 	{
@@ -25,17 +25,17 @@ namespace InvoicesApplicationCS_Raman
 		private DataTable tableInvoices;
 		private DataTable tableAddresses;
 
-		DBView dbvInvoices;
-		DBView dbvAddresses;
+		private DBView dbvInvoices;
+		private DBView dbvAddresses;
 
-		private int company_id;
+		private int companyID;
 
 		public InvoicesAndAddressesForm(int cID)
 		{
 			this.InitializeComponent();
 
 			// Save company_id
-			this.company_id = cID;
+			this.companyID = cID;
 
 			// Set up CemDB to use the .udl file
 			DBControl.ConnectionFile(Application.StartupPath + "\\newer_invoice.udl");
@@ -51,8 +51,8 @@ namespace InvoicesApplicationCS_Raman
 			this.tableAddresses = new DataTable("Addresses");
 
 			// Initialize DBViews
-			this.dbvInvoices = new DBView(invoiceDataGridView, this.dbInvoices);
-			this.dbvAddresses = new DBView(addressDataGridView, this.dbAddresses);
+			this.dbvInvoices = new DBView(InvoiceDataGridView, this.dbInvoices);
+			this.dbvAddresses = new DBView(AddressDataGridView, this.dbAddresses);
 
 			// Initialize stored procedures
 			this.dbInvoices.FetchStoredProcedure = "fetch_invoices_by_comp_ID";
@@ -70,56 +70,55 @@ namespace InvoicesApplicationCS_Raman
 			this.dbAddresses.DataSet = this.dsAddresses;
 
 			// Ensure company_id parameter is passed to obtain corresponding invoices
-			this.dbInvoices.BeforeFetch += this.dbInvoices_BeforeFetch;
-			this.dbAddresses.BeforeFetch += this.dbAddresses_BeforeFetch;
-			this.dbInvoices.BeforeInsert += this.dbInvoices_BeforeInsert;
-			this.dbInvoices.AfterInsert += this.dbInvoices_AfterInsert;
-			this.dbAddresses.AfterInsert += this.dbAddresses_AfterInsert;
+			this.dbInvoices.BeforeFetch += this.DBInvoices_BeforeFetch;
+			this.dbAddresses.BeforeFetch += this.DBAddresses_BeforeFetch;
+			this.dbInvoices.BeforeInsert += this.DBInvoices_BeforeInsert;
+			this.dbInvoices.AfterInsert += this.DBInvoices_AfterInsert;
+			this.dbAddresses.AfterInsert += this.DBAddresses_AfterInsert;
 
 			// Format Date column layout
-			invoiceDataGridView.Columns["InvoiceDateCol"].DefaultCellStyle.Format = "dd/MMM/yyyy";
-			addressDataGridView.Columns["DateModify"].DefaultCellStyle.Format = "dd/MMM/yyyy";
+			InvoiceDataGridView.Columns["InvoiceDateCol"].DefaultCellStyle.Format = "dd/MMM/yyyy";
+			AddressDataGridView.Columns["DateModify"].DefaultCellStyle.Format = "dd/MMM/yyyy";
 
 			// Fetch data and save to corresponding tables
 			this.dbInvoices.FetchDataTable(this.tableInvoices);
 			this.dbAddresses.FetchDataTable(this.tableAddresses);
-			addressDataGridView.AutoGenerateColumns = false;
-			invoiceDataGridView.AutoGenerateColumns = false;
+			AddressDataGridView.AutoGenerateColumns = false;
+			InvoiceDataGridView.AutoGenerateColumns = false;
 
 			// Bind data
-			invoiceDataGridView.DataSource = this.tableInvoices;
-			addressDataGridView.DataSource = this.tableAddresses;
-
+			InvoiceDataGridView.DataSource = this.tableInvoices;
+			AddressDataGridView.DataSource = this.tableAddresses;
 		}
 
 		// re-fetch addresses
-		void dbAddresses_AfterInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
+		private void DBAddresses_AfterInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
 		{
 			this.dbAddresses.FetchDataTable(this.tableAddresses);
 		}
 
 		// Re-fetch invoices
-		void dbInvoices_AfterInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
+		private void DBInvoices_AfterInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
 		{
 			this.dbInvoices.FetchDataTable(this.tableInvoices);
 		}
 
 		// Pass company_id for new invoice as a parameter to insert stored procedure
-		void dbInvoices_BeforeInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
+		private void DBInvoices_BeforeInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
 		{
-			cmd.Parameters["@company_id"].Value = this.company_id;
+			cmd.Parameters["@company_id"].Value = this.companyID;
 		}
 
 		// Fetch addresses based on specified company_id
-		void dbAddresses_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
+		private void DBAddresses_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
 		{
-			cmd.Parameters["@company_id"].Value = this.company_id;
+			cmd.Parameters["@company_id"].Value = this.companyID;
 		}
 
 		// Fetch invoices based on company_id
-		void dbInvoices_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
+		private void DBInvoices_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
 		{
-			cmd.Parameters["@company_id"].Value = this.company_id;
+			cmd.Parameters["@company_id"].Value = this.companyID;
 		}
 
 		private void InvoicesForm_Load(object sender, EventArgs e)
@@ -127,25 +126,24 @@ namespace InvoicesApplicationCS_Raman
 		}
 
 		// All addresses of a specific company should have the same company_id
-		private void addressDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+		private void AddressDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
 		{
 			// For datagrid views for address, make sure default value for company_id is used, otherwise no updating happens
-			e.Row.Cells["companyIDAddCol"].Value = this.company_id;
+			e.Row.Cells["companyIDAddCol"].Value = this.companyID;
 		}
 
 		// All invoices of a specific company should have the same company_id
-		private void invoiceDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+		private void InvoiceDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
 		{
-			e.Row.Cells["CompIDInvoiceCol"].Value = this.company_id;
+			e.Row.Cells["CompIDInvoiceCol"].Value = this.companyID;
 		}
 
 		// Double click on invoice to see more invoice details
-		private void invoiceDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		private void InvoiceDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
-			int invoice_id = Convert.ToInt32(invoiceDataGridView[0, e.RowIndex].FormattedValue);
+			int invoice_id = Convert.ToInt32(InvoiceDataGridView[0, e.RowIndex].FormattedValue);
 			InvoiceDetailsForm frm_details = new InvoiceDetailsForm(invoice_id);
 			frm_details.Show();
 		}
-
 	}
 }

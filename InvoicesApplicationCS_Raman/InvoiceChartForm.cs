@@ -1,5 +1,4 @@
-﻿using CemDB;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CemDB;
 
 namespace InvoicesApplicationCS_Raman
 {
@@ -46,7 +46,7 @@ namespace InvoicesApplicationCS_Raman
 			this.invoiceChartReportViewer.Reset();
 			this.invoiceChartReportViewer.LocalReport.ReportEmbeddedResource = "InvoicesApplicationCS_Raman.InvoicesOverTimeChartReport.rdlc";
 			this.invoiceChartReportViewer.LocalReport.DataSources.Clear();
-			this.invoiceChartReportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("invoiceCostChartDataSet", this.tableInvoicesReport));
+			this.invoiceChartReportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("AllInvoiceCostChartDataSet", this.tableInvoicesReport));
 		}
 
 		private void InvoiceChartForm_Load(object sender, EventArgs e)

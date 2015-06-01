@@ -1,6 +1,4 @@
 ﻿using System;
-using CemDB;
-using Microsoft.Reporting.WinForms;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CemDB;
+using Microsoft.Reporting.WinForms;
 
 namespace InvoicesApplicationCS_Raman
 {
@@ -53,8 +53,7 @@ namespace InvoicesApplicationCS_Raman
 			this.compInvReportViewer.Reset();
 			this.compInvReportViewer.LocalReport.ReportEmbeddedResource = "InvoicesApplicationCS_Raman.AllInvoicesReport.rdlc";
 			this.compInvReportViewer.LocalReport.DataSources.Clear();
-			this.compInvReportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("mainReportDataSet", this.tableInvoicesReport));
-
+			this.compInvReportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("AllInvoicesReportDataSet", this.tableInvoicesReport));
 		}
 
 		private void TotalReportViewer_Load(object sender, EventArgs e)
@@ -62,8 +61,5 @@ namespace InvoicesApplicationCS_Raman
 			this.compInvReportViewer.RefreshReport();
 		}
 
-		private void reportViewer1_Load(object sender, EventArgs e)
-		{
-		}
 	}
 }

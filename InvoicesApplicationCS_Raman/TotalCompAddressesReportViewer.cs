@@ -1,5 +1,4 @@
 ﻿using System;
-using CemDB;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,15 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CemDB;
 
 namespace InvoicesApplicationCS_Raman
 {
 	// Report that displays all companies and their addresses
 	public partial class TotalCompAddressesReportViewer : Form
 	{
-		DBDataSet dbAddressesReport;
-		DataSet dsAddressesReport;
-		DataTable tableAddressesReport;
+		private DBDataSet dbAddressesReport;
+		private DataSet dsAddressesReport;
+		private DataTable tableAddressesReport;
 
 		public TotalCompAddressesReportViewer()
 		{
@@ -45,12 +45,13 @@ namespace InvoicesApplicationCS_Raman
 				this.compAddReportViewer.CancelRendering(100);
 				this.Close();
 			}
-			else 
-			{	// Connect report to report viewer
+			else
+			{
+				// Connect report to report viewer
 				this.compAddReportViewer.Reset();
 				this.compAddReportViewer.LocalReport.ReportEmbeddedResource = "InvoicesApplicationCS_Raman.AllAddressesReport.rdlc";
 				this.compAddReportViewer.LocalReport.DataSources.Clear();
-				this.compAddReportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("allAddressesDataSet", this.tableAddressesReport));
+				this.compAddReportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("AllAddressesDataSet", this.tableAddressesReport));
 			}
 		}
 
@@ -59,7 +60,7 @@ namespace InvoicesApplicationCS_Raman
 			this.compAddReportViewer.RefreshReport();
 		}
 
-		private void compAddReportViewer_Load(object sender, EventArgs e)
+		private void CompAddReportViewer_Load(object sender, EventArgs e)
 		{
 		}
 	}

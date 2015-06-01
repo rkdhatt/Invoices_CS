@@ -19,7 +19,7 @@ namespace InvoicesApplicationCS_Raman
 		private DBDataSet dbCompanies;
 		private DataSet dsCompanies;
 		private DataTable tableCompanies;
-		DBView dbvCompanies;
+		private DBView dbvCompanies;
 
 		public MainForm()
 		{
@@ -34,7 +34,7 @@ namespace InvoicesApplicationCS_Raman
 			this.tableCompanies = new DataTable("Companies");
 
 			// Must have DB View to send inserts/updates/deletes to SQL Server
-			this.dbvCompanies = new DBView(compDataGridView, this.dbCompanies);
+			this.dbvCompanies = new DBView(CompDataGridView, this.dbCompanies);
 
 			// Initialize stored procedures
 			this.dbCompanies.FetchStoredProcedure = "fetch_companies";
@@ -49,13 +49,13 @@ namespace InvoicesApplicationCS_Raman
 			this.dbCompanies.FetchDataTable(this.tableCompanies);
 
 			// Set Datasources
-			compDataGridView.DataSource = this.tableCompanies;
-			compDataGridView.AutoGenerateColumns = false;
-			this.dbCompanies.AfterInsert += this.dbCompanies_AfterInsert;
+			CompDataGridView.DataSource = this.tableCompanies;
+			CompDataGridView.AutoGenerateColumns = false;
+			this.dbCompanies.AfterInsert += this.DBCompanies_AfterInsert;
 		}
 
 		// Fetch latest data after insert
-		void dbCompanies_AfterInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
+		private void DBCompanies_AfterInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
 		{
 			this.dbCompanies.FetchDataTable(this.tableCompanies);
 		}
@@ -65,16 +65,16 @@ namespace InvoicesApplicationCS_Raman
 		}
 
 		// Double click on company name to see list of its invoices
-		private void compDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+		private void CompDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
-			string name = (string)compDataGridView[e.ColumnIndex, e.RowIndex].FormattedValue;
-			int company_id = Convert.ToInt32(compDataGridView[0, e.RowIndex].FormattedValue);
+			string name = (string)CompDataGridView[e.ColumnIndex, e.RowIndex].FormattedValue;
+			int company_id = Convert.ToInt32(CompDataGridView[0, e.RowIndex].FormattedValue);
 			Console.WriteLine("Current name: {0}; column: {1}, row: {2}, company id: {3}", name, e.ColumnIndex, e.RowIndex, company_id);
 			InvoicesAndAddressesForm frm_invoices = new InvoicesAndAddressesForm(company_id);
 			frm_invoices.Show();
 		}
 
-		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+		private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			// Ask if user wants to exit first
 			DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Invoices Application", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
@@ -85,7 +85,7 @@ namespace InvoicesApplicationCS_Raman
 		}
 
 		// Shows report of all companies and their invoices
-		private void reportAllCompaniesWithInvoices_Click(object sender, EventArgs e)
+		private void ReportAllCompaniesWithInvoices_Click(object sender, EventArgs e)
 		{
 			TotalCompInvoicesReportViewer rptviewer = new TotalCompInvoicesReportViewer();
 			if (!rptviewer.IsDisposed)
@@ -95,7 +95,7 @@ namespace InvoicesApplicationCS_Raman
 		}
 
 		// Shows report of all companies and their addresses
-		private void reportSelectedCompanyToolStripMenuItem_Click(object sender, EventArgs e)
+		private void ReportAllCompaniesWithAddresses_Click(object sender, EventArgs e)
 		{
 			TotalCompAddressesReportViewer rptviewer = new TotalCompAddressesReportViewer();
 			if (!rptviewer.IsDisposed)
@@ -104,12 +104,12 @@ namespace InvoicesApplicationCS_Raman
 			}
 		}
 
-		private void selectedCompanyInformationToolStripMenuItem_Click(object sender, EventArgs e)
+		private void SelectedCompanyInformation_Click(object sender, EventArgs e)
 		{
-			int column = compDataGridView.CurrentCell.ColumnIndex;
-			int row = compDataGridView.CurrentCell.RowIndex;
+			int column = CompDataGridView.CurrentCell.ColumnIndex;
+			int row = CompDataGridView.CurrentCell.RowIndex;
 
-			int company_id = Convert.ToInt32(compDataGridView.CurrentCell.OwningRow.Cells[0].Value);
+			int company_id = Convert.ToInt32(CompDataGridView.CurrentCell.OwningRow.Cells[0].Value);
 			SelectedCompanyReportViewer rptviewer = new SelectedCompanyReportViewer(company_id);
 			if (!rptviewer.IsDisposed)
 			{
@@ -117,12 +117,12 @@ namespace InvoicesApplicationCS_Raman
 			}
 		}
 
-		private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
+		private void AboutToolStripMenuClick(object sender, EventArgs e)
 		{
 			MessageBox.Show("Author: Raman Dhatt \nCreated: May 2015", "About", MessageBoxButtons.OK);
 		}
 
-		private void invoicesCostChart_Click(object sender, EventArgs e)
+		private void InvoicesCostChart_Click(object sender, EventArgs e)
 		{
 			InvoiceChartForm rptviewer = new InvoiceChartForm();
 			if (!rptviewer.IsDisposed)

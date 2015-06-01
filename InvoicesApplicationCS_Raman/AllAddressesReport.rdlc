@@ -439,11 +439,11 @@
                               </TablixMember>
                             </TablixMembers>
                           </TablixRowHierarchy>
-                          <DataSetName>allAddressesDataSet</DataSetName>
+                          <DataSetName>AllAddressesDataSet</DataSetName>
                           <Top>2.51437cm</Top>
                           <Left>0.29104cm</Left>
                           <Height>1.2cm</Height>
-                          <Width>12.81812cm</Width>
+                          <Width>12.81813cm</Width>
                           <ZIndex>4</ZIndex>
                           <Style>
                             <Border>
@@ -549,7 +549,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>allAddressesDataSet</DataSetName>
+        <DataSetName>AllAddressesDataSet</DataSetName>
         <Top>0.34078cm</Top>
         <Left>0.7112cm</Left>
         <Height>4.48345cm</Height>
@@ -707,7 +707,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="allAddressesDataSet">
+    <DataSet Name="AllAddressesDataSet">
       <Query>
         <DataSourceName>reportsDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>

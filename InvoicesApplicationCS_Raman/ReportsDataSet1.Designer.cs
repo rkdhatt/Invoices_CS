@@ -22,7 +22,7 @@ namespace InvoicesApplicationCS_Raman {
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
     [global::System.Xml.Serialization.XmlRootAttribute("reportsDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class reportsDataSet : global::System.Data.DataSet {
+    public partial class ReportsDataSet : global::System.Data.DataSet {
         
         private fetch_company_reportDataTable tablefetch_company_report;
         
@@ -36,15 +36,13 @@ namespace InvoicesApplicationCS_Raman {
         
         private fetch_company_invoicesDataTable tablefetch_company_invoices;
         
-        private fetch_invoice_costs_chartDataTable tablefetch_invoice_costs_chart;
-        
         private fetch_invoice_costs_chart_twoDataTable tablefetch_invoice_costs_chart_two;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public reportsDataSet() {
+        public ReportsDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -55,7 +53,7 @@ namespace InvoicesApplicationCS_Raman {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected reportsDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected ReportsDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -85,9 +83,6 @@ namespace InvoicesApplicationCS_Raman {
                 }
                 if ((ds.Tables["fetch_company_invoices"] != null)) {
                     base.Tables.Add(new fetch_company_invoicesDataTable(ds.Tables["fetch_company_invoices"]));
-                }
-                if ((ds.Tables["fetch_invoice_costs_chart"] != null)) {
-                    base.Tables.Add(new fetch_invoice_costs_chartDataTable(ds.Tables["fetch_invoice_costs_chart"]));
                 }
                 if ((ds.Tables["fetch_invoice_costs_chart_two"] != null)) {
                     base.Tables.Add(new fetch_invoice_costs_chart_twoDataTable(ds.Tables["fetch_invoice_costs_chart_two"]));
@@ -174,16 +169,6 @@ namespace InvoicesApplicationCS_Raman {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public fetch_invoice_costs_chartDataTable fetch_invoice_costs_chart {
-            get {
-                return this.tablefetch_invoice_costs_chart;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public fetch_invoice_costs_chart_twoDataTable fetch_invoice_costs_chart_two {
             get {
                 return this.tablefetch_invoice_costs_chart_two;
@@ -232,7 +217,7 @@ namespace InvoicesApplicationCS_Raman {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            reportsDataSet cln = ((reportsDataSet)(base.Clone()));
+            ReportsDataSet cln = ((ReportsDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -274,9 +259,6 @@ namespace InvoicesApplicationCS_Raman {
                 }
                 if ((ds.Tables["fetch_company_invoices"] != null)) {
                     base.Tables.Add(new fetch_company_invoicesDataTable(ds.Tables["fetch_company_invoices"]));
-                }
-                if ((ds.Tables["fetch_invoice_costs_chart"] != null)) {
-                    base.Tables.Add(new fetch_invoice_costs_chartDataTable(ds.Tables["fetch_invoice_costs_chart"]));
                 }
                 if ((ds.Tables["fetch_invoice_costs_chart_two"] != null)) {
                     base.Tables.Add(new fetch_invoice_costs_chart_twoDataTable(ds.Tables["fetch_invoice_costs_chart_two"]));
@@ -350,12 +332,6 @@ namespace InvoicesApplicationCS_Raman {
                     this.tablefetch_company_invoices.InitVars();
                 }
             }
-            this.tablefetch_invoice_costs_chart = ((fetch_invoice_costs_chartDataTable)(base.Tables["fetch_invoice_costs_chart"]));
-            if ((initTable == true)) {
-                if ((this.tablefetch_invoice_costs_chart != null)) {
-                    this.tablefetch_invoice_costs_chart.InitVars();
-                }
-            }
             this.tablefetch_invoice_costs_chart_two = ((fetch_invoice_costs_chart_twoDataTable)(base.Tables["fetch_invoice_costs_chart_two"]));
             if ((initTable == true)) {
                 if ((this.tablefetch_invoice_costs_chart_two != null)) {
@@ -384,8 +360,6 @@ namespace InvoicesApplicationCS_Raman {
             base.Tables.Add(this.tablefetch_company_address);
             this.tablefetch_company_invoices = new fetch_company_invoicesDataTable();
             base.Tables.Add(this.tablefetch_company_invoices);
-            this.tablefetch_invoice_costs_chart = new fetch_invoice_costs_chartDataTable();
-            base.Tables.Add(this.tablefetch_invoice_costs_chart);
             this.tablefetch_invoice_costs_chart_two = new fetch_invoice_costs_chart_twoDataTable();
             base.Tables.Add(this.tablefetch_invoice_costs_chart_two);
         }
@@ -428,12 +402,6 @@ namespace InvoicesApplicationCS_Raman {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializefetch_invoice_costs_chart() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializefetch_invoice_costs_chart_two() {
             return false;
         }
@@ -449,7 +417,7 @@ namespace InvoicesApplicationCS_Raman {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            reportsDataSet ds = new reportsDataSet();
+            ReportsDataSet ds = new ReportsDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -510,9 +478,6 @@ namespace InvoicesApplicationCS_Raman {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void fetch_company_invoicesRowChangeEventHandler(object sender, fetch_company_invoicesRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void fetch_invoice_costs_chartRowChangeEventHandler(object sender, fetch_invoice_costs_chartRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void fetch_invoice_costs_chart_twoRowChangeEventHandler(object sender, fetch_invoice_costs_chart_twoRowChangeEvent e);
@@ -769,7 +734,7 @@ namespace InvoicesApplicationCS_Raman {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                reportsDataSet ds = new reportsDataSet();
+                ReportsDataSet ds = new ReportsDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1074,7 +1039,7 @@ namespace InvoicesApplicationCS_Raman {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                reportsDataSet ds = new reportsDataSet();
+                ReportsDataSet ds = new ReportsDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1399,7 +1364,7 @@ namespace InvoicesApplicationCS_Raman {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                reportsDataSet ds = new reportsDataSet();
+                ReportsDataSet ds = new ReportsDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1831,7 +1796,7 @@ namespace InvoicesApplicationCS_Raman {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                reportsDataSet ds = new reportsDataSet();
+                ReportsDataSet ds = new ReportsDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2156,7 +2121,7 @@ namespace InvoicesApplicationCS_Raman {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                reportsDataSet ds = new reportsDataSet();
+                ReportsDataSet ds = new ReportsDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2506,7 +2471,7 @@ namespace InvoicesApplicationCS_Raman {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                reportsDataSet ds = new reportsDataSet();
+                ReportsDataSet ds = new ReportsDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2525,301 +2490,6 @@ namespace InvoicesApplicationCS_Raman {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "fetch_company_invoicesDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class fetch_invoice_costs_chartDataTable : global::System.Data.TypedTableBase<fetch_invoice_costs_chartRow> {
-            
-            private global::System.Data.DataColumn columnname;
-            
-            private global::System.Data.DataColumn columndescription;
-            
-            private global::System.Data.DataColumn columntotal_cost;
-            
-            private global::System.Data.DataColumn columndate;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public fetch_invoice_costs_chartDataTable() {
-                this.TableName = "fetch_invoice_costs_chart";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal fetch_invoice_costs_chartDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected fetch_invoice_costs_chartDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nameColumn {
-                get {
-                    return this.columnname;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn descriptionColumn {
-                get {
-                    return this.columndescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn total_costColumn {
-                get {
-                    return this.columntotal_cost;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn dateColumn {
-                get {
-                    return this.columndate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public fetch_invoice_costs_chartRow this[int index] {
-                get {
-                    return ((fetch_invoice_costs_chartRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event fetch_invoice_costs_chartRowChangeEventHandler fetch_invoice_costs_chartRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event fetch_invoice_costs_chartRowChangeEventHandler fetch_invoice_costs_chartRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event fetch_invoice_costs_chartRowChangeEventHandler fetch_invoice_costs_chartRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event fetch_invoice_costs_chartRowChangeEventHandler fetch_invoice_costs_chartRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Addfetch_invoice_costs_chartRow(fetch_invoice_costs_chartRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public fetch_invoice_costs_chartRow Addfetch_invoice_costs_chartRow(string name, string description, float total_cost, System.DateTime date) {
-                fetch_invoice_costs_chartRow rowfetch_invoice_costs_chartRow = ((fetch_invoice_costs_chartRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        name,
-                        description,
-                        total_cost,
-                        date};
-                rowfetch_invoice_costs_chartRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowfetch_invoice_costs_chartRow);
-                return rowfetch_invoice_costs_chartRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                fetch_invoice_costs_chartDataTable cln = ((fetch_invoice_costs_chartDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new fetch_invoice_costs_chartDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnname = base.Columns["name"];
-                this.columndescription = base.Columns["description"];
-                this.columntotal_cost = base.Columns["total_cost"];
-                this.columndate = base.Columns["date"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnname);
-                this.columndescription = new global::System.Data.DataColumn("description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndescription);
-                this.columntotal_cost = new global::System.Data.DataColumn("total_cost", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntotal_cost);
-                this.columndate = new global::System.Data.DataColumn("date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndate);
-                this.columnname.AllowDBNull = false;
-                this.columnname.MaxLength = 50;
-                this.columndescription.AllowDBNull = false;
-                this.columndescription.MaxLength = 50;
-                this.columntotal_cost.ReadOnly = true;
-                this.columndate.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public fetch_invoice_costs_chartRow Newfetch_invoice_costs_chartRow() {
-                return ((fetch_invoice_costs_chartRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new fetch_invoice_costs_chartRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(fetch_invoice_costs_chartRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.fetch_invoice_costs_chartRowChanged != null)) {
-                    this.fetch_invoice_costs_chartRowChanged(this, new fetch_invoice_costs_chartRowChangeEvent(((fetch_invoice_costs_chartRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.fetch_invoice_costs_chartRowChanging != null)) {
-                    this.fetch_invoice_costs_chartRowChanging(this, new fetch_invoice_costs_chartRowChangeEvent(((fetch_invoice_costs_chartRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.fetch_invoice_costs_chartRowDeleted != null)) {
-                    this.fetch_invoice_costs_chartRowDeleted(this, new fetch_invoice_costs_chartRowChangeEvent(((fetch_invoice_costs_chartRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.fetch_invoice_costs_chartRowDeleting != null)) {
-                    this.fetch_invoice_costs_chartRowDeleting(this, new fetch_invoice_costs_chartRowChangeEvent(((fetch_invoice_costs_chartRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removefetch_invoice_costs_chartRow(fetch_invoice_costs_chartRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                reportsDataSet ds = new reportsDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "fetch_invoice_costs_chartDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3078,7 +2748,7 @@ namespace InvoicesApplicationCS_Raman {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                reportsDataSet ds = new reportsDataSet();
+                ReportsDataSet ds = new ReportsDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3750,83 +3420,6 @@ namespace InvoicesApplicationCS_Raman {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class fetch_invoice_costs_chartRow : global::System.Data.DataRow {
-            
-            private fetch_invoice_costs_chartDataTable tablefetch_invoice_costs_chart;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal fetch_invoice_costs_chartRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tablefetch_invoice_costs_chart = ((fetch_invoice_costs_chartDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string name {
-                get {
-                    return ((string)(this[this.tablefetch_invoice_costs_chart.nameColumn]));
-                }
-                set {
-                    this[this.tablefetch_invoice_costs_chart.nameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string description {
-                get {
-                    return ((string)(this[this.tablefetch_invoice_costs_chart.descriptionColumn]));
-                }
-                set {
-                    this[this.tablefetch_invoice_costs_chart.descriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public float total_cost {
-                get {
-                    try {
-                        return ((float)(this[this.tablefetch_invoice_costs_chart.total_costColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'total_cost\' in table \'fetch_invoice_costs_chart\' is DBNull." +
-                                "", e);
-                    }
-                }
-                set {
-                    this[this.tablefetch_invoice_costs_chart.total_costColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime date {
-                get {
-                    return ((global::System.DateTime)(this[this.tablefetch_invoice_costs_chart.dateColumn]));
-                }
-                set {
-                    this[this.tablefetch_invoice_costs_chart.dateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Istotal_costNull() {
-                return this.IsNull(this.tablefetch_invoice_costs_chart.total_costColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Settotal_costNull() {
-                this[this.tablefetch_invoice_costs_chart.total_costColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
         public partial class fetch_invoice_costs_chart_twoRow : global::System.Data.DataRow {
             
             private fetch_invoice_costs_chart_twoDataTable tablefetch_invoice_costs_chart_two;
@@ -4132,40 +3725,6 @@ namespace InvoicesApplicationCS_Raman {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class fetch_invoice_costs_chartRowChangeEvent : global::System.EventArgs {
-            
-            private fetch_invoice_costs_chartRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public fetch_invoice_costs_chartRowChangeEvent(fetch_invoice_costs_chartRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public fetch_invoice_costs_chartRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public class fetch_invoice_costs_chart_twoRowChangeEvent : global::System.EventArgs {
             
             private fetch_invoice_costs_chart_twoRow eventRow;
@@ -4352,7 +3911,7 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(reportsDataSet.fetch_company_reportDataTable dataTable, global::System.Nullable<int> company_id) {
+        public virtual int Fill(ReportsDataSet.fetch_company_reportDataTable dataTable, global::System.Nullable<int> company_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((company_id.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(company_id.Value));
@@ -4371,7 +3930,7 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual reportsDataSet.fetch_company_reportDataTable GetData(global::System.Nullable<int> company_id) {
+        public virtual ReportsDataSet.fetch_company_reportDataTable GetData(global::System.Nullable<int> company_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((company_id.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(company_id.Value));
@@ -4379,7 +3938,7 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            reportsDataSet.fetch_company_reportDataTable dataTable = new reportsDataSet.fetch_company_reportDataTable();
+            ReportsDataSet.fetch_company_reportDataTable dataTable = new ReportsDataSet.fetch_company_reportDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4535,7 +4094,7 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(reportsDataSet.fetch_main_reportDataTable dataTable) {
+        public virtual int Fill(ReportsDataSet.fetch_main_reportDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4548,9 +4107,9 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual reportsDataSet.fetch_main_reportDataTable GetData() {
+        public virtual ReportsDataSet.fetch_main_reportDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            reportsDataSet.fetch_main_reportDataTable dataTable = new reportsDataSet.fetch_main_reportDataTable();
+            ReportsDataSet.fetch_main_reportDataTable dataTable = new ReportsDataSet.fetch_main_reportDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4708,7 +4267,7 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(reportsDataSet.fetch_all_company_addresses_reportDataTable dataTable) {
+        public virtual int Fill(ReportsDataSet.fetch_all_company_addresses_reportDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4721,9 +4280,9 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual reportsDataSet.fetch_all_company_addresses_reportDataTable GetData() {
+        public virtual ReportsDataSet.fetch_all_company_addresses_reportDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            reportsDataSet.fetch_all_company_addresses_reportDataTable dataTable = new reportsDataSet.fetch_all_company_addresses_reportDataTable();
+            ReportsDataSet.fetch_all_company_addresses_reportDataTable dataTable = new ReportsDataSet.fetch_all_company_addresses_reportDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4888,7 +4447,7 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(reportsDataSet.fetch_total_reportDataTable dataTable) {
+        public virtual int Fill(ReportsDataSet.fetch_total_reportDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4901,9 +4460,9 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual reportsDataSet.fetch_total_reportDataTable GetData() {
+        public virtual ReportsDataSet.fetch_total_reportDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            reportsDataSet.fetch_total_reportDataTable dataTable = new reportsDataSet.fetch_total_reportDataTable();
+            ReportsDataSet.fetch_total_reportDataTable dataTable = new ReportsDataSet.fetch_total_reportDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5062,7 +4621,7 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(reportsDataSet.fetch_company_addressDataTable dataTable, global::System.Nullable<int> company_id) {
+        public virtual int Fill(ReportsDataSet.fetch_company_addressDataTable dataTable, global::System.Nullable<int> company_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((company_id.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(company_id.Value));
@@ -5081,7 +4640,7 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual reportsDataSet.fetch_company_addressDataTable GetData(global::System.Nullable<int> company_id) {
+        public virtual ReportsDataSet.fetch_company_addressDataTable GetData(global::System.Nullable<int> company_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((company_id.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(company_id.Value));
@@ -5089,7 +4648,7 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            reportsDataSet.fetch_company_addressDataTable dataTable = new reportsDataSet.fetch_company_addressDataTable();
+            ReportsDataSet.fetch_company_addressDataTable dataTable = new ReportsDataSet.fetch_company_addressDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5249,7 +4808,7 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(reportsDataSet.fetch_company_invoicesDataTable dataTable, global::System.Nullable<int> company_id) {
+        public virtual int Fill(ReportsDataSet.fetch_company_invoicesDataTable dataTable, global::System.Nullable<int> company_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((company_id.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(company_id.Value));
@@ -5268,7 +4827,7 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual reportsDataSet.fetch_company_invoicesDataTable GetData(global::System.Nullable<int> company_id) {
+        public virtual ReportsDataSet.fetch_company_invoicesDataTable GetData(global::System.Nullable<int> company_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((company_id.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(company_id.Value));
@@ -5276,178 +4835,7 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            reportsDataSet.fetch_company_invoicesDataTable dataTable = new reportsDataSet.fetch_company_invoicesDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class fetch_invoice_costs_chartTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public fetch_invoice_costs_chartTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "fetch_invoice_costs_chart";
-            tableMapping.ColumnMappings.Add("name", "name");
-            tableMapping.ColumnMappings.Add("description", "description");
-            tableMapping.ColumnMappings.Add("total_cost", "total_cost");
-            tableMapping.ColumnMappings.Add("date", "date");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::InvoicesApplicationCS_Raman.Properties.Settings.Default.invoices_ramanConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.fetch_invoice_costs_chart";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(reportsDataSet.fetch_invoice_costs_chartDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual reportsDataSet.fetch_invoice_costs_chartDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            reportsDataSet.fetch_invoice_costs_chartDataTable dataTable = new reportsDataSet.fetch_invoice_costs_chartDataTable();
+            ReportsDataSet.fetch_company_invoicesDataTable dataTable = new ReportsDataSet.fetch_company_invoicesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5602,7 +4990,7 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(reportsDataSet.fetch_invoice_costs_chart_twoDataTable dataTable) {
+        public virtual int Fill(ReportsDataSet.fetch_invoice_costs_chart_twoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5615,9 +5003,9 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual reportsDataSet.fetch_invoice_costs_chart_twoDataTable GetData() {
+        public virtual ReportsDataSet.fetch_invoice_costs_chart_twoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            reportsDataSet.fetch_invoice_costs_chart_twoDataTable dataTable = new reportsDataSet.fetch_invoice_costs_chart_twoDataTable();
+            ReportsDataSet.fetch_invoice_costs_chart_twoDataTable dataTable = new ReportsDataSet.fetch_invoice_costs_chart_twoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5691,7 +5079,7 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(reportsDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(ReportsDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -5701,7 +5089,7 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(reportsDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(ReportsDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -5711,7 +5099,7 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(reportsDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(ReportsDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -5745,7 +5133,7 @@ namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(reportsDataSet dataSet) {
+        public virtual int UpdateAll(ReportsDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

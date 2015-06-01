@@ -281,7 +281,7 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>invoiceCostChartDataSet</DataSetName>
+        <DataSetName>AllInvoiceCostChartDataSet</DataSetName>
         <Top>0.47308cm</Top>
         <Left>0.42016cm</Left>
         <Height>8.83646cm</Height>
@@ -321,7 +321,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="invoiceCostChartDataSet">
+    <DataSet Name="AllInvoiceCostChartDataSet">
       <Query>
         <DataSourceName>reportsDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>

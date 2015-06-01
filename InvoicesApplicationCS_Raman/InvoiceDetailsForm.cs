@@ -1,5 +1,4 @@
-﻿using CemDB;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,31 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CemDB;
 
 namespace InvoicesApplicationCS_Raman
 {
 	/// <summary>
-	/// Displays datagridview of invoice details
+	/// Displays data grid view of invoice details
 	/// </summary>
 	public partial class InvoiceDetailsForm : Form
 	{
 		private DBDataSet dbDetails;
 		private DataSet dsDetails;
 		private DataTable tableDetails;
-		DBView dbvDetails;
+		private DBView dbvDetails;
 
-		private int invoice_id;
+		private int invoiceId;
 
-		public InvoiceDetailsForm(int invoiceID)
+		public InvoiceDetailsForm(int iID)
 		{
 			this.InitializeComponent();
 
-			this.invoice_id = invoiceID;
+			this.invoiceId = iID;
 
 			this.dbDetails = new DBDataSet();
 			this.dsDetails = new DataSet();
 			this.tableDetails = new DataTable("Details");
-			this.dbvDetails = new DBView(detailsDataGridView, this.dbDetails);
+			this.dbvDetails = new DBView(DetailsDataGridView, this.dbDetails);
 
 			this.dbDetails.FetchStoredProcedure = "fetch_details_by_invoice_ID";
 			this.dbDetails.InsertStoredProcedure = "insert_detail";
@@ -41,35 +41,35 @@ namespace InvoicesApplicationCS_Raman
 
 			this.dbDetails.DataSet = this.dsDetails;
 
-			this.dbDetails.BeforeFetch += this.dbDetails_BeforeFetch;
-			this.dbDetails.BeforeInsert += this.dbDetails_BeforeInsert;
-			this.dbDetails.AfterInsert += this.dbDetails_AfterInsert;
+			this.dbDetails.BeforeFetch += this.DBDetails_BeforeFetch;
+			this.dbDetails.BeforeInsert += this.DBDetails_BeforeInsert;
+			this.dbDetails.AfterInsert += this.DBDetails_AfterInsert;
 
 			// Format unit cost 
-			detailsDataGridView.Columns["CostCol"].DefaultCellStyle.Format = "c";
+			DetailsDataGridView.Columns["CostCol"].DefaultCellStyle.Format = "c";
 			this.dbDetails.FetchDataTable(this.tableDetails);
-			detailsDataGridView.AutoGenerateColumns = false;
-			detailsDataGridView.DataSource = this.tableDetails;
+			DetailsDataGridView.AutoGenerateColumns = false;
+			DetailsDataGridView.DataSource = this.tableDetails;
 		}
 
-		void dbDetails_AfterInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
+		private void DBDetails_AfterInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
 		{
 			this.dbDetails.FetchDataTable(this.tableDetails);
 		}
 
-		void dbDetails_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
+		private void DBDetails_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
 		{
-			cmd.Parameters["@invoice_id"].Value = this.invoice_id;
+			cmd.Parameters["@invoice_id"].Value = this.invoiceId;
 		}
 
-		void dbDetails_BeforeInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
+		private void DBDetails_BeforeInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
 		{
-			cmd.Parameters["@invoice_id"].Value = this.invoice_id;
+			cmd.Parameters["@invoice_id"].Value = this.invoiceId;
 		}
 
-		private void detailsDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+		private void DetailsDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
 		{
-			e.Row.Cells["InvoiceIDDetailCol"].Value = this.invoice_id;
+			e.Row.Cells["InvoiceIDDetailCol"].Value = this.invoiceId;
 		}
 	}
 }
