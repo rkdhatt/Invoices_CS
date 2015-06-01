@@ -19,25 +19,28 @@ namespace InvoicesApplicationCS_Raman
 		private DBDataSet dbInvoicesReport;
 		private DataSet dsInvoicesReport;
 		private DataTable tableInvoicesReport;
+		private int companyID;
+		private int year;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="SelectedCompanyInvoiceCostsChartForm"/> class.
 		/// Selected Company Invoice Costs Chart Form constructor
 		/// </summary>
-		public SelectedCompanyInvoiceCostsChartForm()
+		public SelectedCompanyInvoiceCostsChartForm(int compID, int selectedYear)
 		{
 			// Set up CemDB to use the .udl file
 			DBControl.ConnectionFile(Application.StartupPath + "\\newer_invoice.udl");
 
 			// Initialize data set and table
 			this.dbInvoicesReport = new DBDataSet();
-
 			this.dsInvoicesReport = new DataSet();
-
 			this.tableInvoicesReport = new DataTable();
+			this.companyID = compID;
+			this.year = selectedYear;
 
 			// Stored procedures for report
 			this.dbInvoicesReport.FetchStoredProcedure = "fetch_invoice_costs_chart_by_compID";
+			this.dbInvoicesReport.BeforeFetch += DBInvoicesReport_BeforeFetch;
 
 			this.dbInvoicesReport.DataSet = this.dsInvoicesReport;
 
@@ -46,9 +49,15 @@ namespace InvoicesApplicationCS_Raman
 
 			// Connect report to report viewer
 			this.selectedCompInvoiceCostsReportViewer.Reset();
-			this.selectedCompInvoiceCostsReportViewer.LocalReport.ReportEmbeddedResource = "InvoicesApplicationCS_Raman.InvoicesOverTimeChartReport.rdlc";
+			this.selectedCompInvoiceCostsReportViewer.LocalReport.ReportEmbeddedResource = "InvoicesApplicationCS_Raman.SelectedCompanyCostsByYearReport.rdlc";
 			this.selectedCompInvoiceCostsReportViewer.LocalReport.DataSources.Clear();
-			this.selectedCompInvoiceCostsReportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("AllInvoiceCostChartDataSet", this.tableInvoicesReport));
+			this.selectedCompInvoiceCostsReportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("selectedCompCostsDataSet", this.tableInvoicesReport));
+		}
+
+		void DBInvoicesReport_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
+		{
+			cmd.Parameters["@company_id"].Value = this.companyID;
+			cmd.Parameters["@year"].Value = this.year;
 		}
 
 		private void SelectedCompanyInvoiceCostsChartForm_Load(object sender, EventArgs e)

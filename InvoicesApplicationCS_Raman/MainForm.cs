@@ -141,11 +141,17 @@ namespace InvoicesApplicationCS_Raman
 		// Show invoice costs for a selected company for a given year
 		private void selectedCompanyYearlyInvoiceCosts_Click(object sender, EventArgs e)
 		{
-			int company_id = Convert.ToInt32(CompDataGridView.CurrentCell.OwningRow.Cells[0].Value);
-			SelectedCompanyInvoiceCostsChartForm rptviewer = new SelectedCompanyInvoiceCostsChartForm();
-			if (!rptviewer.IsDisposed)
+			YearForm yearFrm = new YearForm();
+			yearFrm.Show();
+			if (yearFrm.DialogResult == DialogResult.OK)
 			{
-				rptviewer.Show();
+				int year = yearFrm.getYear();
+				int company_id = Convert.ToInt32(CompDataGridView.CurrentCell.OwningRow.Cells[0].Value);
+				SelectedCompanyInvoiceCostsChartForm rptviewer = new SelectedCompanyInvoiceCostsChartForm(company_id, year);
+				if (!rptviewer.IsDisposed)
+				{
+					rptviewer.Show();
+				}
 			}
 		}
 	}

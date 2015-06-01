@@ -17,7 +17,7 @@ GO
 
 CREATE PROCEDURE fetch_invoice_costs_chart_by_compID
 	@company_id int,
-	@date date
+	@year int
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -42,7 +42,7 @@ BEGIN
 			on i.invoice_id = d.invoice_id
 		  ) As t2Result
 		  on t1Result.invoice_id = t2Result.invoice_id
-		where YEAR(t2Result.date) = YEAR(@date)
+		where YEAR(t2Result.date) = @year
 		group by t1Result.name, t2Result.date
 	COMMIT TRANSACTION
 
