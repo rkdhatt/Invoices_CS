@@ -1,0 +1,6 @@
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesMSIRaman\bin\Debug\InvoicesMSIRaman.msi
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesMSIRaman\bin\Debug\InvoicesMSIRaman.wixpdb
+obj\Debug\Product.wixobj
+obj\Debug\InvoicesMSIRaman.wixproj.BindContentsFileListnull.txt
+obj\Debug\InvoicesMSIRaman.wixproj.BindOutputsFileListnull.txt
+obj\Debug\InvoicesMSIRaman.wixproj.BindBuiltOutputsFileListnull.txt

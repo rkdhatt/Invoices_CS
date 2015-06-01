@@ -24,7 +24,8 @@ BEGIN
 	SET XACT_ABORT ON;
 
     -- Insert statements for procedure here
-	SELECT * from details
+	SELECT invoice_id, detail_id, description, quantity, CAST(cost as numeric(25,2)) as cost 
+	FROM details
 
 	GRANT EXECUTE ON fetch_details TO PUBLIC
 	

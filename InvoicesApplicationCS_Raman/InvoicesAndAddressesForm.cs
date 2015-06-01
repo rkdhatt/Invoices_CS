@@ -84,6 +84,7 @@ namespace InvoicesApplicationCS_Raman
 			// Format Date column layout
 			InvoiceDataGridView.Columns["InvoiceDateCol"].DefaultCellStyle.Format = "dd/MMM/yyyy";
 			AddressDataGridView.Columns["DateModify"].DefaultCellStyle.Format = "dd/MMM/yyyy";
+			InvoiceDataGridView.ShowCellToolTips = true;
 
 			// Fetch data and save to corresponding tables
 			this.dbInvoices.FetchDataTable(this.tableInvoices);

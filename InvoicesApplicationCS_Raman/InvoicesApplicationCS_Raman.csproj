@@ -55,11 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InvoiceChartForm.cs">
+    <Compile Include="InvoiceCostsChartForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InvoiceChartForm.Designer.cs">
-      <DependentUpon>InvoiceChartForm.cs</DependentUpon>
+    <Compile Include="InvoiceCostsChartForm.Designer.cs">
+      <DependentUpon>InvoiceCostsChartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InvoiceDetailsForm.cs">
       <SubType>Form</SubType>
@@ -90,6 +90,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SelectedCompanyInvoiceCostsChartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectedCompanyInvoiceCostsChartForm.Designer.cs">
+      <DependentUpon>SelectedCompanyInvoiceCostsChartForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelectedCompanyReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,8 +115,8 @@
       <DependentUpon>TotalCompInvoicesReportViewer.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AllAddressesReport.rdlc" />
-    <EmbeddedResource Include="InvoiceChartForm.resx">
-      <DependentUpon>InvoiceChartForm.cs</DependentUpon>
+    <EmbeddedResource Include="InvoiceCostsChartForm.resx">
+      <DependentUpon>InvoiceCostsChartForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InvoiceDetailsForm.resx">
       <DependentUpon>InvoiceDetailsForm.cs</DependentUpon>
@@ -132,6 +138,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AllInvoicesReport.rdlc" />
+    <EmbeddedResource Include="SelectedCompanyInvoiceCostsChartForm.resx">
+      <DependentUpon>SelectedCompanyInvoiceCostsChartForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelectedCompanyReport.rdlc" />
     <EmbeddedResource Include="SelectedCompanyReportViewer.resx">
       <DependentUpon>SelectedCompanyReportViewer.cs</DependentUpon>

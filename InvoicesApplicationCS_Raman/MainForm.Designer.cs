@@ -46,6 +46,7 @@
 			this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.CompanyInfoLabel = new System.Windows.Forms.Label();
+			this.selectedCompanyInvoiceCosts = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.CompDataGridView)).BeginInit();
 			this.mainMenuStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -126,50 +127,51 @@
             this.reportAllInvoices,
             this.reportAllCompaniesWithAddresses,
             this.selectedCompanyInformationToolStripMenuItem,
-            this.invoicesCostChart});
+            this.invoicesCostChart,
+            this.selectedCompanyInvoiceCosts});
 			this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
 			this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-			this.printToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+			this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.printToolStripMenuItem.Text = "&Print Report";
 			// 
 			// reportAllInvoices
 			// 
 			this.reportAllInvoices.Name = "reportAllInvoices";
-			this.reportAllInvoices.Size = new System.Drawing.Size(239, 22);
+			this.reportAllInvoices.Size = new System.Drawing.Size(276, 22);
 			this.reportAllInvoices.Text = "Company Invoices";
 			this.reportAllInvoices.Click += new System.EventHandler(this.ReportAllCompaniesWithInvoices_Click);
 			// 
 			// reportAllCompaniesWithAddresses
 			// 
 			this.reportAllCompaniesWithAddresses.Name = "reportAllCompaniesWithAddresses";
-			this.reportAllCompaniesWithAddresses.Size = new System.Drawing.Size(239, 22);
+			this.reportAllCompaniesWithAddresses.Size = new System.Drawing.Size(276, 22);
 			this.reportAllCompaniesWithAddresses.Text = "Company Addresses";
 			this.reportAllCompaniesWithAddresses.Click += new System.EventHandler(this.ReportAllCompaniesWithAddresses_Click);
 			// 
 			// selectedCompanyInformationToolStripMenuItem
 			// 
 			this.selectedCompanyInformationToolStripMenuItem.Name = "selectedCompanyInformationToolStripMenuItem";
-			this.selectedCompanyInformationToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+			this.selectedCompanyInformationToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
 			this.selectedCompanyInformationToolStripMenuItem.Text = "Selected Company Information";
 			this.selectedCompanyInformationToolStripMenuItem.Click += new System.EventHandler(this.SelectedCompanyInformation_Click);
 			// 
 			// invoicesCostChart
 			// 
 			this.invoicesCostChart.Name = "invoicesCostChart";
-			this.invoicesCostChart.Size = new System.Drawing.Size(239, 22);
-			this.invoicesCostChart.Text = "Invoices Costs Over Time";
+			this.invoicesCostChart.Size = new System.Drawing.Size(276, 22);
+			this.invoicesCostChart.Text = "Total Invoice Costs Over Time";
 			this.invoicesCostChart.Click += new System.EventHandler(this.InvoicesCostChart_Click);
 			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new System.Drawing.Size(134, 6);
+			this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
 			// 
 			// ExitToolStripMenuItem
 			// 
 			this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-			this.ExitToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+			this.ExitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.ExitToolStripMenuItem.Text = "E&xit";
 			this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
 			// 
@@ -188,6 +190,13 @@
 			this.CompanyInfoLabel.Size = new System.Drawing.Size(242, 13);
 			this.CompanyInfoLabel.TabIndex = 7;
 			this.CompanyInfoLabel.Text = "Double-click on a company name for more details:";
+			// 
+			// selectedCompanyInvoiceCosts
+			// 
+			this.selectedCompanyInvoiceCosts.Name = "selectedCompanyInvoiceCosts";
+			this.selectedCompanyInvoiceCosts.Size = new System.Drawing.Size(276, 22);
+			this.selectedCompanyInvoiceCosts.Text = "Selected Company Total Invoice Costs";
+			this.selectedCompanyInvoiceCosts.Click += new System.EventHandler(this.selectedCompanyYearlyInvoiceCosts_Click);
 			// 
 			// MainForm
 			// 
@@ -230,6 +239,7 @@
 		private System.Windows.Forms.ToolStripMenuItem selectedCompanyInformationToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem invoicesCostChart;
+		private System.Windows.Forms.ToolStripMenuItem selectedCompanyInvoiceCosts;
 
 	}
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?define MicrosoftDir= "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\"?>
-<?define MyTargetPath = "E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\bin\Release"?>
+<?define MyTargetPath = "E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\bin\Debug"?>
 <?define CEMDBTargetPath = "E:\Programmers - Raman\InvoicesApplicationCS_Raman\NoDevExp CemDB Dlls\"?>
 <?define MSReportViewerCommonPath = "C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.Common\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.Common.dll"?>
 <?define MSReportViewerWinFormsPath = "C:\Program Files (x86)\Microsoft Visual Studio 11.0\ReportViewer\Microsoft.ReportViewer.WinForms.dll"?>

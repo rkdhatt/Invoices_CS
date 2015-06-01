@@ -5,7 +5,7 @@ GO
 -- =================================================================================
 -- Author:		Raman Dhatt
 -- Create date: 2015-05-29
--- Description:	Procedure that retreives invoice costrs for chart.
+-- Description:	Procedure that retreives invoice costs for chart.
 -- Revisions:
 --		Author                  Date       	Description                                       
 --		------------------- 	---------- 	--------------------------------------
@@ -26,7 +26,7 @@ BEGIN
 
     -- Insert statements for procedure here
 	BEGIN TRANSACTION
-		select t1Result.name, t2Result.date, isnull(sum(t2Result.sum_cost), 0) as 'total_cost'
+		select t1Result.name, t2Result.date, CAST(isnull(sum(t2Result.sum_cost), 0) as numeric(35, 2)) as 'total_cost'
 		from (select c.name, i.invoice_id
 			from companies c
 			left join invoices i

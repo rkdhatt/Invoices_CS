@@ -282,7 +282,7 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>AllInvoiceCostChartDataSet</DataSetName>
-        <Top>0.47308cm</Top>
+        <Top>1.50496cm</Top>
         <Left>0.42016cm</Left>
         <Height>8.83646cm</Height>
         <Width>20.04125cm</Width>
@@ -295,11 +295,43 @@
           <BackgroundGradientType>None</BackgroundGradientType>
         </Style>
       </Chart>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Report Generation Date: " &amp; FORMAT(Cdate(today), "dd-MMM-yyyy")</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>0.73766cm</Top>
+        <Left>0.42016cm</Left>
+        <Height>0.6cm</Height>
+        <Width>9.56438cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>3.875in</Height>
+    <Height>4.30208in</Height>
     <Style />
   </Body>
-  <Width>8.33333in</Width>
+  <Width>8.63541in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

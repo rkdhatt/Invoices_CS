@@ -19,7 +19,7 @@ CREATE PROCEDURE insert_detail
 	@invoice_id int,
 	@description varchar(50),
 	@quantity real,
-	@cost money
+	@cost numeric(25, 1)
 	
 AS
 BEGIN

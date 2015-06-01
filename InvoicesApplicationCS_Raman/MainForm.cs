@@ -108,6 +108,7 @@ namespace InvoicesApplicationCS_Raman
 			}
 		}
 
+		// Show address and invoice info for a selected company
 		private void SelectedCompanyInformation_Click(object sender, EventArgs e)
 		{
 			int column = CompDataGridView.CurrentCell.ColumnIndex;
@@ -121,14 +122,27 @@ namespace InvoicesApplicationCS_Raman
 			}
 		}
 
+		// Show information about application
 		private void AboutToolStripMenuClick(object sender, EventArgs e)
 		{
 			MessageBox.Show("Author: Raman Dhatt \nCreated: May 2015", "About", MessageBoxButtons.OK);
 		}
 
+		// Show overall invoice costs of all companies for all years
 		private void InvoicesCostChart_Click(object sender, EventArgs e)
 		{
-			InvoiceChartForm rptviewer = new InvoiceChartForm();
+			InvoiceCostsChartForm rptviewer = new InvoiceCostsChartForm();
+			if (!rptviewer.IsDisposed)
+			{
+				rptviewer.Show();
+			}
+		}
+
+		// Show invoice costs for a selected company for a given year
+		private void selectedCompanyYearlyInvoiceCosts_Click(object sender, EventArgs e)
+		{
+			int company_id = Convert.ToInt32(CompDataGridView.CurrentCell.OwningRow.Cells[0].Value);
+			SelectedCompanyInvoiceCostsChartForm rptviewer = new SelectedCompanyInvoiceCostsChartForm();
 			if (!rptviewer.IsDisposed)
 			{
 				rptviewer.Show();
