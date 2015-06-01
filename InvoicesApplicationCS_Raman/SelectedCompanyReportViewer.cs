@@ -11,6 +11,9 @@ using CemDB;
 
 namespace InvoicesApplicationCS_Raman
 {
+	/// <summary>
+	/// SelectedCompanyReportViewer partial class
+	/// </summary>
 	public partial class SelectedCompanyReportViewer : Form
 	{
 		private DBDataSet dbAddressesReport;
@@ -23,6 +26,11 @@ namespace InvoicesApplicationCS_Raman
 
 		private int companyId;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="SelectedCompanyReportViewer"/> class.
+		/// Selected Company Report constructor
+		/// </summary>
+		/// <param name="cID">Company ID</param>
 		public SelectedCompanyReportViewer(int cID)
 		{
 			this.InitializeComponent();

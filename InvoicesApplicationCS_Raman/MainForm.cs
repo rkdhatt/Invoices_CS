@@ -21,6 +21,10 @@ namespace InvoicesApplicationCS_Raman
 		private DataTable tableCompanies;
 		private DBView dbvCompanies;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MainForm"/> class.
+		/// Main Form constructor
+		/// </summary>
 		public MainForm()
 		{
 			this.InitializeComponent();

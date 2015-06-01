@@ -3756,7 +3756,7 @@ namespace InvoicesApplicationCS_Raman {
         }
     }
 }
-namespace InvoicesApplicationCS_Raman.reportsDataSetTableAdapters {
+namespace InvoicesApplicationCS_Raman.ReportsDataSetTableAdapters {
     
     
     /// <summary>

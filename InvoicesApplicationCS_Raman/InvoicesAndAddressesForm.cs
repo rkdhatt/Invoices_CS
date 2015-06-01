@@ -30,6 +30,11 @@ namespace InvoicesApplicationCS_Raman
 
 		private int companyID;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="InvoicesAndAddressesForm"/> class.
+		/// Invoices and Addresses Form constructor
+		/// </summary>
+		/// <param name="cID">Company ID</param>
 		public InvoicesAndAddressesForm(int cID)
 		{
 			this.InitializeComponent();

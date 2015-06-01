@@ -21,6 +21,10 @@ namespace InvoicesApplicationCS_Raman
 		private DataSet dsInvoicesReport;
 		private DataTable tableInvoicesReport;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="TotalCompInvoicesReportViewer"/> class.
+		/// All Invoices constructor 
+		/// </summary>
 		public TotalCompInvoicesReportViewer()
 		{
 			this.InitializeComponent();
@@ -60,6 +64,5 @@ namespace InvoicesApplicationCS_Raman
 		{
 			this.compInvReportViewer.RefreshReport();
 		}
-
 	}
 }

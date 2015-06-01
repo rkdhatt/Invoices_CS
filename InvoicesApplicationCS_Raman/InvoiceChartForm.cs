@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,8 @@ using CemDB;
 
 namespace InvoicesApplicationCS_Raman
 {
+	[SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation", Justification = "Reviewed.")]
+
 	/// <summary>
 	/// Invoice Chart for total invoice costs per company over time.
 	/// </summary>
@@ -20,6 +23,10 @@ namespace InvoicesApplicationCS_Raman
 		private DataSet dsInvoicesReport;
 		private DataTable tableInvoicesReport;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="InvoiceChartForm"/> class.
+		/// Invoice Chart Form constructor
+		/// </summary>
 		public InvoiceChartForm()
 		{
 			this.InitializeComponent();

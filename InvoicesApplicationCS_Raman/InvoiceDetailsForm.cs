@@ -23,6 +23,11 @@ namespace InvoicesApplicationCS_Raman
 
 		private int invoiceId;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="InvoiceDetailsForm"/> class. 
+		/// Invoice Details Form constructor
+		/// </summary>
+		/// <param name="iID">Invoice ID</param>
 		public InvoiceDetailsForm(int iID)
 		{
 			this.InitializeComponent();

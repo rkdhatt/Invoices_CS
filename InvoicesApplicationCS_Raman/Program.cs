@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace InvoicesApplicationCS_Raman
 {
+	/// <summary>
+	/// main Program class
+	/// </summary>
 	static class Program
 	{
 		/// <summary>

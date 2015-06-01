@@ -18,6 +18,10 @@ namespace InvoicesApplicationCS_Raman
 		private DataSet dsAddressesReport;
 		private DataTable tableAddressesReport;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="TotalCompAddressesReportViewer"/> class.
+		/// All Addresses constructor
+		/// </summary>
 		public TotalCompAddressesReportViewer()
 		{
 			this.InitializeComponent();
