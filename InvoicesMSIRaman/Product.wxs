@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?define MicrosoftDir= "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\"?>
+<?define MyTargetPath = "E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\bin\Release"?>
+<?define CEMDBTargetPath = "E:\Programmers - Raman\InvoicesApplicationCS_Raman\NoDevExp CemDB Dlls\"?>
+<?define MSReportViewerCommonPath = "C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.Common\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.Common.dll"?>
+<?define MSReportViewerWinFormsPath = "C:\Program Files (x86)\Microsoft Visual Studio 11.0\ReportViewer\Microsoft.ReportViewer.WinForms.dll"?>
+
+<?define ProductName = "InvoicesRamanCSharp"?>
+<?define Manufacturer = "University Of Alberta"?>
+<?define UpgradeCode = "25ec0197-f4a9-40df-b0d6-93b19b4a0516"?>
+<?define Id = "*"?>
+<?define Version = "1.0.00"?> <!--last 2 numbers have to be concatenated to ensure upgrade occurs. Maybe patch can work but not sure...-->
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product 
+    Id="$(var.Id)" 
+    Name="$(var.ProductName)" 
+    Language="1033" 
+    Version="$(var.Version)" 
+    Manufacturer="$(var.Manufacturer)" 
+    UpgradeCode="$(var.UpgradeCode)">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <!-- Media element describes a disk that makes up the source media for the installation. -->
+    <Media Id ="1" Cabinet="InvoicesRamanCSharp.cab" EmbedCab="yes" DiskPrompt="InvoicesRamanCSharp 1.0.0.0"/>
+    <Property Id="DiskPrompt" Value="InvoicesRamanCSharp Installation 1.0.0.0" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+
+    <!-- A feature for the Feature table. Features are the smallest installable unit. -->
+    <!-- For every component group created, you must reference it in this feature block. -->
+		<Feature Id="ProductFeature" Title="$(var.ProductName)" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="DesktopShortCutComponent" />
+		</Feature>
+
+    <UIRef Id="WixUI_Minimal" />
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+      <!-- For saving a desktop shortcut-->
+      <Directory Id="DesktopFolder" SourceName="Desktop" />
+
+      <!-- For saving in program files-->
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="$(var.ProductName)" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+
+    <!-- Component group used for creating a desktop shortcut-->
+    <ComponentGroup Id ="DesktopShortCutComponent" Directory="DesktopFolder">
+      <Component Id="ApplicationShortcutDesktop" Guid="2EB22DD6-2A99-48F6-9372-24BC2A9AF31B">
+        <Shortcut Id="ApplicationDesktopShortcut"
+           Name="InvoicesApplicationCS_Raman"
+           Description="Record company information such as invoices and addresses."
+           Target="[INSTALLFOLDER]InvoicesApplicationCS_Raman.exe"
+           WorkingDirectory="INSTALLFOLDER"/>
+        <RemoveFolder Id="DesktopFolder" On="uninstall"/>
+        <RegistryValue
+          Root="HKCU"
+          Key="Software/InvoicesApplicationCS_Raman"
+          Name="installed"
+          Type="integer"
+          Value="1"
+          KeyPath="yes"/>
+      </Component>
+    </ComponentGroup>
+    
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="MainExecutable" Guid="{4261800E-6E37-4510-B0A3-F1102C988A27}">
+        <File Id ="InvoicesApplicationCS_RamanEXE" Name="InvoicesApplicationCS_Raman.exe" DiskId="1" Source="$(var.InvoicesApplicationCS_Raman.TargetPath)" KeyPath="yes"/>
+      </Component>
+
+      <!--CemDB-related Tools-->
+      <Component Id ="CemControls" Guid="{D280311A-9F90-4C12-8029-A93B91CDD947}">
+        <File Id= "CemControls" Name="CemControls.dll" Source="$(var.CEMDBTargetPath)" KeyPath ="yes" Vital="yes" DiskId="1"></File>
+      </Component>
+
+      <Component Id ="CemDB" Guid="{20B8F197-E065-4B14-B178-7BF7CDDB16E7}">
+        <File Id= "CemDB" Name="CemDB.dll" Source="$(var.CEMDBTargetPath)" KeyPath ="yes" Vital="yes" DiskId="1"></File>
+      </Component>
+      
+      <!--Microsoft Tools-->
+      <Component Id ="Microsoft.CSharp" Guid="{D8A6C43B-0593-439C-B020-4B7255F644E4}">
+        <File Id= "Microsoft.CSharp" Name="Microsoft.CSharp.dll" Source="$(var.MicrosoftDir)" KeyPath ="yes" Vital="yes" DiskId="1"></File>
+      </Component>
+
+      <Component Id ="Microsoft.ReportViewer.Common" Guid="{104731A4-FE8A-4988-9668-2D05CF06C657}">
+        <File Id= "Microsoft.ReportViewer.Common" Name="Microsoft.ReportViewer.Common.dll" Source="$(var.MSReportViewerCommonPath)" KeyPath ="yes" Vital="yes" DiskId="1"></File>
+      </Component>
+
+      <Component Id ="Microsoft.ReportViewer.WinForms" Guid="{24F891AE-9571-469B-85E1-AEC473DAD959}">
+        <File Id= "Microsoft.ReportViewer.WinForms" Name="Microsoft.ReportViewer.WinForms.dll" Source="$(var.MSReportViewerWinFormsPath)" KeyPath ="yes" Vital="yes" DiskId="1"></File>
+      </Component>
+      
+      <Component Id ="mscorlib" Guid="{C96CA878-D433-47D8-9458-1A41EC29CE2E}">
+        <File Id= "mscorlib" Name="mscorlib.dll" Source="$(var.MicrosoftDir)" KeyPath ="yes" Vital="yes" DiskId="1"></File>
+      </Component>
+      
+		</ComponentGroup>
+	</Fragment>
+</Wix>

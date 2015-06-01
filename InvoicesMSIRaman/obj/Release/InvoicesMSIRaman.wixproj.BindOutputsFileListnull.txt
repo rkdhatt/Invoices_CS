@@ -1,0 +1,2 @@
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesMSIRaman\bin\Release\InvoicesMSIRaman.msi
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesMSIRaman\bin\Release\InvoicesMSIRaman.wixpdb

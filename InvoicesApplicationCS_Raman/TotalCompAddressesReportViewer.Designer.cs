@@ -38,7 +38,6 @@
 			this.compAddReportViewer.Name = "compAddReportViewer";
 			this.compAddReportViewer.Size = new System.Drawing.Size(715, 578);
 			this.compAddReportViewer.TabIndex = 0;
-			this.compAddReportViewer.Load += new System.EventHandler(this.CompAddReportViewer_Load);
 			// 
 			// TotalCompAddressesReportViewer
 			// 

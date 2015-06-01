@@ -1,0 +1,8 @@
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\NoDevExp CemDB Dlls\CemControls.dll
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\NoDevExp CemDB Dlls\CemDB.dll
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\bin\Release\InvoicesApplicationCS_Raman.exe
+C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Microsoft.CSharp.dll
+C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.Common\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.Common.dll
+C:\Program Files (x86)\Microsoft Visual Studio 11.0\ReportViewer\Microsoft.ReportViewer.WinForms.dll
+C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\bin\Release\InvoicesApplicationCS_Raman.exe

@@ -63,9 +63,5 @@ namespace InvoicesApplicationCS_Raman
 		{
 			this.compAddReportViewer.RefreshReport();
 		}
-
-		private void CompAddReportViewer_Load(object sender, EventArgs e)
-		{
-		}
 	}
 }

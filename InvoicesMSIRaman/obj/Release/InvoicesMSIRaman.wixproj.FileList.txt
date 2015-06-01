@@ -1,0 +1,6 @@
+obj\Release\Product.wixobj
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesMSIRaman\bin\Release\InvoicesMSIRaman.msi
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesMSIRaman\bin\Release\InvoicesMSIRaman.wixpdb
+obj\Release\InvoicesMSIRaman.wixproj.BindContentsFileListnull.txt
+obj\Release\InvoicesMSIRaman.wixproj.BindOutputsFileListnull.txt
+obj\Release\InvoicesMSIRaman.wixproj.BindBuiltOutputsFileListnull.txt
