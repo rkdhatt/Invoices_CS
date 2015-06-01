@@ -123,7 +123,7 @@
     <EmbeddedResource Include="InvoicesAndAddressesForm.resx">
       <DependentUpon>InvoicesAndAddressesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InvoicesChartReport.rdlc" />
+    <EmbeddedResource Include="InvoicesOverTimeChartReport.rdlc" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

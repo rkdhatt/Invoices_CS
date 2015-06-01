@@ -46,7 +46,7 @@
 			this.ClientSize = new System.Drawing.Size(610, 424);
 			this.Controls.Add(this.invoiceChartReportViewer);
 			this.Name = "InvoiceChartForm";
-			this.Text = "InvoiceChartForm";
+			this.Text = "Total Invoice Costs Over Time Per Company";
 			this.Load += new System.EventHandler(this.InvoiceChartForm_Load);
 			this.ResumeLayout(false);
 

@@ -28,8 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.invoiceDataGridView = new System.Windows.Forms.DataGridView();
@@ -78,8 +78,8 @@
 			// 
 			// invoiceDataGridView
 			// 
-			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			this.invoiceDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.invoiceDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.invoiceDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
 			this.invoiceDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.invoiceDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -134,7 +134,6 @@
 			this.invoiceDataGrid.Size = new System.Drawing.Size(230, 171);
 			this.invoiceDataGrid.TabIndex = 1;
 			this.invoiceDataGrid.Visible = false;
-			this.invoiceDataGrid.Navigate += new System.Windows.Forms.NavigateEventHandler(this.invoiceDataGrid_Navigate);
 			// 
 			// tabPage2
 			// 
@@ -149,8 +148,8 @@
 			// 
 			// addressDataGridView
 			// 
-			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			this.addressDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.addressDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
 			this.addressDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
 			this.addressDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.addressDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

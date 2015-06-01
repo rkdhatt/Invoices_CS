@@ -11,12 +11,12 @@
                   <GroupExpression>=Fields!date.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
-              <Label>Fields!date.Value</Label>
               <SortExpressions>
                 <SortExpression>
                   <Value>=Fields!date.Value</Value>
                 </SortExpression>
               </SortExpressions>
+              <Label>=FORMAT(Fields!date.Value, "dd-MMM-yyyy")</Label>
             </ChartMember>
           </ChartMembers>
         </ChartCategoryHierarchy>
@@ -28,12 +28,12 @@
                   <GroupExpression>=Fields!name.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
-              <Label>=Fields!name.Value</Label>
               <SortExpressions>
                 <SortExpression>
                   <Value>=Fields!name.Value</Value>
                 </SortExpression>
               </SortExpressions>
+              <Label>=Fields!name.Value</Label>
             </ChartMember>
           </ChartMembers>
         </ChartSeriesHierarchy>
@@ -50,7 +50,7 @@
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
-                    <Type>Diamond</Type>
+                    <Type>Auto</Type>
                     <Size>4pt</Size>
                     <Style />
                   </ChartMarker>
@@ -88,6 +88,7 @@
                   <Caption>Invoice Date</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
+                    <FontWeight>SemiBold</FontWeight>
                   </Style>
                 </ChartAxisTitle>
                 <ChartMajorGridLines>
@@ -160,9 +161,10 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Invoice Cost</Caption>
+                  <Caption>Invoice Cost ($)</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
+                    <FontWeight>SemiBold</FontWeight>
                   </Style>
                 </ChartAxisTitle>
                 <ChartMajorGridLines>
@@ -238,6 +240,8 @@
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontSize>8pt</FontSize>
             </Style>
+            <Position>TopRight</Position>
+            <DockOutsideChartArea>true</DockOutsideChartArea>
             <ChartLegendTitle>
               <Caption />
               <Style>
@@ -252,7 +256,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>Chart Title</Caption>
+            <Caption>Total Invoice Cost Per Company Over Time</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontWeight>Bold</FontWeight>
@@ -278,10 +282,10 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>invoiceCostChartDataSet</DataSetName>
-        <Top>2.35162cm</Top>
-        <Left>2.00766cm</Left>
-        <Height>6.56104cm</Height>
-        <Width>11.6275cm</Width>
+        <Top>0.47308cm</Top>
+        <Left>0.42016cm</Left>
+        <Height>8.83646cm</Height>
+        <Width>20.04125cm</Width>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -292,10 +296,10 @@
         </Style>
       </Chart>
     </ReportItems>
-    <Height>5.4375in</Height>
+    <Height>3.875in</Height>
     <Style />
   </Body>
-  <Width>6.83333in</Width>
+  <Width>8.33333in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

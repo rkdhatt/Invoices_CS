@@ -1,5 +1,5 @@
-﻿using CemDB;
-using System;
+﻿using System;
+using CemDB;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,40 +20,47 @@ namespace InvoicesApplicationCS_Raman
 
 		public TotalCompAddressesReportViewer()
 		{
-			InitializeComponent();
+			this.InitializeComponent();
 
 			// Set up CemDB to use the .udl file
 			DBControl.ConnectionFile(Application.StartupPath + "\\newer_invoice.udl");
 
 			// Initialize data sets and table
-			dbAddressesReport = new DBDataSet();
-			dsAddressesReport = new DataSet();
-			tableAddressesReport = new DataTable();
+			this.dbAddressesReport = new DBDataSet();
+			this.dsAddressesReport = new DataSet();
+			this.tableAddressesReport = new DataTable();
 
 			// Stored procedure for report
-			dbAddressesReport.FetchStoredProcedure = "fetch_all_company_addresses_report";
+			this.dbAddressesReport.FetchStoredProcedure = "fetch_all_company_addresses_report";
 
-			dbAddressesReport.DataSet = dsAddressesReport;
+			this.dbAddressesReport.DataSet = this.dsAddressesReport;
 
 			// Save data into tableAddressesReport
-			dbAddressesReport.FetchDataTable(tableAddressesReport);
+			this.dbAddressesReport.FetchDataTable(this.tableAddressesReport);
 
-			// Connect report to report viewer
-			this.compAddReportViewer.Reset();
-			this.compAddReportViewer.LocalReport.ReportEmbeddedResource = "InvoicesApplicationCS_Raman.AllAddressesReport.rdlc";
-			this.compAddReportViewer.LocalReport.DataSources.Clear();
-			this.compAddReportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("allAddressesDataSet", tableAddressesReport));
+			// Check if table has data
+			if (this.tableAddressesReport.Rows.Count == 0)
+			{
+				MessageBox.Show("No data to display", "No Data", MessageBoxButtons.OK);
+				this.compAddReportViewer.CancelRendering(100);
+				this.Close();
+			}
+			else 
+			{	// Connect report to report viewer
+				this.compAddReportViewer.Reset();
+				this.compAddReportViewer.LocalReport.ReportEmbeddedResource = "InvoicesApplicationCS_Raman.AllAddressesReport.rdlc";
+				this.compAddReportViewer.LocalReport.DataSources.Clear();
+				this.compAddReportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("allAddressesDataSet", this.tableAddressesReport));
+			}
 		}
 
 		private void TotalCompAddressesReportViewer_Load(object sender, EventArgs e)
 		{
-
 			this.compAddReportViewer.RefreshReport();
 		}
 
 		private void compAddReportViewer_Load(object sender, EventArgs e)
 		{
-
 		}
 	}
 }

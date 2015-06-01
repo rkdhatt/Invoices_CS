@@ -22,59 +22,69 @@ namespace InvoicesApplicationCS_Raman
 		private DataTable tableInvoicesReport;
 
 		int company_id;
+
 		public SelectedCompanyReportViewer(int cID)
 		{
-			InitializeComponent();
+			this.InitializeComponent();
 
-			company_id = cID;
+			this.company_id = cID;
 
 			// Set up CemDB to use the .udl file
 			DBControl.ConnectionFile(Application.StartupPath + "\\newer_invoice.udl");
 
 			// Initialize data sets and table
-			dbAddressesReport = new DBDataSet();
-			dbInvoicesReport = new DBDataSet();
+			this.dbAddressesReport = new DBDataSet();
+			this.dbInvoicesReport = new DBDataSet();
 
-			dsAddressesReport = new DataSet();
-			dsInvoicesReport = new DataSet();
+			this.dsAddressesReport = new DataSet();
+			this.dsInvoicesReport = new DataSet();
 
-			tableAddressesReport = new DataTable();
-			tableInvoicesReport = new DataTable();
-			dbAddressesReport.BeforeFetch += dbAddressesReport_BeforeFetch;
-			dbInvoicesReport.BeforeFetch += dbInvoicesReport_BeforeFetch;
+			this.tableAddressesReport = new DataTable();
+			this.tableInvoicesReport = new DataTable();
+			this.dbAddressesReport.BeforeFetch += this.dbAddressesReport_BeforeFetch;
+			this.dbInvoicesReport.BeforeFetch += this.dbInvoicesReport_BeforeFetch;
 
 			// Stored procedures for report
-			dbAddressesReport.FetchStoredProcedure = "fetch_company_address";
-			dbInvoicesReport.FetchStoredProcedure = "fetch_company_invoices";
+			this.dbAddressesReport.FetchStoredProcedure = "fetch_company_address";
+			this.dbInvoicesReport.FetchStoredProcedure = "fetch_company_invoices";
 
-			dbAddressesReport.DataSet = dsAddressesReport;
-			dbInvoicesReport.DataSet = dsInvoicesReport;
+			this.dbAddressesReport.DataSet = this.dsAddressesReport;
+			this.dbInvoicesReport.DataSet = this.dsInvoicesReport;
 
 			// Save data into tables
-			dbAddressesReport.FetchDataTable(tableAddressesReport);
-			dbInvoicesReport.FetchDataTable(tableInvoicesReport);
+			this.dbAddressesReport.FetchDataTable(this.tableAddressesReport);
+			this.dbInvoicesReport.FetchDataTable(this.tableInvoicesReport);
 
-			// Connect report to report viewer
-			this.selectedCompReportViewer.Reset();
-			this.selectedCompReportViewer.LocalReport.ReportEmbeddedResource = "InvoicesApplicationCS_Raman.SelectedCompanyReport.rdlc";
-			this.selectedCompReportViewer.LocalReport.DataSources.Clear();
-			this.selectedCompReportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("selectedAddressDataSet", tableAddressesReport));
-			this.selectedCompReportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("selectedInvoiceDataSet", tableInvoicesReport));
+			// Check if table has data
+			if (this.tableInvoicesReport.Rows.Count == 0)
+			{
+				MessageBox.Show("No data to display", "No Data", MessageBoxButtons.OK);
+				this.selectedCompReportViewer.CancelRendering(100);
+				this.Close();
+			}
+			else
+			{
+				// Connect report to report viewer
+				this.selectedCompReportViewer.Reset();
+				this.selectedCompReportViewer.LocalReport.ReportEmbeddedResource = "InvoicesApplicationCS_Raman.SelectedCompanyReport.rdlc";
+				this.selectedCompReportViewer.LocalReport.DataSources.Clear();
+				this.selectedCompReportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("selectedAddressDataSet", this.tableAddressesReport));
+				this.selectedCompReportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("selectedInvoiceDataSet", this.tableInvoicesReport));
+			}
 		}
 
 		void dbInvoicesReport_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
 		{
-			cmd.Parameters["@company_id"].Value = company_id;
+			cmd.Parameters["@company_id"].Value = this.company_id;
 		}
 
 		void dbAddressesReport_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
 		{
-			cmd.Parameters["@company_id"].Value = company_id;
+			cmd.Parameters["@company_id"].Value = this.company_id;
 		}
 
 		private void SelectedCompanyReportViewer_Load(object sender, EventArgs e)
 		{
-
 			this.selectedCompReportViewer.RefreshReport();
 		}
 	}

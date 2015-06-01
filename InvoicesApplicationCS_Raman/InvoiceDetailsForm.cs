@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace InvoicesApplicationCS_Raman
 {
+	/// <summary>
+	/// Displays datagridview of invoice details
+	/// </summary>
 	public partial class InvoiceDetailsForm : Form
 	{
 		private DBDataSet dbDetails;
@@ -20,40 +23,38 @@ namespace InvoicesApplicationCS_Raman
 
 		private int invoice_id;
 
-
 		public InvoiceDetailsForm(int invoiceID)
 		{
-			InitializeComponent();
+			this.InitializeComponent();
 
 			this.invoice_id = invoiceID;
 
-			dbDetails = new DBDataSet();
-			dsDetails = new DataSet();
-			tableDetails = new DataTable("Details");
-			dbvDetails = new DBView(detailsDataGridView, dbDetails);
+			this.dbDetails = new DBDataSet();
+			this.dsDetails = new DataSet();
+			this.tableDetails = new DataTable("Details");
+			this.dbvDetails = new DBView(detailsDataGridView, this.dbDetails);
 
-			dbDetails.FetchStoredProcedure = "fetch_details_by_invoice_ID";
-			dbDetails.InsertStoredProcedure = "insert_detail";
-			dbDetails.UpdateStoredProcedure = "update_detail";
-			dbDetails.DeleteStoredProcedure = "delete_detail";
+			this.dbDetails.FetchStoredProcedure = "fetch_details_by_invoice_ID";
+			this.dbDetails.InsertStoredProcedure = "insert_detail";
+			this.dbDetails.UpdateStoredProcedure = "update_detail";
+			this.dbDetails.DeleteStoredProcedure = "delete_detail";
 
-			dbDetails.DataSet = dsDetails;
+			this.dbDetails.DataSet = this.dsDetails;
 
-			dbDetails.BeforeFetch += dbDetails_BeforeFetch;
-			dbDetails.BeforeInsert += dbDetails_BeforeInsert;
-			dbDetails.AfterInsert += dbDetails_AfterInsert;
+			this.dbDetails.BeforeFetch += this.dbDetails_BeforeFetch;
+			this.dbDetails.BeforeInsert += this.dbDetails_BeforeInsert;
+			this.dbDetails.AfterInsert += this.dbDetails_AfterInsert;
 
 			// Format unit cost 
-
 			detailsDataGridView.Columns["CostCol"].DefaultCellStyle.Format = "c";
-			dbDetails.FetchDataTable(tableDetails);
+			this.dbDetails.FetchDataTable(this.tableDetails);
 			detailsDataGridView.AutoGenerateColumns = false;
 			detailsDataGridView.DataSource = this.tableDetails;
 		}
 
 		void dbDetails_AfterInsert(object sender, System.Data.SqlClient.SqlCommand cmd, DataRow row, Cancel cancel)
 		{
-			dbDetails.FetchDataTable(tableDetails);
+			this.dbDetails.FetchDataTable(this.tableDetails);
 		}
 
 		void dbDetails_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
