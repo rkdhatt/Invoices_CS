@@ -16,7 +16,7 @@
                   <Value>=Fields!date.Value</Value>
                 </SortExpression>
               </SortExpressions>
-              <Label>=Fields!date.Value</Label>
+              <Label>=FORMAT(Fields!date.Value, "dd-MMM")</Label>
             </ChartMember>
           </ChartMembers>
         </ChartCategoryHierarchy>
@@ -73,7 +73,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Axis Title</Caption>
+                  <Caption>Invoice Date (DD-MMM)</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -148,7 +148,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Axis Title</Caption>
+                  <Caption>Invoice Cost ($)</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -240,7 +240,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>Chart Title</Caption>
+            <Caption>=Fields!name.Value &amp; "'s Total Invoice Costs For The Year " &amp; Year(Fields!date.Value).ToString()</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontWeight>Bold</FontWeight>
@@ -268,7 +268,7 @@
         <DataSetName>selectedCompCostsDataSet</DataSetName>
         <Top>1.6637cm</Top>
         <Left>2.08703cm</Left>
-        <Height>8.99521cm</Height>
+        <Height>9.31271cm</Height>
         <Width>14.90833cm</Width>
         <Style>
           <Border>
@@ -279,6 +279,38 @@
           <BackgroundGradientType>None</BackgroundGradientType>
         </Style>
       </Chart>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Report Generation Date: " &amp; FORMAT(Cdate(today), "dd-MMM-yyyy")</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>1.0637cm</Top>
+        <Left>2.08703cm</Left>
+        <Height>0.6cm</Height>
+        <Width>9.56438cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>4.83333in</Height>
     <Style />

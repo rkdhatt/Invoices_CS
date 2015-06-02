@@ -36,17 +36,16 @@
 			this.compAddReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.compAddReportViewer.Location = new System.Drawing.Point(0, 0);
 			this.compAddReportViewer.Name = "compAddReportViewer";
-			this.compAddReportViewer.Size = new System.Drawing.Size(715, 578);
+			this.compAddReportViewer.Size = new System.Drawing.Size(795, 578);
 			this.compAddReportViewer.TabIndex = 0;
 			// 
 			// TotalCompAddressesReportViewer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(715, 578);
+			this.ClientSize = new System.Drawing.Size(795, 578);
 			this.Controls.Add(this.compAddReportViewer);
-			this.MaximumSize = new System.Drawing.Size(731, 616);
-			this.MinimumSize = new System.Drawing.Size(731, 616);
+			this.MinimumSize = new System.Drawing.Size(811, 547);
 			this.Name = "TotalCompAddressesReportViewer";
 			this.Text = "TotalCompAddressesReportViewer";
 			this.Load += new System.EventHandler(this.TotalCompAddressesReportViewer_Load);

@@ -36,15 +36,16 @@
 			this.selectedCompReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.selectedCompReportViewer.Location = new System.Drawing.Point(0, 0);
 			this.selectedCompReportViewer.Name = "selectedCompReportViewer";
-			this.selectedCompReportViewer.Size = new System.Drawing.Size(676, 563);
+			this.selectedCompReportViewer.Size = new System.Drawing.Size(795, 563);
 			this.selectedCompReportViewer.TabIndex = 0;
 			// 
 			// SelectedCompanyReportViewer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(676, 563);
+			this.ClientSize = new System.Drawing.Size(795, 563);
 			this.Controls.Add(this.selectedCompReportViewer);
+			this.MinimumSize = new System.Drawing.Size(811, 547);
 			this.Name = "SelectedCompanyReportViewer";
 			this.Text = "SelectedCompanyReportViewer";
 			this.Load += new System.EventHandler(this.SelectedCompanyReportViewer_Load);

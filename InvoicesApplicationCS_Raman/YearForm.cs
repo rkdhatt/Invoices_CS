@@ -33,23 +33,27 @@ namespace InvoicesApplicationCS_Raman
 				if (this.year < 1900 || this.year > 2015)
 				{
 					MessageBox.Show("Must enter appropriate year.", "Year Entry Error", MessageBoxButtons.OK);
-					this.DialogResult = DialogResult.Cancel;
-					this.Hide();
+					return;
 				}
-				this.DialogResult = DialogResult.OK;
 
+				this.DialogResult = DialogResult.OK;
 			}
 			catch
 			{
 				MessageBox.Show("Must enter appropriate year.", "Year Entry Error", MessageBoxButtons.OK);
-				this.DialogResult = DialogResult.Cancel;
-				this.Hide();
+				return;
 			}
 		}
 
 		public int getYear()
 		{
 			return this.year;
+		}
+
+		private void cancelButton_Click(object sender, EventArgs e)
+		{
+			this.DialogResult = DialogResult.Cancel;
+			this.Hide();
 		}
 	}
 }

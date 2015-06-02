@@ -36,16 +36,17 @@
 			this.invoiceChartReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.invoiceChartReportViewer.Location = new System.Drawing.Point(0, 0);
 			this.invoiceChartReportViewer.Name = "invoiceChartReportViewer";
-			this.invoiceChartReportViewer.Size = new System.Drawing.Size(610, 424);
+			this.invoiceChartReportViewer.Size = new System.Drawing.Size(795, 509);
 			this.invoiceChartReportViewer.TabIndex = 0;
 			// 
-			// InvoiceChartForm
+			// InvoiceCostsChartForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(610, 424);
+			this.ClientSize = new System.Drawing.Size(795, 509);
 			this.Controls.Add(this.invoiceChartReportViewer);
-			this.Name = "InvoiceChartForm";
+			this.MinimumSize = new System.Drawing.Size(811, 547);
+			this.Name = "InvoiceCostsChartForm";
 			this.Text = "Total Invoice Costs Over Time Per Company";
 			this.Load += new System.EventHandler(this.InvoiceChartForm_Load);
 			this.ResumeLayout(false);

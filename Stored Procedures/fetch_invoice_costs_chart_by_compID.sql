@@ -17,7 +17,7 @@ GO
 
 CREATE PROCEDURE fetch_invoice_costs_chart_by_compID
 	@company_id int,
-	@year int
+	@year int = 2015
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from

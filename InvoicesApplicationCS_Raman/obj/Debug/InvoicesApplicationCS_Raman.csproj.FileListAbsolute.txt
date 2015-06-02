@@ -16,6 +16,5 @@ E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\o
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.exe
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.pdb
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.InvoiceCostsChartForm.resources
-E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.csprojResolveAssemblyReference.cache
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.SelectedCompanyInvoiceCostsChartForm.resources
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Debug\InvoicesApplicationCS_Raman.YearForm.resources

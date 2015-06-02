@@ -160,7 +160,7 @@
 			this.InvoiceDateCol.DataPropertyName = "date";
 			this.InvoiceDateCol.HeaderText = "Invoice Date";
 			this.InvoiceDateCol.Name = "InvoiceDateCol";
-			this.InvoiceDateCol.ToolTipText = "Enter in DD/MMM/YYYY format";
+			this.InvoiceDateCol.ToolTipText = "Enter in DD/MM/YYYY format";
 			// 
 			// CompIDInvoiceCol
 			// 
@@ -206,7 +206,7 @@
 			this.DateModify.DataPropertyName = "date_modify";
 			this.DateModify.HeaderText = "Date Modified";
 			this.DateModify.Name = "DateModify";
-			this.DateModify.ToolTipText = "Enter in DD/MMM/YYYY format";
+			this.DateModify.ToolTipText = "Enter in DD/MM/YYYY format";
 			// 
 			// InvoicesAndAddressesForm
 			// 

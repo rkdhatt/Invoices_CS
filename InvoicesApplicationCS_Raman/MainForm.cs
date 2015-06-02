@@ -142,7 +142,8 @@ namespace InvoicesApplicationCS_Raman
 		private void selectedCompanyYearlyInvoiceCosts_Click(object sender, EventArgs e)
 		{
 			YearForm yearFrm = new YearForm();
-			yearFrm.Show();
+			yearFrm.ShowDialog();
+			DialogResult result = yearFrm.DialogResult;
 			if (yearFrm.DialogResult == DialogResult.OK)
 			{
 				int year = yearFrm.getYear();

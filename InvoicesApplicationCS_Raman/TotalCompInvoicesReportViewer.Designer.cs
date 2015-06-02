@@ -36,17 +36,16 @@
 			this.compInvReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.compInvReportViewer.Location = new System.Drawing.Point(0, 0);
 			this.compInvReportViewer.Name = "compInvReportViewer";
-			this.compInvReportViewer.Size = new System.Drawing.Size(664, 576);
+			this.compInvReportViewer.Size = new System.Drawing.Size(795, 576);
 			this.compInvReportViewer.TabIndex = 0;
 			// 
 			// TotalCompInvoicesReportViewer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(664, 576);
+			this.ClientSize = new System.Drawing.Size(795, 576);
 			this.Controls.Add(this.compInvReportViewer);
-			this.MaximumSize = new System.Drawing.Size(680, 614);
-			this.MinimumSize = new System.Drawing.Size(680, 614);
+			this.MinimumSize = new System.Drawing.Size(811, 547);
 			this.Name = "TotalCompInvoicesReportViewer";
 			this.Text = "Summary Report of Companies and their Invoices";
 			this.Load += new System.EventHandler(this.TotalReportViewer_Load);
