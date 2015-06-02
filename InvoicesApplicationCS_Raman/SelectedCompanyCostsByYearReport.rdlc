@@ -40,6 +40,7 @@
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
+                    <Type>Auto</Type>
                     <Style />
                   </ChartMarker>
                   <DataElementOutput>Output</DataElementOutput>
@@ -240,7 +241,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>=Fields!name.Value &amp; "'s Total Invoice Costs For The Year " &amp; Year(Fields!date.Value).ToString()</Caption>
+            <Caption>=Fields!name.Value &amp; "'s Invoice Costs For The Year " &amp; Year(Fields!date.Value).ToString()</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontWeight>Bold</FontWeight>

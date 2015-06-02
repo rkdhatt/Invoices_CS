@@ -66,7 +66,7 @@ namespace InvoicesApplicationCS_Raman
 			// Check if table has data
 			if (this.tableInvoicesReport.Rows.Count == 0)
 			{
-				MessageBox.Show("No data to display", "No Data", MessageBoxButtons.OK);
+				MessageBox.Show("No data to display for this company.", "No Data", MessageBoxButtons.OK);
 				this.selectedCompReportViewer.CancelRendering(100);
 				this.Close();
 			}

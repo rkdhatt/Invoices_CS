@@ -125,7 +125,8 @@ namespace InvoicesApplicationCS_Raman
 			}
 			catch (InvalidCastException q)
 			{
-				MessageBox.Show("You've selected an invalid cell!\n Error Message:\n\n"+q.ToString(), "Invalid Cell Error", MessageBoxButtons.OK);
+				// User selected an empty cell - invalid
+				MessageBox.Show("You've selected an invalid cell!\n Error Message:\n\n" + q.ToString(), "Invalid Cell Error", MessageBoxButtons.OK);
 			}
 		}
 
@@ -164,9 +165,9 @@ namespace InvoicesApplicationCS_Raman
 					}
 				}
 			}
-
 			catch (InvalidCastException q)
 			{
+				// User selected an empty cell - invalid
 				MessageBox.Show("You've selected an invalid cell!\n Error Message:\n\n" + q.ToString(), "Invalid Cell Error", MessageBoxButtons.OK);
 			}
 		}

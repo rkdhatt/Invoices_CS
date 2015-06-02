@@ -82,7 +82,8 @@
 			this.MaximumSize = new System.Drawing.Size(276, 147);
 			this.MinimumSize = new System.Drawing.Size(276, 147);
 			this.Name = "YearForm";
-			this.Text = "YearForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "Enter Company Year";
 			this.Load += new System.EventHandler(this.YearForm_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();

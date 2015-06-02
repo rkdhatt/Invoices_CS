@@ -165,6 +165,7 @@
 			this.AddressDataGridView.Size = new System.Drawing.Size(462, 192);
 			this.AddressDataGridView.TabIndex = 0;
 			this.AddressDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.AddressDataGridView_DefaultValuesNeeded);
+			this.AddressDataGridView.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.AddressDataGridView_EditingControlShowing);
 			// 
 			// invoiceInfoLabel
 			// 
@@ -199,6 +200,7 @@
 			// 
 			this.Phone.DataPropertyName = "phone";
 			this.Phone.HeaderText = "Phone";
+			this.Phone.MaxInputLength = 10;
 			this.Phone.Name = "Phone";
 			// 
 			// DateModify

@@ -147,9 +147,43 @@ namespace InvoicesApplicationCS_Raman
 		// Double click on invoice to see more invoice details
 		private void InvoiceDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
-			int invoice_id = Convert.ToInt32(InvoiceDataGridView[0, e.RowIndex].FormattedValue);
-			InvoiceDetailsForm frm_details = new InvoiceDetailsForm(invoice_id);
-			frm_details.Show();
+			try
+			{
+				int invoice_id = Convert.ToInt32(InvoiceDataGridView[0, e.RowIndex].Value);
+				InvoiceDetailsForm frm_details = new InvoiceDetailsForm(invoice_id);
+				frm_details.Show();
+			}
+			catch (InvalidCastException q)
+			{
+				// User selected an empty cell - invalid
+				MessageBox.Show("You've selected an invalid cell! Cannot access invoice details.\n Error Message:\n\n" + q.ToString(), "Invalid Cell Error", MessageBoxButtons.OK);
+			}
+		}
+
+		// Ensures only numerical values can be entered into phone column of address.
+		private void AddressDataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+		{
+			e.Control.KeyPress -= new KeyPressEventHandler(this.PhoneColumn_KeyPress);
+
+			// Check if current cell is in phone column
+			if (AddressDataGridView.CurrentCell.ColumnIndex == 3)
+			{
+				TextBox input = e.Control as TextBox;
+				if (input != null)
+				{
+					input.KeyPress += new KeyPressEventHandler(this.PhoneColumn_KeyPress);
+				}
+			}
+		}
+
+		// Checks if key entered is a digit, else cancel the input.
+		private void PhoneColumn_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!char.IsControl(e.KeyChar)
+				&& !char.IsDigit(e.KeyChar))
+			{
+				e.Handled = true;
+			}
 		}
 	}
 }

@@ -9,7 +9,7 @@
 <?define Manufacturer = "University Of Alberta"?>
 <?define UpgradeCode = "25ec0197-f4a9-40df-b0d6-93b19b4a0516"?>
 <?define Id = "*"?>
-<?define Version = "1.0.02"?> <!--last 2 numbers have to be concatenated to ensure upgrade occurs. Maybe patch can work but not sure...-->
+<?define Version = "1.0.07"?> <!--last 2 numbers have to be concatenated to ensure upgrade occurs. Maybe patch can work but not sure...-->
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<Product 
     Id="$(var.Id)" 
