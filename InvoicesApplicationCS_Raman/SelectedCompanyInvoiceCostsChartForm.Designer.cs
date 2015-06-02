@@ -67,7 +67,7 @@
 			this.Controls.Add(this.selectedCompInvoiceCostsReportViewer);
 			this.MinimumSize = new System.Drawing.Size(811, 547);
 			this.Name = "SelectedCompanyInvoiceCostsChartForm";
-			this.Text = "SelectedCompanyInvoiceCostsChartForm";
+			this.Text = "Total Invoice Costs For Selected Company";
 			this.Load += new System.EventHandler(this.SelectedCompanyInvoiceCostsChartForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.StoredProceduresDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.fetch_invoice_costs_chart_by_compIDBindingSource)).EndInit();

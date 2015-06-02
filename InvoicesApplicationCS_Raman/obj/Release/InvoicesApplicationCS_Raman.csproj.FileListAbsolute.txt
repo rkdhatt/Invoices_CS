@@ -3,7 +3,6 @@ E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\b
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\bin\Release\InvoicesApplicationCS_Raman.pdb
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\bin\Release\CemControls.dll
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\bin\Release\CemDB.dll
-E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Release\InvoicesApplicationCS_Raman.InvoiceChartForm.resources
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Release\InvoicesApplicationCS_Raman.InvoiceDetailsForm.resources
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Release\InvoicesApplicationCS_Raman.InvoicesAndAddressesForm.resources
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Release\InvoicesApplicationCS_Raman.MainForm.resources
@@ -16,3 +15,6 @@ E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\o
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Release\RdlCompile.compiled
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Release\InvoicesApplicationCS_Raman.exe
 E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Release\InvoicesApplicationCS_Raman.pdb
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Release\InvoicesApplicationCS_Raman.InvoiceCostsChartForm.resources
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Release\InvoicesApplicationCS_Raman.SelectedCompanyInvoiceCostsChartForm.resources
+E:\Programmers - Raman\InvoicesApplicationCS_Raman\InvoicesApplicationCS_Raman\obj\Release\InvoicesApplicationCS_Raman.YearForm.resources

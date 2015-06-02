@@ -11,21 +11,38 @@ using CemDB;
 
 namespace InvoicesApplicationCS_Raman
 {
+	/// <summary>
+	/// Allows user to enter the year to see total 
+	/// costs for that year for a specific company
+	/// </summary>
 	public partial class YearForm : Form
 	{
 		private int year;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="YearForm"/> class.
+		/// </summary>
 		public YearForm()
 		{
 			this.InitializeComponent();
 		}
 
-		private void YearForm_Load(object sender, EventArgs e)
+		/// <summary>
+		/// public method that returns the year
+		/// </summary>
+		/// <returns> year entered by user </returns>
+		public int GetYear()
 		{
-			this.CancelButton = cancelButton;
+			return this.year;
 		}
 
-		private void okButton_Click(object sender, EventArgs e)
+		private void YearForm_Load(object sender, EventArgs e)
+		{
+			this.CancelButton = this.cancelButton;
+		}
+
+		// Checks if user entered appropriate year
+		private void OKButton_Click(object sender, EventArgs e)
 		{
 			try
 			{
@@ -45,12 +62,7 @@ namespace InvoicesApplicationCS_Raman
 			}
 		}
 
-		public int getYear()
-		{
-			return this.year;
-		}
-
-		private void cancelButton_Click(object sender, EventArgs e)
+		private void CancelButton_Click(object sender, EventArgs e)
 		{
 			this.DialogResult = DialogResult.Cancel;
 			this.Hide();

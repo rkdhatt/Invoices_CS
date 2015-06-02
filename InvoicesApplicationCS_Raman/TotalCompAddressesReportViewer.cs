@@ -11,7 +11,9 @@ using CemDB;
 
 namespace InvoicesApplicationCS_Raman
 {
-	// Report that displays all companies and their addresses
+	/// <summary>
+	/// Report that displays all companies and their addresses
+	/// </summary>
 	public partial class TotalCompAddressesReportViewer : Form
 	{
 		private DBDataSet dbAddressesReport;

@@ -73,7 +73,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Invoice Date (DD-MMM)</Caption>
+                  <Caption>Invoice Date (2015)</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -292,12 +292,14 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.0637cm</Top>
-        <Left>2.08703cm</Left>
+        <Top>10.97641cm</Top>
+        <Left>7.43098cm</Left>
         <Height>0.6cm</Height>
         <Width>9.56438cm</Width>
         <ZIndex>1</ZIndex>

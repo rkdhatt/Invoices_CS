@@ -42,7 +42,8 @@ BEGIN
 	END
 
 	-- Check if address is unique
-	IF EXISTS (SELECT * FROM addresses ad WHERE LTRIM(RTRIM(LOWER(ad.addresses))) = LTRIM(RTRIM(LOWER(@addresses)))) BEGIN
+	IF EXISTS (SELECT * FROM addresses ad WHERE LTRIM(RTRIM(LOWER(ad.addresses))) = LTRIM(RTRIM(LOWER(@addresses)))
+	AND ad.address_id <> @address_id) BEGIN
 		RAISERROR('Address already exists. Please enter a unique address.', 16, 1)
 		RETURN -1
 	END

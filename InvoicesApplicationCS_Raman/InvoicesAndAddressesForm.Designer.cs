@@ -33,14 +33,14 @@
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.InvoiceDataGridView = new System.Windows.Forms.DataGridView();
-			this.invoiceDataGrid = new System.Windows.Forms.DataGrid();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.AddressDataGridView = new System.Windows.Forms.DataGridView();
-			this.invoiceInfoLabel = new System.Windows.Forms.Label();
 			this.InvoiceIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.InvoiceDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.CompIDInvoiceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.TermsCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.invoiceDataGrid = new System.Windows.Forms.DataGrid();
+			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.AddressDataGridView = new System.Windows.Forms.DataGridView();
+			this.invoiceInfoLabel = new System.Windows.Forms.Label();
 			this.companyIDAddCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.AddressID = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Addresses = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,6 +95,33 @@
 			this.InvoiceDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.InvoiceDataGridView_CellDoubleClick);
 			this.InvoiceDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.InvoiceDataGridView_DefaultValuesNeeded);
 			// 
+			// InvoiceIDCol
+			// 
+			this.InvoiceIDCol.DataPropertyName = "invoice_id";
+			this.InvoiceIDCol.HeaderText = "Invoice ID";
+			this.InvoiceIDCol.Name = "InvoiceIDCol";
+			this.InvoiceIDCol.Visible = false;
+			// 
+			// InvoiceDateCol
+			// 
+			this.InvoiceDateCol.DataPropertyName = "date";
+			this.InvoiceDateCol.HeaderText = "Invoice Date";
+			this.InvoiceDateCol.Name = "InvoiceDateCol";
+			this.InvoiceDateCol.ToolTipText = "Enter in DD/MM/YYYY format";
+			// 
+			// CompIDInvoiceCol
+			// 
+			this.CompIDInvoiceCol.DataPropertyName = "company_id";
+			this.CompIDInvoiceCol.HeaderText = "Company ID";
+			this.CompIDInvoiceCol.Name = "CompIDInvoiceCol";
+			this.CompIDInvoiceCol.Visible = false;
+			// 
+			// TermsCol
+			// 
+			this.TermsCol.DataPropertyName = "terms";
+			this.TermsCol.HeaderText = "Terms";
+			this.TermsCol.Name = "TermsCol";
+			// 
 			// invoiceDataGrid
 			// 
 			this.invoiceDataGrid.AlternatingBackColor = System.Drawing.SystemColors.InactiveCaption;
@@ -147,33 +174,6 @@
 			this.invoiceInfoLabel.Size = new System.Drawing.Size(210, 13);
 			this.invoiceInfoLabel.TabIndex = 1;
 			this.invoiceInfoLabel.Text = "Double-click on an invoice for more details:";
-			// 
-			// InvoiceIDCol
-			// 
-			this.InvoiceIDCol.DataPropertyName = "invoice_id";
-			this.InvoiceIDCol.HeaderText = "Invoice ID";
-			this.InvoiceIDCol.Name = "InvoiceIDCol";
-			this.InvoiceIDCol.Visible = false;
-			// 
-			// InvoiceDateCol
-			// 
-			this.InvoiceDateCol.DataPropertyName = "date";
-			this.InvoiceDateCol.HeaderText = "Invoice Date";
-			this.InvoiceDateCol.Name = "InvoiceDateCol";
-			this.InvoiceDateCol.ToolTipText = "Enter in DD/MM/YYYY format";
-			// 
-			// CompIDInvoiceCol
-			// 
-			this.CompIDInvoiceCol.DataPropertyName = "company_id";
-			this.CompIDInvoiceCol.HeaderText = "Company ID";
-			this.CompIDInvoiceCol.Name = "CompIDInvoiceCol";
-			this.CompIDInvoiceCol.Visible = false;
-			// 
-			// TermsCol
-			// 
-			this.TermsCol.DataPropertyName = "terms";
-			this.TermsCol.HeaderText = "Terms";
-			this.TermsCol.Name = "TermsCol";
 			// 
 			// companyIDAddCol
 			// 

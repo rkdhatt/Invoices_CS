@@ -111,14 +111,21 @@ namespace InvoicesApplicationCS_Raman
 		// Show address and invoice info for a selected company
 		private void SelectedCompanyInformation_Click(object sender, EventArgs e)
 		{
-			int column = CompDataGridView.CurrentCell.ColumnIndex;
-			int row = CompDataGridView.CurrentCell.RowIndex;
-
-			int company_id = Convert.ToInt32(CompDataGridView.CurrentCell.OwningRow.Cells[0].Value);
-			SelectedCompanyReportViewer rptviewer = new SelectedCompanyReportViewer(company_id);
-			if (!rptviewer.IsDisposed)
+			try
 			{
-				rptviewer.Show();
+				int column = CompDataGridView.CurrentCell.ColumnIndex;
+				int row = CompDataGridView.CurrentCell.RowIndex;
+
+				int company_id = Convert.ToInt32(CompDataGridView.CurrentCell.OwningRow.Cells[0].Value);
+				SelectedCompanyReportViewer rptviewer = new SelectedCompanyReportViewer(company_id);
+				if (!rptviewer.IsDisposed)
+				{
+					rptviewer.Show();
+				}
+			}
+			catch (InvalidCastException q)
+			{
+				MessageBox.Show("You've selected an invalid cell!\n Error Message:\n\n"+q.ToString(), "Invalid Cell Error", MessageBoxButtons.OK);
 			}
 		}
 
@@ -139,20 +146,28 @@ namespace InvoicesApplicationCS_Raman
 		}
 
 		// Show invoice costs for a selected company for a given year
-		private void selectedCompanyYearlyInvoiceCosts_Click(object sender, EventArgs e)
+		private void SelectedCompanyYearlyInvoiceCosts_Click(object sender, EventArgs e)
 		{
-			YearForm yearFrm = new YearForm();
-			yearFrm.ShowDialog();
-			DialogResult result = yearFrm.DialogResult;
-			if (yearFrm.DialogResult == DialogResult.OK)
+			try
 			{
-				int year = yearFrm.getYear();
-				int company_id = Convert.ToInt32(CompDataGridView.CurrentCell.OwningRow.Cells[0].Value);
-				SelectedCompanyInvoiceCostsChartForm rptviewer = new SelectedCompanyInvoiceCostsChartForm(company_id, year);
-				if (!rptviewer.IsDisposed)
+				YearForm yearFrm = new YearForm();
+				yearFrm.ShowDialog();
+				DialogResult result = yearFrm.DialogResult;
+				if (yearFrm.DialogResult == DialogResult.OK)
 				{
-					rptviewer.Show();
+					int year = yearFrm.GetYear();
+					int company_id = Convert.ToInt32(CompDataGridView.CurrentCell.OwningRow.Cells[0].Value);
+					SelectedCompanyInvoiceCostsChartForm rptviewer = new SelectedCompanyInvoiceCostsChartForm(company_id, year);
+					if (!rptviewer.IsDisposed)
+					{
+						rptviewer.Show();
+					}
 				}
+			}
+
+			catch (InvalidCastException q)
+			{
+				MessageBox.Show("You've selected an invalid cell!\n Error Message:\n\n" + q.ToString(), "Invalid Cell Error", MessageBoxButtons.OK);
 			}
 		}
 	}

@@ -196,7 +196,7 @@
 			this.selectedCompanyInvoiceCosts.Name = "selectedCompanyInvoiceCosts";
 			this.selectedCompanyInvoiceCosts.Size = new System.Drawing.Size(276, 22);
 			this.selectedCompanyInvoiceCosts.Text = "Selected Company Total Invoice Costs";
-			this.selectedCompanyInvoiceCosts.Click += new System.EventHandler(this.selectedCompanyYearlyInvoiceCosts_Click);
+			this.selectedCompanyInvoiceCosts.Click += new System.EventHandler(this.SelectedCompanyYearlyInvoiceCosts_Click);
 			// 
 			// MainForm
 			// 

@@ -26,6 +26,8 @@ namespace InvoicesApplicationCS_Raman
 		/// Initializes a new instance of the <see cref="SelectedCompanyInvoiceCostsChartForm"/> class.
 		/// Selected Company Invoice Costs Chart Form constructor
 		/// </summary>
+		/// <param name="compID">Company ID</param>
+		/// <param name="selectedYear">invoices obtained by specifying year</param>
 		public SelectedCompanyInvoiceCostsChartForm(int compID, int selectedYear)
 		{
 			this.InitializeComponent();
@@ -42,7 +44,7 @@ namespace InvoicesApplicationCS_Raman
 			this.companyID = compID;
 			this.year = selectedYear;
 
-			this.dbInvoicesReport.BeforeFetch += DBInvoicesReport_BeforeFetch;
+			this.dbInvoicesReport.BeforeFetch += this.DBInvoicesReport_BeforeFetch;
 
 			// Stored procedures for report
 			this.dbInvoicesReport.FetchStoredProcedure = "fetch_invoice_costs_chart_by_compID";
@@ -70,7 +72,7 @@ namespace InvoicesApplicationCS_Raman
 		}
 
 		// Pass in company ID and year parameters
-		void DBInvoicesReport_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
+		private void DBInvoicesReport_BeforeFetch(object sender, System.Data.SqlClient.SqlCommand cmd, Cancel cancel)
 		{
 			cmd.Parameters["@company_id"].Value = this.companyID;
 			cmd.Parameters["@year"].Value = this.year;
